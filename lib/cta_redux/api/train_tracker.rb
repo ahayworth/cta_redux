@@ -72,12 +72,12 @@ module CTA
         @trains = Array.wrap(trains).map { |t| Train.new(t, ROUTES[name]) }
       end
 
-      def status
-        CTA::CustomerAlerts.status(:route => self.name).routes.first
+      def status!
+        CTA::CustomerAlerts.status!(:route => self.name).routes.first
       end
 
-      def alerts
-        CTA::CustomerAlerts.alerts(:route => self.name).alerts
+      def alerts!
+        CTA::CustomerAlerts.alerts!(:route => self.name).alerts
       end
     end
 
@@ -119,8 +119,8 @@ module CTA
         approaching?
       end
 
-      def follow
-        CTA::TrainTracker.follow(:run => self.run)
+      def follow!
+        CTA::TrainTracker.follow!(:run => self.run)
       end
 
       def <=>(other)

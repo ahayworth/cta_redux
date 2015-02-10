@@ -10,7 +10,7 @@ module CTA
       end
     end
 
-    def self.status(options = {})
+    def self.status!(options = {})
       routes   = Array.wrap(options[:routes]).flatten.compact.uniq.join(',')
       stations = Array.wrap(options[:stations]).flatten.compact.uniq
 
@@ -21,7 +21,7 @@ module CTA
       connection.get('routes.aspx', { :type => options[:type], :routeid => routes, :stationid => stations.first })
     end
 
-    def self.alerts(options = {})
+    def self.alerts!(options = {})
       params = {}
       params.merge!({ :activeonly => options[:active] }) if options[:active]
       params.merge!({ :accessibility => options[:accessiblity] }) if options[:accessibility]

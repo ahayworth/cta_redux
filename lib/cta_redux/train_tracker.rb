@@ -13,7 +13,7 @@ module CTA
       end
     end
 
-    def self.arrivals(options={})
+    def self.arrivals!(options={})
       has_map  = options.has_key?(:parent_station)
       has_stop = options.has_key?(:station)
 
@@ -43,11 +43,11 @@ module CTA
       connection.get('ttarrivals.aspx', params)
     end
 
-    def self.predictions(options={})
-      self.arrivals(options)
+    def self.predictions!(options={})
+      self.arrivals!(options)
     end
 
-    def self.follow(options={})
+    def self.follow!(options={})
       raise "Must specify a run! Try follow(:run => 914)..." unless options.has_key?(:run)
 
       runs = Array.wrap(options[:run]).flatten.compact.uniq
@@ -59,7 +59,7 @@ module CTA
       connection.get('ttfollow.aspx', { :runnumber => runs.first })
     end
 
-    def self.locations(options={})
+    def self.locations!(options={})
       unless options.has_key?(:routes)
         raise "Must specify at least one route! (Try locations(:routes => [:red, :blue]) )"
       end
@@ -73,8 +73,8 @@ module CTA
       connection.get('ttpositions.aspx', { :rt => rt.join(',') })
     end
 
-    def self.positions(options={})
-      self.locations(options)
+    def self.positions!(options={})
+      self.locations!(options)
     end
 
     def self.key

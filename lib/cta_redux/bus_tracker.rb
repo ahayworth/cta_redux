@@ -13,11 +13,11 @@ module CTA
       end
     end
 
-    def self.time
+    def self.time!
       connection.get('gettime')
     end
 
-    def self.vehicles(options={})
+    def self.vehicles!(options={})
       has_vehicle = options.has_key?(:vehicles)
       has_route   = options.has_key?(:routes)
 
@@ -31,11 +31,11 @@ module CTA
       connection.get('getvehicles', { :rt => routes, :vid => vehicles })
     end
 
-    def self.routes
+    def self.routes!
       connection.get('getroutes')
     end
 
-    def self.directions(options={})
+    def self.directions!(options={})
       unless options.has_key?(:route)
         raise "Must specify a route! (Try directions(:route => 914) )"
       end
@@ -48,7 +48,7 @@ module CTA
       connection.get('getdirections', { :rt => routes.first })
     end
 
-    def self.stops(options={})
+    def self.stops!(options={})
       has_route     = options.has_key?(:route)
       has_direction = options.has_key?(:direction)
 
@@ -69,7 +69,7 @@ module CTA
       connection.get('getstops', { :rt => routes.first, :dir => directions.first.to_s.capitalize })
     end
 
-    def self.patterns(options={})
+    def self.patterns!(options={})
       has_route   = options.has_key?(:route)
       has_pattern = options.has_key?(:patterns)
 
@@ -86,7 +86,7 @@ module CTA
       connection.get('getpatterns', { :pid => patterns, :rt => routes.first })
     end
 
-    def self.predictions(options={})
+    def self.predictions!(options={})
       has_vehicle = options.has_key?(:vehicles)
       has_stop    = options.has_key?(:stops)
 
@@ -102,7 +102,7 @@ module CTA
       connection.get('getpredictions', { :rt => routes, :vid => vehicles, :stpid => stops, :top => limit })
     end
 
-    def self.bulletins(options={})
+    def self.bulletins!(options={})
       has_route = options.has_key?(:routes)
       has_stop  = options.has_key?(:stop)
 

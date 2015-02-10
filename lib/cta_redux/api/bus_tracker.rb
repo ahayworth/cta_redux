@@ -105,10 +105,10 @@ module CTA
         @stop_name = s["stpnm"]
       end
 
-      def predictions
+      def predictions!
         options = { :route => self.route }
         options.merge!({ :stop => self.stop_id }) if self.stop_id
-        CTA::BusTracker.predictions(options)
+        CTA::BusTracker.predictions!(options)
       end
     end
 
@@ -198,8 +198,8 @@ module CTA
         @lon = @longitude = stop["lon"].to_f
       end
 
-      def predictions
-        CTA::BusTracker.predictions(:stop => self.id)
+      def predictions!
+        CTA::BusTracker.predictions!(:stop => self.id)
       end
     end
 
@@ -250,8 +250,8 @@ module CTA
         @delayed
       end
 
-      def predictions
-        CTA::BusTracker.predictions(:vehicle => self.id)
+      def predictions!
+        CTA::BusTracker.predictions!(:vehicle => self.id)
       end
     end
   end
