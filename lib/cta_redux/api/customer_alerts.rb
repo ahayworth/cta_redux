@@ -18,44 +18,6 @@ module CTA
 
     FRIENDLY_L_ROUTES = Hash[L_ROUTES.values.map { |r| r[:name].downcase.to_sym }.zip(L_ROUTES.keys)]
 
-    class APIError
-      attr_reader :code
-      attr_reader :name
-
-      def initialize(code, name)
-        @code = code.to_i
-        @name = name || "OK"
-      end
-    end
-
-    class APIResponse
-      include Comparable
-
-      attr_reader :timestamp
-      attr_reader :error
-      attr_reader :raw_body
-      attr_reader :parsed_body
-
-      def initialize(parsed_body, raw_body)
-        if parsed_body["CTARoutes"]
-          err = Array.wrap(parsed_body["CTARoutes"]["ErrorCode"]).flatten.compact.uniq.first
-          msg = Array.wrap(parsed_body["CTARoutes"]["ErrorMessage"]).flatten.compact.uniq.first
-          @timestamp = DateTime.parse(parsed_body["CTARoutes"]["TimeStamp"])
-        else
-          err = Array.wrap(parsed_body["CTAAlerts"]["ErrorCode"]).flatten.compact.uniq.first
-          msg = Array.wrap(parsed_body["CTAAlerts"]["ErrorMessage"]).flatten.compact.uniq.first
-          @timestamp = DateTime.parse(parsed_body["CTAAlerts"]["TimeStamp"])
-        end
-        @error = APIError.new(err, msg)
-        @parsed_body = parsed_body
-        @raw_body = raw_body
-      end
-
-      def <=>(other)
-        self.timestamp <=> other.timestamp
-      end
-    end
-
     class RouteStatus
       FIELDS = [:route, :route_color, :route_text_color, :service_id, :route_url, :status, :status_color]
       FIELDS.each { |f| attr_reader f }
@@ -115,7 +77,7 @@ module CTA
       end
     end
 
-    class AlertsResponse < APIResponse
+    class AlertsResponse < CTA::API::Response
       attr_reader :alerts
 
       def initialize(parsed_body, raw_body)
@@ -124,7 +86,7 @@ module CTA
       end
     end
 
-    class RouteStatusResponse < APIResponse
+    class RouteStatusResponse < CTA::API::Response
       attr_reader :routes
 
       def initialize(parsed_body, raw_body)

@@ -6,7 +6,7 @@ module CTA
     def self.connection
       @connection ||= Faraday.new do |faraday|
         faraday.url_prefix = 'http://www.transitchicago.com/api/1.0/'
-        faraday.use CTA::CustomerAlerts::APIParser
+        faraday.use CTA::CustomerAlerts::Parser
         faraday.response :caching, SimpleCache.new(Hash.new)
         faraday.adapter Faraday.default_adapter
       end

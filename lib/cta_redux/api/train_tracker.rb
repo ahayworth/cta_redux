@@ -34,37 +34,7 @@ module CTA
 
     FRIENDLY_ROUTES = Hash[ROUTES.values.map { |r| r[:name].downcase.to_sym }.zip(ROUTES.keys)]
 
-    class APIError
-      attr_reader :code
-      attr_reader :name
-
-      def initialize(code, name)
-        @code = code.to_i
-        @name = name || "OK"
-      end
-    end
-
-    class APIResponse
-      include Comparable
-
-      attr_reader :timestamp
-      attr_reader :error
-      attr_reader :raw_body
-      attr_reader :parsed_body
-
-      def initialize(parsed_body, raw_body)
-        @timestamp = DateTime.parse(parsed_body["ctatt"]["tmst"])
-        @error = APIError.new(parsed_body["ctatt"]["errCd"], parsed_body["ctatt"]["errNm"])
-        @parsed_body = parsed_body
-        @raw_body = raw_body
-      end
-
-      def <=>(other)
-        self.timestamp <=> other.timestamp
-      end
-    end
-
-    class ArrivalsResponse < APIResponse
+    class ArrivalsResponse < CTA::API::Response
       attr_reader :arrivals
 
       def initialize(parsed_body, raw_body)
@@ -73,7 +43,7 @@ module CTA
       end
     end
 
-    class FollowResponse < APIResponse
+    class FollowResponse < CTA::API::Response
       attr_reader :position
       attr_reader :arrivals
 
@@ -84,7 +54,7 @@ module CTA
       end
     end
 
-    class PositionsResponse < APIResponse
+    class PositionsResponse < CTA::API::Response
       attr_reader :routes
 
       def initialize(parsed_body, raw_body)
@@ -215,35 +185,6 @@ module CTA
         @lat = @latitude = position["lat"]
         @long = @longitude = position["lon"]
         @heading = position["heading"]
-      end
-    end
-
-    class APIParser < Faraday::Response::Middleware
-      def call(request_env)
-        api_response = nil
-
-        @app.call(request_env).on_complete do |response_env|
-          parsed_body = ::MultiXml.parse(response_env.body)
-
-          if has_errors?(parsed_body)
-            api_response = APIResponse.new(parsed_body, response_env.body)
-          else
-            case response_env.url.to_s
-            when /ttarrivals\.aspx/
-              api_response = ArrivalsResponse.new(parsed_body, response_env.body)
-            when /ttfollow\.aspx/
-              api_response = FollowResponse.new(parsed_body, response_env.body)
-            when /ttpositions\.aspx/
-              api_response = PositionsResponse.new(parsed_body, response_env.body)
-            end
-          end
-        end
-
-        api_response
-      end
-
-      def has_errors?(parsed_body)
-        parsed_body["ctatt"]["errCd"] != "0"
       end
     end
 

@@ -7,7 +7,7 @@ module CTA
         faraday.url_prefix = 'http://lapi.transitchicago.com/api/1.0/'
         faraday.params = { :key => @key }
 
-        faraday.use CTA::TrainTracker::APIParser
+        faraday.use CTA::TrainTracker::Parser
         faraday.response :caching, SimpleCache.new(Hash.new)
         faraday.adapter Faraday.default_adapter
       end

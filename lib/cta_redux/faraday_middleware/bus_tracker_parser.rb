@@ -7,7 +7,7 @@ module CTA
           parsed_body = ::MultiXml.parse(response_env.body)
 
           if has_errors?(parsed_body)
-            api_response = APIResponse.new(parsed_body, response_env.body)
+            api_response = Response.new(parsed_body, response_env.body)
           else
             case response_env.url.to_s
             when /bustime\/.+\/getvehicles/

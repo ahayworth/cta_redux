@@ -15,7 +15,7 @@ module CTA
         faraday.url_prefix = 'http://www.ctabustracker.com/bustime/api/v2/'
         faraday.params = { :key => @key }
 
-        faraday.use CTA::BusTracker::APIParser
+        faraday.use CTA::BusTracker::Parser
         faraday.response :caching, SimpleCache.new(Hash.new)
         faraday.adapter Faraday.default_adapter
       end

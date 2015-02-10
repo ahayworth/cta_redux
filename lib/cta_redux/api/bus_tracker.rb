@@ -4,33 +4,8 @@ require 'multi_xml'
 
 module CTA
   class BusTracker
-    class APIError
-      attr_reader :message
 
-      def initialize(message)
-        @message = (message || "OK")
-      end
-    end
-
-    class APIResponse
-      attr_reader :timestamp
-      attr_reader :error
-      attr_reader :raw_body
-      attr_reader :parsed_body
-
-      def initialize(parsed_body, raw_body)
-        @timestamp = DateTime.now
-        if parsed_body["bustime_response"].has_key?("error")
-          @error = APIError.new(parsed_body["bustime_response"]["error"]["msg"])
-        else
-          @error = APIError.new(nil)
-        end
-        @parsed_body = parsed_body
-        @raw_body = raw_body
-      end
-    end
-
-    class VehiclesResponse < APIResponse
+    class VehiclesResponse < CTA::API::Response
       attr_reader :vehicles
 
       def initialize(parsed_body, raw_body)
@@ -39,7 +14,7 @@ module CTA
       end
     end
 
-    class TimeResponse < APIResponse
+    class TimeResponse < CTA::API::Response
       attr_reader :timestamp
 
       def initialize(parsed_body, raw_body)
@@ -48,7 +23,7 @@ module CTA
       end
     end
 
-    class RoutesResponse < APIResponse
+    class RoutesResponse < CTA::API::Response
       attr_reader :routes
 
       def initialize(parsed_body, raw_body)
@@ -57,7 +32,7 @@ module CTA
       end
     end
 
-    class DirectionsResponse < APIResponse
+    class DirectionsResponse < CTA::API::Response
       attr_reader :directions
 
       def initialize(parsed_body, raw_body)
@@ -66,7 +41,7 @@ module CTA
       end
     end
 
-    class StopsResponse < APIResponse
+    class StopsResponse < CTA::API::Response
       attr_reader :stops
 
       def initialize(parsed_body, raw_body)
@@ -75,7 +50,7 @@ module CTA
       end
     end
 
-    class PatternsResponse < APIResponse
+    class PatternsResponse < CTA::API::Response
       attr_reader :patterns
 
       def initialize(parsed_body, raw_body)
@@ -84,7 +59,7 @@ module CTA
       end
     end
 
-    class PredictionsResponse < APIResponse
+    class PredictionsResponse < CTA::API::Response
       attr_reader :predictions
 
       def initialize(parsed_body, raw_body)
@@ -93,7 +68,7 @@ module CTA
       end
     end
 
-    class ServiceBulletinsResponse < APIResponse
+    class ServiceBulletinsResponse < CTA::API::Response
       attr_reader :bulletins
 
       def initialize(parsed_body, raw_body)
