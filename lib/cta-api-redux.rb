@@ -4,6 +4,7 @@ require "sqlite3"
 require "faraday"
 require "faraday_middleware"
 require "multi_xml"
+require "zlib"
 
 module CTA
   Dir.glob("cta-api-redux/faraday_middleware/*") { |lib| require lib }
@@ -12,21 +13,26 @@ module CTA
   require "cta-api-redux/bus_tracker.rb"
   require "cta-api-redux/customer_alerts.rb"
 
-  DB = "Not connected to a GTFS db!"
+  data_dir = File.join(File.expand_path("../..", __FILE__), 'data')
+  db_filename = File.join(data_dir, 'cta-gtfs.db')
 
-  def self.load_gtfs_data!(path)
-    raise "Can't find #{path}" unless File.exists?(path)
-
-    self.send(:remove_const, :DB)
-    self.const_set(:DB, Sequel.sqlite(:database => path, :readonly => true))
-
-    Dir.glob("cta-api-redux/models/*") do |lib|
-      next if lib == "cta-api-redux/models/train.rb" || lib == "cta-api-redux/models/bus.rb"
-      load lib
+  # First run
+  if !File.exists?(db_filename)
+    dbf = File.open(db_filename, 'wb')
+    Zlib::GzipReader.open("#{db_filename}.gz") do |gz|
+      dbf.puts gz.read
     end
-    load "cta-api-redux/models/train.rb"
-    load "cta-api-redux/models/bus.rb"
+    dbf.close
   end
+
+  DB = Sequel.sqlite(:database => db_filename, :readonly => true)
+
+  Dir.glob("cta-api-redux/models/*") do |lib|
+    next if lib == "cta-api-redux/models/train.rb" || lib == "cta-api-redux/models/bus.rb"
+    require lib
+  end
+  require "cta-api-redux/models/train.rb"
+  require "cta-api-redux/models/bus.rb"
 end
 
 class Array
