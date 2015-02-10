@@ -14,25 +14,31 @@ module CTA
     end
 
     def self.arrivals(options={})
-      if [:map_id, :stop_id].none? { |o| options.keys.include?(o) }
-        raise "You must specify a map_id or a stop_id! Try arrivals(:stop_id => 30280..."
-      end
+      has_map  = options.has_key?(:parent_station)
+      has_stop = options.has_key?(:station)
 
-      rt = []
-      [:route, :rt].each do |k|
-        rt << Array.wrap(options[k]).map { |r| FRIENDLY_ROUTES[r] || r }
-      end
-      rt = rt.flatten.compact.uniq
+      route = Array.wrap(options[:route]).flatten.compact.uniq
+      map   = Array.wrap(options[:parent_station]).flatten.compact.uniq
+      stop  = Array.wrap(options[:station]).flatten.compact.uniq
+      limit = Array.wrap(options[:limit]).flatten.compact.uniq.first.to_i if options[:limit]
 
-      if rt.size > 1
+      if route.size > 1
         raise "No more than 1 route may be specified!"
       end
 
+      if map.size > 1 || stop.size > 1
+        raise "No more than 1 station or parent_station may be specified!"
+      end
+
+      if !(has_map || has_stop)
+        raise "You must specify a station or a parent_station! Try arrivals(:station => 30280..."
+      end
+
       params = {}
-      params.merge!({ :mapid => options[:map_id] }) if options[:map_id]
-      params.merge!({ :stpid => options[:stop_id] }) if options[:stop_id]
-      params.merge!({ :max => options[:max] }) if options[:max]
-      params.merge!({ :rt => rt.first }) if rt.any?
+      params.merge!({ :mapid => map.first }) if options[:parent_station]
+      params.merge!({ :stpid => stop.first }) if options[:station]
+      params.merge!({ :max => options[:limit] }) if options[:limit]
+      params.merge!({ :rt => route.first }) if route.any?
 
       connection.get('ttarrivals.aspx', params)
     end
@@ -42,16 +48,9 @@ module CTA
     end
 
     def self.follow(options={})
-      allowed_keys = [:run, :runnumber, :run_number]
-      unless options.keys.any? { |k| allowed_keys.include?(k) }
-        raise "Must specify a run! (Try follow(:run => 914) )"
-      end
+      raise "Must specify a run! Try follow(:run => 914)..." unless options.has_key?(:run)
 
-      runs = []
-      allowed_keys.each do |k|
-        runs << Array.wrap(options[k])
-      end
-      runs = runs.flatten.compact.uniq
+      runs = Array.wrap(options[:run]).flatten.compact.uniq
 
       if runs.size > 1
         raise "Only one run may be specified!"
@@ -61,22 +60,17 @@ module CTA
     end
 
     def self.locations(options={})
-      allowed_keys = [:route, :routes, :rt]
-      unless options.keys.any? { |k| allowed_keys.include?(k) }
+      unless options.has_key?(:routes)
         raise "Must specify at least one route! (Try locations(:routes => [:red, :blue]) )"
       end
 
-      rt = []
-      allowed_keys.each do |k|
-        rt << Array.wrap(options[k]).map { |r| FRIENDLY_ROUTES[r] || r }
-      end
+      rt = Array.wrap(options[:routes]).flatten.compact.map { |r| (FRIENDLY_ROUTES[r] || r).to_s }
 
       if rt.size > 8
         raise "No more than 8 routes may be specified!"
       end
-      rt = rt.flatten.compact.join(",")
 
-      connection.get('ttpositions.aspx', { :rt => rt })
+      connection.get('ttpositions.aspx', { :rt => rt.join(',') })
     end
 
     def self.positions(options={})
@@ -91,6 +85,5 @@ module CTA
       @key = key
       @connection = nil
     end
-
   end
 end
