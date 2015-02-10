@@ -1,10 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'cta-api-redux/version'
+require 'cta_redux-api-redux/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "cta-api-redux"
+  spec.name          = "cta_redux"
   spec.version       = CTA::VERSION
   spec.authors       = ["Andrew Hayworth"]
   spec.email         = ["ahayworth@gmail.com"]

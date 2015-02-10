@@ -1,4 +1,4 @@
-# cta-api-redux
+# cta_redux
 
 # Reloading CTA GTFS data
 
@@ -10,7 +10,7 @@ Note that this will take a long time - there are several million stop_time recor
 
 3. rm ../data/*{txt,htm,zip}
 
-4. mv ../data/cta-gtfs.db /tmp/
+4. cd ../data && gzip cta-gtfs.db
 
-4. Commit / push / create release - make sure to upload the database from /tmp with the release
+5. Commit / push / create release and gem
 
