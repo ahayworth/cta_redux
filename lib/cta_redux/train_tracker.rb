@@ -64,7 +64,7 @@ module CTA
         raise "Must specify at least one route! (Try locations(:routes => [:red, :blue]) )"
       end
 
-      rt = Array.wrap(options[:routes]).flatten.compact.map { |r| (FRIENDLY_ROUTES[r] || r).to_s }
+      rt = Array.wrap(options[:routes]).flatten.compact.map { |r| (CTA::Train::FRIENDLY_L_ROUTES[r] || r).to_s }
 
       if rt.size > 8
         raise "No more than 8 routes may be specified!"

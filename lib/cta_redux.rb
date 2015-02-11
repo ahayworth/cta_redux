@@ -7,13 +7,14 @@ require "multi_xml"
 require "zlib"
 
 module CTA
-  Dir.glob("cta_redux/faraday_middleware/*") { |lib| require lib }
-  Dir.glob("cta_redux/api/*") { |lib| require lib }
-  require "cta_redux/train_tracker.rb"
-  require "cta_redux/bus_tracker.rb"
-  require "cta_redux/customer_alerts.rb"
-
+  base_path = File.expand_path("..", __FILE__)
   data_dir = File.join(File.expand_path("../..", __FILE__), 'data')
+  Dir.glob("#{base_path}/cta_redux/faraday_middleware/*") { |lib| require lib }
+  Dir.glob("#{base_path}/cta_redux/api/*") { |lib| require lib }
+  require "#{base_path}/cta_redux/train_tracker.rb"
+  require "#{base_path}/cta_redux/bus_tracker.rb"
+  require "#{base_path}/cta_redux/customer_alerts.rb"
+
   db_filename = File.join(data_dir, 'cta-gtfs.db')
 
   # First run
@@ -27,12 +28,13 @@ module CTA
 
   DB = Sequel.sqlite(:database => db_filename, :readonly => true)
 
-  Dir.glob("cta_redux/models/*") do |lib|
-    next if lib == "cta_redux/models/train.rb" || lib == "cta_redux/models/bus.rb"
+  Dir.glob("#{base_path}/cta_redux/models/*") do |lib|
+    next if lib =~ /train/ || lib =~ /bus/
     require lib
   end
-  require "cta_redux/models/train.rb"
-  require "cta_redux/models/bus.rb"
+
+  require "#{base_path}/cta_redux/models/train.rb"
+  require "#{base_path}/cta_redux/models/bus.rb"
 end
 
 class Array

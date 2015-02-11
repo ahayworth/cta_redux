@@ -4,20 +4,6 @@ require 'multi_xml'
 
 module CTA
   class CustomerAlerts
-
-    L_ROUTES = {
-      "red"   => { :name => "Red" },
-      "blue"  => { :name => "Blue" },
-      "brn"   => { :name => "Brown" },
-      "g"     => { :name => "Green" },
-      "org"   => { :name => "Orange" },
-      "p"     => { :name => "Purple" },
-      "pink"  => { :name => "Pink" },
-      "y"     => { :name => "Yellow" },
-    }
-
-    FRIENDLY_L_ROUTES = Hash[L_ROUTES.values.map { |r| r[:name].downcase.to_sym }.zip(L_ROUTES.keys)]
-
     class RouteStatus
       FIELDS = [:route, :route_color, :route_text_color, :service_id, :route_url, :status, :status_color]
       FIELDS.each { |f| attr_reader f }

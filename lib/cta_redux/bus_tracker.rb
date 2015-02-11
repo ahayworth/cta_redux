@@ -91,7 +91,7 @@ module CTA
       has_stop    = options.has_key?(:stops)
 
       if !(has_stop || has_vehicle) || (has_stop && has_vehicle)
-        raise "Must specify a stop (and optionally route), or vehicle! Try predictions(:stops => 6597)"
+        raise "Must specify a stop (and optionally route), or vehicles! Try predictions(:stops => 6597)"
       end
 
       routes   = Array.wrap(options[:routes]).flatten.compact.uniq.join(',')
