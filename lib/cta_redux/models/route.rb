@@ -4,6 +4,20 @@ module CTA
 
     one_to_many :trips, :key => :route_id
 
+    def stops
+      # Gosh, I wish SQLite could do "SELECT DISTINCT ON..."
+      CTA::Stop.with_sql(<<-SQL)
+        SELECT s.*
+        FROM stops s
+        WHERE s.stop_id IN (
+          SELECT DISTINCT st.stop_id
+          FROM stop_times st
+            JOIN trips t ON st.trip_id = t.trip_id
+          WHERE t.route_id = '#{self.route_id}'
+        )
+      SQL
+    end
+
     def live!(vehicles)
       class << self
         attr_reader :vehicles

@@ -10,6 +10,19 @@ module CTA
 
     many_to_many :trips, :left_key => :stop_id, :right_key => :trip_id, :join_table => :stop_times
 
+    def routes
+      CTA::Route.with_sql(<<-SQL)
+        SELECT r.*
+        FROM routes r
+        WHERE r.route_id IN (
+          SELECT DISTINCT t.route_id
+          FROM stop_times st
+            JOIN trips t ON st.trip_id = t.trip_id
+          WHERE st.stop_id = '#{self.stop_id}'
+        )
+      SQL
+    end
+
     # Some CTA routes are seasonal, and are missing from the GTFS feed.
     # However, the API still returns that info. So, we create a dummy CTA::Stop
     # to fill in the gaps. I've emailed CTA developer support for clarification.
