@@ -28,36 +28,6 @@ module CTA
     }
     FRIENDLY_L_ROUTES = Hash[L_ROUTES.values.map { |r| r[:name].downcase.to_sym }.zip(L_ROUTES.keys)]
 
-    # DRAGONS
-    # The CTA doesn't exactly honor the GTFS spec (nor do they return GTFS trip_ids
-    # in the TrainTracker API, grr). They specify multiple entries of
-    # (schd_trip_id, block_id, service_id) - so the only way to know which
-    # trip_id to pick is to join against stop_times and calendar dates, and
-    # find out which run (according to stop_times) is happening *right now*.
-    # Of course, this will break if the train is delayed more the total time
-    # it takes to complete the run... so a delayed train will start to disappear
-    # as it progresses through the run. We allow for a 'fuzz factor' to account
-    # for this...
-    def self.find_active_run(run, timestamp, fuzz = false)
-      d = timestamp.is_a?(DateTime) ? timestamp : DateTime.parse(timestamp)
-      wday = d.strftime("%A").downcase
-      dstr = d.strftime("%Y%m%d")
-      ts = (fuzz ? d.to_time - (30 * 60) : d).strftime("%H:%M:%S")
-      Trip.with_sql(<<-SQL)
-        SELECT t.*
-        FROM trips t
-          JOIN stop_times st ON t.trip_id = st.trip_id
-          JOIN calendar   c  ON t.service_id = c.service_id
-        WHERE t.schd_trip_id = 'R#{run}'
-          AND CAST(c.start_date AS NUMERIC) <= #{dstr}
-          AND CAST(c.end_date   AS NUMERIC) >= #{dstr}
-          AND c.#{wday} = '1'
-        GROUP BY t.trip_id
-        HAVING MIN(st.departure_time) <= '#{ts}'
-          AND  MAX(st.departure_time) >= '#{ts}'
-      SQL
-    end
-
     def follow!
       CTA::TrainTracker.follow!(:run => self.schd_trip_id.gsub("R", ""))
     end

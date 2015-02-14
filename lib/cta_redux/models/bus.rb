@@ -1,25 +1,5 @@
 module CTA
   class Bus < CTA::Trip
-    def self.find_active_run(run, timestamp, fuzz = false)
-      d = timestamp.is_a?(DateTime) ? timestamp : DateTime.parse(timestamp)
-      wday = d.strftime("%A").downcase
-      dstr = d.strftime("%Y%m%d")
-      ts = (fuzz ? d.to_time - (30 * 60) : d).strftime("%H:%M:%S")
-      Trip.with_sql(<<-SQL)
-        SELECT t.*
-        FROM trips t
-          JOIN stop_times st ON t.trip_id = st.trip_id
-          JOIN calendar   c  ON t.service_id = c.service_id
-        WHERE t.route_id = '#{run}'
-          AND CAST(c.start_date AS NUMERIC) <= #{dstr}
-          AND CAST(c.end_date   AS NUMERIC) >= #{dstr}
-          AND c.#{wday} = '1'
-        GROUP BY t.trip_id
-        HAVING MIN(st.departure_time) <= '#{ts}'
-          AND  MAX(st.departure_time) >= '#{ts}'
-      SQL
-    end
-
     def predictions!(options = {})
       opts = (self.vehicle_id ? { :vehicles => self.vehicle_id } : { :routes => self.route_id })
       puts opts
