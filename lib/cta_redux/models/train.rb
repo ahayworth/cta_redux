@@ -47,10 +47,11 @@ module CTA
     class Prediction
       attr_reader :run, :trip, :destination, :direction, :next_station,
                   :prediction_generated_at, :arrival_time, :minutes, :seconds,
-                  :approaching, :scheduled, :delayed, :flags, :route
+                  :approaching, :scheduled, :delayed, :flags, :route, :lat, :lon,
+                  :heading, :route, :direction
 
       def initialize(data)
-        @run = data["rn"].to_i
+        @run = data["rn"]
         @trip = CTA::Trip.where(:schd_trip_id => "R#{@run}").first
         @destination = CTA::Stop.where(:stop_id => data["destSt"]).first
         @next_station = CTA::Stop.where(:stop_id => (data["staId"] || data["nextStaId"])).first

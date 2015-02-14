@@ -45,8 +45,7 @@ module CTA
       end
       d = timestamp.is_a?(DateTime) ? timestamp : DateTime.parse(timestamp)
       wday = d.strftime("%A").downcase
-      end_ts = (fuzz ? d.to_time - (30 * 60) : d).strftime("%H:%M:%S")
-      start_ts = d.strftime("%H:%M:%S")
+      end_ts = (fuzz ? (d.to_time + (60 * 60 * 6) - (90 * 60)) : d).strftime("%H:%M:%S")
       Trip.with_sql(<<-SQL)
         SELECT t.*
         FROM trips t
@@ -56,9 +55,8 @@ module CTA
           AND c.start_date <= '#{d.to_s}'
           AND c.end_date   >= '#{d.to_s}'
           AND c.#{wday}
-        GROUP BY t.trip_id
-        HAVING MIN(st.departure_time) <= '#{start_ts}'
-          AND  MAX(st.departure_time) >= '#{end_ts}'
+        GROUP BY t.trip_id, st.departure_time
+        HAVING  MAX(st.departure_time) >= '#{end_ts}'
       SQL
     end
 

@@ -29,9 +29,9 @@ module CTA
 
       def has_errors?(parsed_body)
         if parsed_body["CTARoutes"]
-          Array.wrap(parsed_body["CTARoutes"]["ErrorCode"]).flatten.compact.uniq.first != "0"
+          Array.wrap(parsed_body["CTARoutes"]["ErrorCode"]).flatten.compact.uniq.first.to_i != 0
         else
-          Array.wrap(parsed_body["CTAAlerts"]["ErrorCode"]).flatten.compact.uniq.first != "0"
+          Array.wrap(parsed_body["CTAAlerts"]["ErrorCode"]).flatten.compact.uniq.first.to_i != 0
         end
       end
     end

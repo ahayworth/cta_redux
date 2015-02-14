@@ -14,6 +14,11 @@ module CTA
     end
 
     def self.arrivals!(options={})
+      allowed_keys = [:route, :parent_station, :station, :limit]
+      if options.keys.any? { |k| !allowed_keys.include?(k) }
+        raise "Illegal option!"
+      end
+
       has_map  = options.has_key?(:parent_station)
       has_stop = options.has_key?(:station)
 

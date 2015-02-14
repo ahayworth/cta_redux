@@ -11,6 +11,11 @@ module CTA
     end
 
     def self.status!(options = {})
+      allowed_keys = [:routes, :stations]
+      if options.keys.any? { |k| !allowed_keys.include?(k) }
+        raise "Illegal argument!"
+      end
+
       routes   = Array.wrap(options[:routes]).flatten.compact.uniq.join(',')
       stations = Array.wrap(options[:stations]).flatten.compact.uniq
 
@@ -22,6 +27,11 @@ module CTA
     end
 
     def self.alerts!(options = {})
+      allowed_keys = [:active, :accessibility, :planned, :routes, :station, :recent_days, :before]
+      if options.keys.any? { |k| !allowed_keys.include?(k) }
+        raise "Illegal argument!"
+      end
+
       params = {}
       params.merge!({ :activeonly => options[:active] }) if options[:active]
       params.merge!({ :accessibility => options[:accessiblity] }) if options[:accessibility]
