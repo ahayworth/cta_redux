@@ -29,9 +29,9 @@ module CTA
     end
 
     def stop_type
-      if self.stop_id < 30000
+      if self.stop_id.to_i < 30000
         :bus
-      elsif self.stop_id < 40000
+      elsif self.stop_id.to_i < 40000
         :rail
       else
         :parent_station
@@ -40,7 +40,7 @@ module CTA
 
     def predictions!(options = {})
       if self.stop_type == :bus
-        raise "E_NOTIMPLEMENTED"
+        CTA::BusTracker.predictions!(options.merge({:stops => self.stop_id}))
       else
         if self.stop_type == :rail
           CTA::TrainTracker.predictions!(options.merge({:station => self.stop_id}))
