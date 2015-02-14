@@ -34,11 +34,10 @@ module CTA
       def initialize(parsed_body, raw_body, debug)
         super(parsed_body, raw_body, debug)
         @routes = Array.wrap(parsed_body["bustime_response"]["route"]).map do |r|
-          puts r.inspect
           rt = CTA::Route.where(:route_id => r["rt"]).first
           rt.route_color = r["rtclr"]
 
-          r
+          rt
         end
       end
     end

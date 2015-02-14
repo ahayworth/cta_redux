@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+
+
+
+
+
+
+
+
+
+
+
+		<bustime-response>	
+			
+				<prd>
+					<tmstmp>20150214 12:20</tmstmp>
+					<typ>D</typ>
+					<stpnm>Clark &amp; Harrison</stpnm>
+					<stpid>15895</stpid>
+					<vid>4336</vid>
+					
+					 
+					<dstp>0</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 12:25</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -513</tablockid>  
+		        	<tatripid>204510</tatripid>    
+		        	<prdctdn>3</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:21</tmstmp>
+					<typ>D</typ>
+					<stpnm>Clark &amp; Harrison</stpnm>
+					<stpid>15895</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>3971</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 12:35</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>14</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+
+		</bustime-response>
+
+		

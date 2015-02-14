@@ -18,6 +18,11 @@ module CTA
     end
 
     def self.vehicles!(options={})
+      allowed_keys = [:vehicles, :routes]
+      if options.keys.any? { |k| !allowed_keys.include?(k) }
+        raise "Illegal option!"
+      end
+
       has_vehicle = options.has_key?(:vehicles)
       has_route   = options.has_key?(:routes)
 
@@ -36,6 +41,11 @@ module CTA
     end
 
     def self.directions!(options={})
+      allowed_keys = [:route]
+      if options.keys.any? { |k| !allowed_keys.include?(k) }
+        raise "Illegal option!"
+      end
+
       unless options.has_key?(:route)
         raise "Must specify a route! (Try directions(:route => 914) )"
       end
@@ -49,6 +59,11 @@ module CTA
     end
 
     def self.stops!(options={})
+      allowed_keys = [:route, :direction]
+      if options.keys.any? { |k| !allowed_keys.include?(k) }
+        raise "Illegal option!"
+      end
+
       has_route     = options.has_key?(:route)
       has_direction = options.has_key?(:direction)
 
@@ -70,6 +85,11 @@ module CTA
     end
 
     def self.patterns!(options={})
+      allowed_keys = [:route, :patterns]
+      if options.keys.any? { |k| !allowed_keys.include?(k) }
+        raise "Illegal option!"
+      end
+
       has_route   = options.has_key?(:route)
       has_pattern = options.has_key?(:patterns)
 
@@ -87,6 +107,11 @@ module CTA
     end
 
     def self.predictions!(options={})
+      allowed_keys = [:vehicles, :stops, :routes, :limit]
+      if options.keys.any? { |k| !allowed_keys.include?(k) }
+        raise "Illegal option!"
+      end
+
       has_vehicle = options.has_key?(:vehicles)
       has_stop    = options.has_key?(:stops)
 
@@ -103,6 +128,11 @@ module CTA
     end
 
     def self.bulletins!(options={})
+      allowed_keys = [:routes, :directions, :stop]
+      if options.keys.any? { |k| !allowed_keys.include?(k) }
+        raise "Illegal option!"
+      end
+
       has_route = options.has_key?(:routes)
       has_stop  = options.has_key?(:stop)
 

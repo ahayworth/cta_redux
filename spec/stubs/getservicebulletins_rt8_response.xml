@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+
+
+
+
+
+		<bustime-response>
+
+			<sb>
+				<nm>TCU #8 Halsted reroute Halsted/35th</nm>
+				<sbj>#8 Halsted reroute Halsted/35th</sbj>
+				<dtl>#8 Halsted buses are temporarily rerouted in both directions via Halsted, 31st, Wallace, 35th, and Halsted, due to street blockage.&lt;br/&gt;&lt;br/&gt;Allow extra travel time.&lt;br/&gt;</dtl>
+				<brf></brf>
+				<prty>Medium</prty>
+						
+						<srvc>	
+												
+							<rt>8</rt>
+							<rtdir/>
+							<stpid/>
+							<stpnm/>
+												
+						</srvc>
+					
+			</sb>
+
+			<sb>
+				<nm>TCU #8 Reroute Halsted/Harrison</nm>
+				<sbj>Reroute at Halsted/Harrison</sbj>
+				<dtl>#8 Halsted buses are temporarily rerouted in both directions via Halsted, Harrison, Morgan, Van Buren, and Halsted, due to street blockage.&lt;br/&gt;</dtl>
+				<brf></brf>
+				<prty>Medium</prty>
+						
+						<srvc>	
+												
+							<rt>8</rt>
+							<rtdir/>
+							<stpid/>
+							<stpnm/>
+												
+						</srvc>
+					
+			</sb>
+
+			<sb>
+				<nm>#63 - Bus Stop Relocation</nm>
+				<sbj>#63 63rd Bus Stop Relocation</sbj>
+				<dtl>The eastbound stop on the southeast corner at 63rd/Stewart will be temporarily relocated to the southwest corner at 63rd/Stewart.&lt;br/&gt;&lt;br/&gt;The bus stop is being relocated due to construction.&lt;br/&gt;</dtl>
+				<brf></brf>
+				<prty>Low</prty>
+
+					<srvc/>
+					
+			</sb>
+
+			<sb>
+				<nm>#8 - Bus Stop Relocations/Eliminations</nm>
+				<sbj>#8 Stop Eliminations/Relocations</sbj>
+				<dtl>•	The northbound and southbound #8 bus stops located near the southeast and northwest corners of Halsted/Huron will be eliminated. Please board buses as follows:&lt;br/&gt;&lt;br/&gt;–Board northbound buses on the northeast corner of Halsted/Grand&lt;br/&gt;–Board southbound buses on the northwest corner of Halsted/Erie.&lt;br/&gt;&lt;br/&gt;•	The southbound #8 bus stop located near the northwest corner of Halsted/Hubbard will be eliminated. &lt;br/&gt;&lt;br/&gt;–Board southbound buses on the northwest corner at Grand/Halsted.&lt;br/&gt;&lt;br/&gt;•	The southbound #8 bus stop on the southwest corner at Halsted/Erie will be relocated to the northwest corner at Halsted/Erie.&lt;br/&gt;&lt;br/&gt;•	The southbound #8 bus stop on the northwest corner at Halsted/Lake will be relocated to southwest corner at Halsted/Lake.&lt;br/&gt;       &lt;br/&gt;Why is service being changed?&lt;br/&gt;The bus stops are being relocated due to the installation of a bike lane on Halsted.&lt;br/&gt;</dtl>
+				<brf></brf>
+				<prty>Low</prty>
+						
+						<srvc>	
+												
+							<rt>8</rt>
+							<rtdir/>
+							<stpid/>
+							<stpnm/>
+												
+						</srvc>
+					
+			</sb>
+
+			<sb>
+				<nm>#8 Halsted Bus Stop Relocations</nm>
+				<sbj>Bus Stop Relocations</sbj>
+				<dtl>Effective Wed, Apr 30&lt;br/&gt;&lt;br/&gt;The northbound bus stop on the southeast corner at Halsted/53rd will be relocated to the northeast corner at Halsted/53rd.&lt;br/&gt;&lt;br/&gt;The southbound bus stop on the northwest corner at Halsted/53rd will be relocated to the southwest corner at Halsted/53rd.&lt;br/&gt;&lt;br/&gt;</dtl>
+				<brf></brf>
+				<prty>Low</prty>
+						
+						<srvc>	
+												
+							<rt>8</rt>
+							<rtdir/>
+							<stpid/>
+							<stpnm/>
+												
+						</srvc>
+					
+			</sb>
+
+			<sb>
+				<nm>#8 Halsted Bus Stop Relocations &lt;br/&gt;</nm>
+				<sbj>Bus Stop Relocations&lt;br/&gt;</sbj>
+				<dtl>The northbound bus stop on the southeast corners at Halsted/Jackson and Halsted/Randolph will be relocated to the northeast corners at Halsted/Jackson and Halsted/Randolph. &lt;br/&gt;</dtl>
+				<brf></brf>
+				<prty>Low</prty>
+						
+						<srvc>	
+												
+							<rt>8</rt>
+							<rtdir/>
+							<stpid/>
+							<stpnm/>
+												
+						</srvc>
+					
+			</sb>
+
+		</bustime-response>

@@ -1,0 +1,2768 @@
+<?xml version="1.0"?>
+
+
+
+
+
+
+
+
+
+		<bustime-response>	
+			
+			<ptr>
+				<pid>3936</pid>
+				<ln>56536.0</ln>
+				<rtdir>Southbound</rtdir>  
+
+					<pt>
+						<seq>1</seq>
+						<lat>42.018923527782</lat>
+						<lon>-87.673398256302</lon>
+
+							<typ>S</typ>
+                			<stpid>14096</stpid>
+                			<stpnm>Paulina &amp; Howard Terminal</stpnm>
+                			<pdist>0.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>2</seq>
+						<lat>42.019043088282</lat>
+						<lon>-87.673612833023</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>3</seq>
+						<lat>42.01910685379</lat>
+						<lon>-87.673671841621</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>4</seq>
+						<lat>42.019186560585</lat>
+						<lon>-87.673698663712</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>5</seq>
+						<lat>42.019421695049</lat>
+						<lon>-87.673698663712</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>6</seq>
+						<lat>42.019437636337</lat>
+						<lon>-87.676359415054</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>7</seq>
+						<lat>42.019194531259</lat>
+						<lon>-87.676268219948</lon>
+
+							<typ>S</typ>
+                			<stpid>14056</stpid>
+                			<stpnm>Clark &amp; Howard</stpnm>
+                			<pdist>1218.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>8</seq>
+						<lat>42.018046743912</lat>
+						<lon>-87.675796151161</lon>
+
+							<typ>S</typ>
+                			<stpid>14091</stpid>
+                			<stpnm>Clark &amp; Birchwood</stpnm>
+                			<pdist>1635.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>9</seq>
+						<lat>42.017349293565</lat>
+						<lon>-87.675485014915</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>10</seq>
+						<lat>42.017034442045</lat>
+						<lon>-87.675383090973</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>11</seq>
+						<lat>42.015954369923</lat>
+						<lon>-87.675189971924</lon>
+
+							<typ>S</typ>
+                			<stpid>14057</stpid>
+                			<stpnm>Clark &amp; Rogers</stpnm>
+                			<pdist>2356.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>12</seq>
+						<lat>42.013758299563</lat>
+						<lon>-87.674830555916</lon>
+
+							<typ>S</typ>
+                			<stpid>1781</stpid>
+                			<stpnm>Clark &amp; Chase</stpnm>
+                			<pdist>3099.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>13</seq>
+						<lat>42.012486855749</lat>
+						<lon>-87.674626708031</lon>
+
+							<typ>S</typ>
+                			<stpid>14429</stpid>
+                			<stpnm>Clark &amp; Touhy</stpnm>
+                			<pdist>3711.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>14</seq>
+						<lat>42.010314581024</lat>
+						<lon>-87.674288749695</lon>
+
+							<typ>S</typ>
+                			<stpid>1784</stpid>
+                			<stpnm>Clark &amp; Greenleaf</stpnm>
+                			<pdist>4470.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>15</seq>
+						<lat>42.008887615238</lat>
+						<lon>-87.673977613449</lon>
+
+							<typ>S</typ>
+                			<stpid>1785</stpid>
+                			<stpnm>Clark &amp; Lunt</stpnm>
+                			<pdist>4873.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>16</seq>
+						<lat>42.007983333335</lat>
+						<lon>-87.673783333333</lon>
+
+							<typ>S</typ>
+                			<stpid>1786</stpid>
+                			<stpnm>Clark &amp; Morse</stpnm>
+                			<pdist>5312.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>17</seq>
+						<lat>42.005156626066</lat>
+						<lon>-87.673065662384</lon>
+
+							<typ>S</typ>
+                			<stpid>14430</stpid>
+                			<stpnm>Clark &amp; Pratt</stpnm>
+                			<pdist>6376.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>18</seq>
+						<lat>42.003246666667</lat>
+						<lon>-87.672448333332</lon>
+
+							<typ>S</typ>
+                			<stpid>17638</stpid>
+                			<stpnm>Clark &amp; North Shore</stpnm>
+                			<pdist>7070.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>19</seq>
+						<lat>42.001836021129</lat>
+						<lon>-87.671939134598</lon>
+
+							<typ>S</typ>
+                			<stpid>1790</stpid>
+                			<stpnm>Clark &amp; Albion</stpnm>
+                			<pdist>7599.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>20</seq>
+						<lat>42.000504541424</lat>
+						<lon>-87.671477794647</lon>
+
+							<typ>S</typ>
+                			<stpid>1791</stpid>
+                			<stpnm>Clark &amp; Arthur</stpnm>
+                			<pdist>8379.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>21</seq>
+						<lat>42.000125822048</lat>
+						<lon>-87.671322226524</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>22</seq>
+						<lat>41.999890616247</lat>
+						<lon>-87.671322226524</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>23</seq>
+						<lat>41.998280031139</lat>
+						<lon>-87.670807242393</lon>
+
+							<typ>S</typ>
+                			<stpid>1792</stpid>
+                			<stpnm>Clark &amp; Devon</stpnm>
+                			<pdist>8956.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>24</seq>
+						<lat>41.997207613992</lat>
+						<lon>-87.670474648476</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>25</seq>
+						<lat>41.996270729204</lat>
+						<lon>-87.670356631279</lon>
+
+							<typ>S</typ>
+                			<stpid>1793</stpid>
+                			<stpnm>Clark &amp; Rosemont</stpnm>
+                			<pdist>9599.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>26</seq>
+						<lat>41.994572341191</lat>
+						<lon>-87.670297622681</lon>
+
+							<typ>S</typ>
+                			<stpid>1794</stpid>
+                			<stpnm>Clark &amp; Granville</stpnm>
+                			<pdist>10303.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>27</seq>
+						<lat>41.992981556384</lat>
+						<lon>-87.6702439785</lon>
+
+							<typ>S</typ>
+                			<stpid>1795</stpid>
+                			<stpnm>Clark &amp; Glenlake</stpnm>
+                			<pdist>10907.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>28</seq>
+						<lat>41.990537491232</lat>
+						<lon>-87.670168876648</lon>
+
+							<typ>S</typ>
+                			<stpid>15258</stpid>
+                			<stpnm>Clark &amp; Elmdale/Peterson</stpnm>
+                			<pdist>11808.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>29</seq>
+						<lat>41.989564623527</lat>
+						<lon>-87.670120596886</lon>
+
+							<typ>S</typ>
+                			<stpid>17155</stpid>
+                			<stpnm>Clark &amp; Ridge</stpnm>
+                			<pdist>12217.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>30</seq>
+						<lat>41.988352505255</lat>
+						<lon>-87.669959664345</lon>
+
+							<typ>S</typ>
+                			<stpid>17156</stpid>
+                			<stpnm>Clark &amp; Thorndale</stpnm>
+                			<pdist>12656.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>31</seq>
+						<lat>41.987594919615</lat>
+						<lon>-87.669857740402</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>32</seq>
+						<lat>41.986841312324</lat>
+						<lon>-87.669680714607</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>33</seq>
+						<lat>41.986055796815</lat>
+						<lon>-87.669407129288</lon>
+
+							<typ>S</typ>
+                			<stpid>1799</stpid>
+                			<stpnm>Clark &amp; Edgewater</stpnm>
+                			<pdist>13409.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>34</seq>
+						<lat>41.983352273424</lat>
+						<lon>-87.668779492378</lon>
+
+							<typ>S</typ>
+                			<stpid>14786</stpid>
+                			<stpnm>Clark &amp; Bryn Mawr</stpnm>
+                			<pdist>14444.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>35</seq>
+						<lat>41.98252683854</lat>
+						<lon>-87.668602466583</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>36</seq>
+						<lat>41.981777158938</lat>
+						<lon>-87.668511271477</lon>
+
+							<typ>S</typ>
+                			<stpid>1803</stpid>
+                			<stpnm>Clark &amp; Catalpa</stpnm>
+                			<pdist>14987.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>37</seq>
+						<lat>41.980660598487</lat>
+						<lon>-87.668387889862</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>38</seq>
+						<lat>41.979707518899</lat>
+						<lon>-87.668318152428</lon>
+
+							<typ>S</typ>
+                			<stpid>14787</stpid>
+                			<stpnm>Clark &amp; Balmoral</stpnm>
+                			<pdist>15783.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>39</seq>
+						<lat>41.978092435148</lat>
+						<lon>-87.66839325428</lon>
+
+							<typ>S</typ>
+                			<stpid>1805</stpid>
+                			<stpnm>Clark &amp; Berwyn</stpnm>
+                			<pdist>16347.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>40</seq>
+						<lat>41.976269933429</lat>
+						<lon>-87.668457627296</lon>
+
+							<typ>S</typ>
+                			<stpid>1806</stpid>
+                			<stpnm>Clark &amp; Foster</stpnm>
+                			<pdist>16985.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>41</seq>
+						<lat>41.97530482387</lat>
+						<lon>-87.66836643219</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>42</seq>
+						<lat>41.974375592996</lat>
+						<lon>-87.668253779411</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>43</seq>
+						<lat>41.973290808472</lat>
+						<lon>-87.668103575706</lon>
+
+							<typ>S</typ>
+                			<stpid>14790</stpid>
+                			<stpnm>Clark &amp; Winnemac</stpnm>
+                			<pdist>18110.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>44</seq>
+						<lat>41.972580902716</lat>
+						<lon>-87.667974829674</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>45</seq>
+						<lat>41.971639667155</lat>
+						<lon>-87.667851448059</lon>
+
+							<typ>S</typ>
+                			<stpid>14613</stpid>
+                			<stpnm>Clark &amp; Ainslie</stpnm>
+                			<pdist>18652.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>46</seq>
+						<lat>41.968959462588</lat>
+						<lon>-87.667561769485</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>47</seq>
+						<lat>41.968716164627</lat>
+						<lon>-87.667513489723</lon>
+
+							<typ>S</typ>
+                			<stpid>14431</stpid>
+                			<stpnm>Clark &amp; Lawrence</stpnm>
+                			<pdist>19744.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>48</seq>
+						<lat>41.967160631106</lat>
+						<lon>-87.667180895805</lon>
+
+							<typ>S</typ>
+                			<stpid>1811</stpid>
+                			<stpnm>Clark &amp; Leland</stpnm>
+                			<pdist>20259.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>49</seq>
+						<lat>41.96505860624</lat>
+						<lon>-87.666714191437</lon>
+
+							<typ>S</typ>
+                			<stpid>15519</stpid>
+                			<stpnm>Clark &amp; Wilson</stpnm>
+                			<pdist>21087.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>50</seq>
+						<lat>41.96355882694</lat>
+						<lon>-87.66639232635498</lon>
+
+							<typ>S</typ>
+                			<stpid>1813</stpid>
+                			<stpnm>Clark &amp; Sunnyside</stpnm>
+                			<pdist>21584.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>51</seq>
+						<lat>41.961815688022</lat>
+						<lon>-87.66603291034698</lon>
+
+							<typ>S</typ>
+                			<stpid>1814</stpid>
+                			<stpnm>Clark &amp; Montrose</stpnm>
+                			<pdist>22240.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>52</seq>
+						<lat>41.961612252226</lat>
+						<lon>-87.665984630585</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>53</seq>
+						<lat>41.960766590584</lat>
+						<lon>-87.665678858757</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>54</seq>
+						<lat>41.959932884866</lat>
+						<lon>-87.665351629257</lon>
+
+							<typ>S</typ>
+                			<stpid>1815</stpid>
+                			<stpnm>Clark &amp; Cullom</stpnm>
+                			<pdist>22945.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>55</seq>
+						<lat>41.958927636671</lat>
+						<lon>-87.664943933487</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>56</seq>
+						<lat>41.958014123568</lat>
+						<lon>-87.664546966553</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>57</seq>
+						<lat>41.957363885739</lat>
+						<lon>-87.664144635201</lon>
+
+							<typ>S</typ>
+                			<stpid>14439</stpid>
+                			<stpnm>Clark &amp; Southport</stpnm>
+                			<pdist>24075.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>58</seq>
+						<lat>41.955552758897</lat>
+						<lon>-87.663023471832</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>59</seq>
+						<lat>41.954507547739</lat>
+						<lon>-87.662385106087</lon>
+
+							<typ>S</typ>
+                			<stpid>1818</stpid>
+                			<stpnm>Clark &amp; Irving Park</stpnm>
+                			<pdist>25057.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>60</seq>
+						<lat>41.954336003812</lat>
+						<lon>-87.662272453308</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>61</seq>
+						<lat>41.953534129565</lat>
+						<lon>-87.661634087563</lon>
+
+							<typ>S</typ>
+                			<stpid>1819</stpid>
+                			<stpnm>3930 N Clark</stpnm>
+                			<pdist>25507.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>62</seq>
+						<lat>41.952696339726</lat>
+						<lon>-87.660968899727</lon>
+
+							<typ>S</typ>
+                			<stpid>1820</stpid>
+                			<stpnm>Clark &amp; Byron</stpnm>
+                			<pdist>25827.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>63</seq>
+						<lat>41.950920986769</lat>
+						<lon>-87.659547328949</lon>
+
+							<typ>S</typ>
+                			<stpid>14432</stpid>
+                			<stpnm>Clark &amp; Grace</stpnm>
+                			<pdist>26671.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>64</seq>
+						<lat>41.950454200366</lat>
+						<lon>-87.659187912941</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>65</seq>
+						<lat>41.94909770766</lat>
+						<lon>-87.658082842827</lon>
+
+							<typ>S</typ>
+                			<stpid>1822</stpid>
+                			<stpnm>Clark &amp; Waveland</stpnm>
+                			<pdist>27335.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>66</seq>
+						<lat>41.948327685721</lat>
+						<lon>-87.657455205917</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>67</seq>
+						<lat>41.947382102016</lat>
+						<lon>-87.656704187393</lon>
+
+							<typ>S</typ>
+                			<stpid>1823</stpid>
+                			<stpnm>Clark &amp; Addison</stpnm>
+                			<pdist>28079.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>68</seq>
+						<lat>41.945674430085</lat>
+						<lon>-87.655341625214</lon>
+
+							<typ>S</typ>
+                			<stpid>1824</stpid>
+                			<stpnm>Clark &amp; Cornelia</stpnm>
+                			<pdist>28816.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>69</seq>
+						<lat>41.943635537569</lat>
+						<lon>-87.653710842133</lon>
+
+							<typ>S</typ>
+                			<stpid>1826</stpid>
+                			<stpnm>Clark &amp; Roscoe</stpnm>
+                			<pdist>29643.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>70</seq>
+						<lat>41.941863922445</lat>
+						<lon>-87.652283906937</lon>
+
+							<typ>S</typ>
+                			<stpid>1827</stpid>
+                			<stpnm>Clark &amp; School/Aldine</stpnm>
+                			<pdist>30416.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>71</seq>
+						<lat>41.940096248386</lat>
+						<lon>-87.650846242905</lon>
+
+							<typ>S</typ>
+                			<stpid>1828</stpid>
+                			<stpnm>Clark &amp; Belmont</stpnm>
+                			<pdist>31192.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>72</seq>
+						<lat>41.938974966981</lat>
+						<lon>-87.649955749512</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>73</seq>
+						<lat>41.937638182247</lat>
+						<lon>-87.648866772652</lon>
+
+							<typ>S</typ>
+                			<stpid>14895</stpid>
+                			<stpnm>Clark &amp; Barry/Halsted</stpnm>
+                			<pdist>32214.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>74</seq>
+						<lat>41.936636572934</lat>
+						<lon>-87.648072838783</lon>
+
+							<typ>S</typ>
+                			<stpid>1830</stpid>
+                			<stpnm>Clark &amp; Wellington</stpnm>
+                			<pdist>32705.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>75</seq>
+						<lat>41.934928613202</lat>
+						<lon>-87.646678090096</lon>
+
+							<typ>S</typ>
+                			<stpid>17751</stpid>
+                			<stpnm>Clark &amp; Orchard</stpnm>
+                			<pdist>33390.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>76</seq>
+						<lat>41.933148774723</lat>
+						<lon>-87.645229697227</lon>
+
+							<typ>S</typ>
+                			<stpid>1832</stpid>
+                			<stpnm>Clark &amp; Diversey</stpnm>
+                			<pdist>34238.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>77</seq>
+						<lat>41.932833506675</lat>
+						<lon>-87.644972205162</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>78</seq>
+						<lat>41.93233865242</lat>
+						<lon>-87.644870281219</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>79</seq>
+						<lat>41.931903656396</lat>
+						<lon>-87.644671797752</lon>
+
+							<typ>S</typ>
+                			<stpid>1833</stpid>
+                			<stpnm>Clark &amp; Schubert</stpnm>
+                			<pdist>34634.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>80</seq>
+						<lat>41.931660216959</lat>
+						<lon>-87.644526958466</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>81</seq>
+						<lat>41.930055887928</lat>
+						<lon>-87.643582820892</lon>
+
+							<typ>S</typ>
+                			<stpid>15744</stpid>
+                			<stpnm>Clark &amp; Wrightwood </stpnm>
+                			<pdist>35344.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>82</seq>
+						<lat>41.929972078586</lat>
+						<lon>-87.643513083458</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>83</seq>
+						<lat>41.929652803893</lat>
+						<lon>-87.642971277237</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>84</seq>
+						<lat>41.929525093569</lat>
+						<lon>-87.64285326004</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>85</seq>
+						<lat>41.927812952342</lat>
+						<lon>-87.641860842705</lon>
+
+							<typ>S</typ>
+                			<stpid>1836</stpid>
+                			<stpnm>Clark &amp; Deming</stpnm>
+                			<pdist>35982.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>86</seq>
+						<lat>41.927050655567</lat>
+						<lon>-87.64141023159</lon>
+
+							<typ>S</typ>
+                			<stpid>1837</stpid>
+                			<stpnm>Clark &amp; Arlington</stpnm>
+                			<pdist>36552.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>87</seq>
+						<lat>41.925693664947</lat>
+						<lon>-87.640605568886</lon>
+
+							<typ>S</typ>
+                			<stpid>1838</stpid>
+                			<stpnm>Clark &amp; Fullerton</stpnm>
+                			<pdist>37090.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>88</seq>
+						<lat>41.92388962096</lat>
+						<lon>-87.63950586319</lon>
+
+							<typ>S</typ>
+                			<stpid>1839</stpid>
+                			<stpnm>Clark &amp; Belden</stpnm>
+                			<pdist>37825.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>89</seq>
+						<lat>41.922169345666</lat>
+						<lon>-87.638459801674</lon>
+
+							<typ>S</typ>
+                			<stpid>1840</stpid>
+                			<stpnm>Clark &amp; Webster</stpnm>
+                			<pdist>38551.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>90</seq>
+						<lat>41.920281379956</lat>
+						<lon>-87.637322545052</lon>
+
+							<typ>S</typ>
+                			<stpid>1841</stpid>
+                			<stpnm>Clark &amp; Dickens</stpnm>
+                			<pdist>39276.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>91</seq>
+						<lat>41.918740630816</lat>
+						<lon>-87.63634622097</lon>
+
+							<typ>S</typ>
+                			<stpid>14788</stpid>
+                			<stpnm>Clark &amp; Armitage</stpnm>
+                			<pdist>39967.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>92</seq>
+						<lat>41.916732811218</lat>
+						<lon>-87.635090947151</lon>
+
+							<typ>S</typ>
+                			<stpid>1843</stpid>
+                			<stpnm>Clark &amp; Wisconsin</stpnm>
+                			<pdist>40712.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>93</seq>
+						<lat>41.914936497603</lat>
+						<lon>-87.633991241455</lon>
+
+							<typ>S</typ>
+                			<stpid>1409</stpid>
+                			<stpnm>Clark &amp; Menomonee</stpnm>
+                			<pdist>41414.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>94</seq>
+						<lat>41.914309771846</lat>
+						<lon>-87.633599638939</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>95</seq>
+						<lat>41.91369501576</lat>
+						<lon>-87.633224129677</lon>
+
+							<typ>S</typ>
+                			<stpid>1845</stpid>
+                			<stpnm>Clark &amp; W. LaSalle Drive</stpnm>
+                			<pdist>42112.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>96</seq>
+						<lat>41.913096221673</lat>
+						<lon>-87.632859349251</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>97</seq>
+						<lat>41.911315774071</lat>
+						<lon>-87.631781101227</lon>
+
+							<typ>S</typ>
+                			<stpid>1846</stpid>
+                			<stpnm>Clark &amp; North Ave</stpnm>
+                			<pdist>42888.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>98</seq>
+						<lat>41.911112177123</lat>
+						<lon>-87.631727457047</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>99</seq>
+						<lat>41.909531284603</lat>
+						<lon>-87.631679177284</lon>
+
+							<typ>S</typ>
+                			<stpid>1847</stpid>
+                			<stpnm>Clark &amp; Burton</stpnm>
+                			<pdist>43544.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>100</seq>
+						<lat>41.907958337534</lat>
+						<lon>-87.631630897522</lon>
+
+							<typ>S</typ>
+                			<stpid>1848</stpid>
+                			<stpnm>Clark &amp; Schiller</stpnm>
+                			<pdist>44123.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>101</seq>
+						<lat>41.905914246888</lat>
+						<lon>-87.631550431252</lon>
+
+							<typ>S</typ>
+                			<stpid>1849</stpid>
+                			<stpnm>Clark &amp; Goethe</stpnm>
+                			<pdist>44870.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>102</seq>
+						<lat>41.904169531813</lat>
+						<lon>-87.631491422653</lon>
+
+							<typ>S</typ>
+                			<stpid>1850</stpid>
+                			<stpnm>Clark &amp; Division (Red Line)</stpnm>
+                			<pdist>45525.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>103</seq>
+						<lat>41.903283182323</lat>
+						<lon>-87.631464600563</lon>
+
+							<typ>S</typ>
+                			<stpid>1851</stpid>
+                			<stpnm>Clark &amp; Elm</stpnm>
+                			<pdist>45855.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>104</seq>
+						<lat>41.902001547112</lat>
+						<lon>-87.631432414055</lon>
+
+							<typ>S</typ>
+                			<stpid>1852</stpid>
+                			<stpnm>Clark &amp; Maple</stpnm>
+                			<pdist>46315.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>105</seq>
+						<lat>41.900683951387</lat>
+						<lon>-87.631405591965</lon>
+
+							<typ>S</typ>
+                			<stpid>1853</stpid>
+                			<stpnm>Clark &amp; Oak</stpnm>
+                			<pdist>46791.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>106</seq>
+						<lat>41.899370321312</lat>
+						<lon>-87.631373405457</lon>
+
+							<typ>S</typ>
+                			<stpid>1854</stpid>
+                			<stpnm>Clark &amp; Delaware</stpnm>
+                			<pdist>47271.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>107</seq>
+						<lat>41.898088607564</lat>
+						<lon>-87.631341218948</lon>
+
+							<typ>S</typ>
+                			<stpid>1855</stpid>
+                			<stpnm>Clark &amp; Chestnut</stpnm>
+                			<pdist>47742.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>108</seq>
+						<lat>41.89687474902</lat>
+						<lon>-87.631298303604</lon>
+
+							<typ>S</typ>
+                			<stpid>1856</stpid>
+                			<stpnm>Clark &amp; Chicago</stpnm>
+                			<pdist>48184.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>109</seq>
+						<lat>41.894958083291</lat>
+						<lon>-87.631233930588</lon>
+
+							<typ>S</typ>
+                			<stpid>1857</stpid>
+                			<stpnm>Clark &amp; Huron</stpnm>
+                			<pdist>48889.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>110</seq>
+						<lat>41.893999728856</lat>
+						<lon>-87.631233930588</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>111</seq>
+						<lat>41.893352831484</lat>
+						<lon>-87.631212472916</lon>
+
+							<typ>S</typ>
+                			<stpid>1858</stpid>
+                			<stpnm>Clark &amp; Ontario</stpnm>
+                			<pdist>49433.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>112</seq>
+						<lat>41.89175552596</lat>
+						<lon>-87.631169557571</lon>
+
+							<typ>S</typ>
+                			<stpid>1859</stpid>
+                			<stpnm>Clark &amp; Grand</stpnm>
+                			<pdist>50058.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>113</seq>
+						<lat>41.890142206836</lat>
+						<lon>-87.631132006645</lon>
+
+							<typ>S</typ>
+                			<stpid>1860</stpid>
+                			<stpnm>Clark &amp; Hubbard</stpnm>
+                			<pdist>50650.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>114</seq>
+						<lat>41.889311571199</lat>
+						<lon>-87.631121277809</lon>
+
+							<typ>S</typ>
+                			<stpid>1861</stpid>
+                			<stpnm>Clark &amp; Kinzie</stpnm>
+                			<pdist>50930.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>115</seq>
+						<lat>41.888037642676</lat>
+						<lon>-87.631089091301</lon>
+
+							<typ>S</typ>
+                			<stpid>1862</stpid>
+                			<stpnm>320 N Clark</stpnm>
+                			<pdist>51427.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>116</seq>
+						<lat>41.887390684922</lat>
+						<lon>-87.631062269211</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>117</seq>
+						<lat>41.886300426476</lat>
+						<lon>-87.631056904793</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>118</seq>
+						<lat>41.885477728299</lat>
+						<lon>-87.631040811539</lon>
+
+							<typ>S</typ>
+                			<stpid>1864</stpid>
+                			<stpnm>Clark &amp; Lake</stpnm>
+                			<pdist>52387.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>119</seq>
+						<lat>41.884283598991</lat>
+						<lon>-87.630992531776</lon>
+
+							<typ>S</typ>
+                			<stpid>1865</stpid>
+                			<stpnm>Clark &amp; Randolph</stpnm>
+                			<pdist>52893.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>120</seq>
+						<lat>41.882586219593</lat>
+						<lon>-87.630971074104</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>121</seq>
+						<lat>41.881463927511</lat>
+						<lon>-87.630922794342</lon>
+
+							<typ>S</typ>
+                			<stpid>15903</stpid>
+                			<stpnm>Clark &amp; Madison &amp; Monroe</stpnm>
+                			<pdist>53889.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>122</seq>
+						<lat>41.87905552601</lat>
+						<lon>-87.630831599236</lon>
+
+							<typ>S</typ>
+                			<stpid>1869</stpid>
+                			<stpnm>Clark &amp; Adams</stpnm>
+                			<pdist>54733.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>123</seq>
+						<lat>41.876627062444</lat>
+						<lon>-87.630772590637</lon>
+
+							<typ>S</typ>
+                			<stpid>1871</stpid>
+                			<stpnm>Clark &amp; Van Buren</stpnm>
+                			<pdist>55680.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>124</seq>
+						<lat>41.874054707633</lat>
+						<lon>-87.630702853203</lon>
+
+							<typ>S</typ>
+                			<stpid>15895</stpid>
+                			<stpnm>Clark &amp; Harrison</stpnm>
+                			<pdist>56536.0</pdist>
+
+					</pt>
+
+			</ptr>
+			
+			<ptr>
+				<pid>3932</pid>
+				<ln>56904.0</ln>
+				<rtdir>Northbound</rtdir>  
+
+					<pt>
+						<seq>1</seq>
+						<lat>41.874054707633</lat>
+						<lon>-87.630702853203</lon>
+
+							<typ>S</typ>
+                			<stpid>15895</stpid>
+                			<stpnm>Clark &amp; Harrison</stpnm>
+                			<pdist>0.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>2</seq>
+						<lat>41.872209258883</lat>
+						<lon>-87.630665302277</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>3</seq>
+						<lat>41.872265182355</lat>
+						<lon>-87.629098892212</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>4</seq>
+						<lat>41.872504853825</lat>
+						<lon>-87.62910425663</lon>
+
+							<typ>S</typ>
+                			<stpid>1875</stpid>
+                			<stpnm>Dearborn &amp; Polk</stpnm>
+                			<pdist>1197.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>5</seq>
+						<lat>41.874809648583</lat>
+						<lon>-87.62915790081001</lon>
+
+							<typ>S</typ>
+                			<stpid>1876</stpid>
+                			<stpnm>Dearborn &amp; Harrison</stpnm>
+                			<pdist>1952.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>6</seq>
+						<lat>41.875916080319</lat>
+						<lon>-87.62916862964602</lon>
+
+							<typ>S</typ>
+                			<stpid>1877</stpid>
+                			<stpnm>Dearborn &amp; Congress</stpnm>
+                			<pdist>2403.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>7</seq>
+						<lat>41.878013055422</lat>
+						<lon>-87.629254460335</lon>
+
+							<typ>S</typ>
+                			<stpid>14508</stpid>
+                			<stpnm>Dearborn &amp; Jackson</stpnm>
+                			<pdist>3093.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>8</seq>
+						<lat>41.87955478751</lat>
+						<lon>-87.62930274009699</lon>
+
+							<typ>S</typ>
+                			<stpid>1880</stpid>
+                			<stpnm>Dearborn &amp; Adams</stpnm>
+                			<pdist>3764.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>9</seq>
+						<lat>41.880980656878</lat>
+						<lon>-87.62934029102303</lon>
+
+							<typ>S</typ>
+                			<stpid>1881</stpid>
+                			<stpnm>Dearborn &amp; Monroe</stpnm>
+                			<pdist>4263.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>10</seq>
+						<lat>41.882106951365</lat>
+						<lon>-87.62938320636698</lon>
+
+							<typ>S</typ>
+                			<stpid>1882</stpid>
+                			<stpnm>Dearborn &amp; Madison</stpnm>
+                			<pdist>4688.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>11</seq>
+						<lat>41.884730900878</lat>
+						<lon>-87.62944221496599</lon>
+
+							<typ>S</typ>
+                			<stpid>1884</stpid>
+                			<stpnm>Dearborn &amp; Randolph</stpnm>
+                			<pdist>5611.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>12</seq>
+						<lat>41.886180616721</lat>
+						<lon>-87.629474401474</lon>
+
+							<typ>S</typ>
+                			<stpid>1885</stpid>
+                			<stpnm>Dearborn &amp; Wacker/Lake</stpnm>
+                			<pdist>6172.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>13</seq>
+						<lat>41.888125500631</lat>
+						<lon>-87.62950122356403</lon>
+
+							<typ>S</typ>
+                			<stpid>1887</stpid>
+                			<stpnm>Dearborn &amp; Marina City</stpnm>
+                			<pdist>6888.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>14</seq>
+						<lat>41.888448976606</lat>
+						<lon>-87.629501223564</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>15</seq>
+						<lat>41.889267643052</lat>
+						<lon>-87.629517316818</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>16</seq>
+						<lat>41.889918575227</lat>
+						<lon>-87.629560232162</lon>
+
+							<typ>S</typ>
+                			<stpid>15399</stpid>
+                			<stpnm>Dearborn &amp; Hubbard</stpnm>
+                			<pdist>7479.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>17</seq>
+						<lat>41.891727572758</lat>
+						<lon>-87.629619240761</lon>
+
+							<typ>S</typ>
+                			<stpid>14767</stpid>
+                			<stpnm>Dearborn &amp; Grand</stpnm>
+                			<pdist>8216.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>18</seq>
+						<lat>41.893121224659</lat>
+						<lon>-87.629662156105</lon>
+
+							<typ>S</typ>
+                			<stpid>1891</stpid>
+                			<stpnm>Dearborn &amp; Ontario</stpnm>
+                			<pdist>8641.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>19</seq>
+						<lat>41.894742454797</lat>
+						<lon>-87.629688978195</lon>
+
+							<typ>S</typ>
+                			<stpid>1892</stpid>
+                			<stpnm>Dearborn &amp; Huron</stpnm>
+                			<pdist>9224.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>20</seq>
+						<lat>41.896507392544</lat>
+						<lon>-87.629726529121</lon>
+
+							<typ>S</typ>
+                			<stpid>1893</stpid>
+                			<stpnm>Dearborn &amp; Chicago</stpnm>
+                			<pdist>9878.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>21</seq>
+						<lat>41.897896947222</lat>
+						<lon>-87.629769444466</lon>
+
+							<typ>S</typ>
+                			<stpid>1894</stpid>
+                			<stpnm>Dearborn &amp; Chestnut</stpnm>
+                			<pdist>10399.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>22</seq>
+						<lat>41.89903092921</lat>
+						<lon>-87.629790902138</lon>
+
+							<typ>S</typ>
+                			<stpid>1895</stpid>
+                			<stpnm>Dearborn &amp; Delaware</stpnm>
+                			<pdist>10804.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>23</seq>
+						<lat>41.899849460032</lat>
+						<lon>-87.629828453064</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>24</seq>
+						<lat>41.899845467224</lat>
+						<lon>-87.630005478859</lon>
+
+							<typ>S</typ>
+                			<stpid>1896</stpid>
+                			<stpnm>Walton &amp; Dearborn</stpnm>
+                			<pdist>11214.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>25</seq>
+						<lat>41.899825503182</lat>
+						<lon>-87.63128221035</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>26</seq>
+						<lat>41.900464349456</lat>
+						<lon>-87.631303668022</lon>
+
+							<typ>S</typ>
+                			<stpid>1897</stpid>
+                			<stpnm>Clark &amp; Oak</stpnm>
+                			<pdist>11695.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>27</seq>
+						<lat>41.901765978963</lat>
+						<lon>-87.631346583366</lon>
+
+							<typ>S</typ>
+                			<stpid>1898</stpid>
+                			<stpnm>Clark &amp; Maple</stpnm>
+                			<pdist>12179.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>28</seq>
+						<lat>41.903782254496</lat>
+						<lon>-87.631389498711</lon>
+
+							<typ>S</typ>
+                			<stpid>1899</stpid>
+                			<stpnm>Clark &amp; Division (Red Line)</stpnm>
+                			<pdist>12902.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>29</seq>
+						<lat>41.905682685618</lat>
+						<lon>-87.631448507309</lon>
+
+							<typ>S</typ>
+                			<stpid>1900</stpid>
+                			<stpnm>Clark &amp; Goethe</stpnm>
+                			<pdist>13617.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>30</seq>
+						<lat>41.907726783678</lat>
+						<lon>-87.631539702415</lon>
+
+							<typ>S</typ>
+                			<stpid>1901</stpid>
+                			<stpnm>Clark &amp; Schiller</stpnm>
+                			<pdist>14375.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>31</seq>
+						<lat>41.909339658607</lat>
+						<lon>-87.63158261776</lon>
+
+							<typ>S</typ>
+                			<stpid>1902</stpid>
+                			<stpnm>Clark &amp; Burton</stpnm>
+                			<pdist>14971.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>32</seq>
+						<lat>41.911080240287</lat>
+						<lon>-87.631630897522</lon>
+
+							<typ>S</typ>
+                			<stpid>1903</stpid>
+                			<stpnm>Clark &amp; North Ave</stpnm>
+                			<pdist>15592.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>33</seq>
+						<lat>41.91122395592</lat>
+						<lon>-87.631657719612</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>34</seq>
+						<lat>41.91133972661</lat>
+						<lon>-87.631695270538</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>35</seq>
+						<lat>41.913192029105</lat>
+						<lon>-87.632821798325</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>36</seq>
+						<lat>41.913375659613</lat>
+						<lon>-87.632934451103</lon>
+
+							<typ>S</typ>
+                			<stpid>1451</stpid>
+                			<stpnm>Clark &amp; LaSalle</stpnm>
+                			<pdist>16586.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>37</seq>
+						<lat>41.913655096329</lat>
+						<lon>-87.633100748062</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>38</seq>
+						<lat>41.914365658469</lat>
+						<lon>-87.633540630341</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>39</seq>
+						<lat>41.915511323461</lat>
+						<lon>-87.634238004684</lon>
+
+							<typ>S</typ>
+                			<stpid>1905</stpid>
+                			<stpnm>Clark &amp; Lincoln</stpnm>
+                			<pdist>17337.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>40</seq>
+						<lat>41.916553182132</lat>
+						<lon>-87.634865641594</lon>
+
+							<typ>S</typ>
+                			<stpid>1906</stpid>
+                			<stpnm>Clark &amp; Wisconsin</stpnm>
+                			<pdist>17808.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>41</seq>
+						<lat>41.918377391792</lat>
+						<lon>-87.63599216938</lon>
+
+							<typ>S</typ>
+                			<stpid>1907</stpid>
+                			<stpnm>Clark &amp; Armitage</stpnm>
+                			<pdist>18451.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>42</seq>
+						<lat>41.920025921532</lat>
+						<lon>-87.63705432415</lon>
+
+							<typ>S</typ>
+                			<stpid>1908</stpid>
+                			<stpnm>Clark &amp; Dickens</stpnm>
+                			<pdist>19143.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>43</seq>
+						<lat>41.921814109027</lat>
+						<lon>-87.63814330101</lon>
+
+							<typ>S</typ>
+                			<stpid>1909</stpid>
+                			<stpnm>Clark &amp; Webster</stpnm>
+                			<pdist>19878.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>44</seq>
+						<lat>41.923634176981</lat>
+						<lon>-87.639248371124</lon>
+
+							<typ>S</typ>
+                			<stpid>1910</stpid>
+                			<stpnm>Clark &amp; Belden</stpnm>
+                			<pdist>20595.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>45</seq>
+						<lat>41.92491138665</lat>
+						<lon>-87.640015482903</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>46</seq>
+						<lat>41.925450201811</lat>
+						<lon>-87.640331983566</lon>
+
+							<typ>S</typ>
+                			<stpid>1911</stpid>
+                			<stpnm>Clark &amp; Fullerton</stpnm>
+                			<pdist>21324.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>47</seq>
+						<lat>41.927250210577</lat>
+						<lon>-87.641420960426</lon>
+
+							<typ>S</typ>
+                			<stpid>17266</stpid>
+                			<stpnm>Clark &amp; Arlington</stpnm>
+                			<pdist>21972.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>48</seq>
+						<lat>41.928619141115</lat>
+						<lon>-87.642230987549</lon>
+
+							<typ>S</typ>
+                			<stpid>1913</stpid>
+                			<stpnm>Clark &amp; Deming</stpnm>
+                			<pdist>22560.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>49</seq>
+						<lat>41.929325545675</lat>
+						<lon>-87.642654776573</lon>
+
+							<typ>S</typ>
+                			<stpid>17171</stpid>
+                			<stpnm>Clark &amp; Wrightwood</stpnm>
+                			<pdist>22940.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>50</seq>
+						<lat>41.929561012123</lat>
+						<lon>-87.642767429352</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>51</seq>
+						<lat>41.929704686139</lat>
+						<lon>-87.642917633057</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>52</seq>
+						<lat>41.93004790609</lat>
+						<lon>-87.643475532532</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>53</seq>
+						<lat>41.931775950578</lat>
+						<lon>-87.644489407539</lon>
+
+							<typ>S</typ>
+                			<stpid>1916</stpid>
+                			<stpnm>Clark &amp; Schubert</stpnm>
+                			<pdist>23944.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>54</seq>
+						<lat>41.931975490806</lat>
+						<lon>-87.644607424736</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>55</seq>
+						<lat>41.932322689315</lat>
+						<lon>-87.644768357277</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>56</seq>
+						<lat>41.93282153444</lat>
+						<lon>-87.644881010056</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>57</seq>
+						<lat>41.933248542767</lat>
+						<lon>-87.645138502121</lon>
+
+							<typ>S</typ>
+                			<stpid>1917</stpid>
+                			<stpnm>Clark &amp; Diversey</stpnm>
+                			<pdist>24465.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>58</seq>
+						<lat>41.934693166568</lat>
+						<lon>-87.646377682686</lon>
+
+							<typ>S</typ>
+                			<stpid>1918</stpid>
+                			<stpnm>Clark &amp; Surf</stpnm>
+                			<pdist>25088.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>59</seq>
+						<lat>41.936528829162</lat>
+						<lon>-87.64786362648</lon>
+
+							<typ>S</typ>
+                			<stpid>14919</stpid>
+                			<stpnm>Clark &amp; Wellington</stpnm>
+                			<pdist>25944.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>60</seq>
+						<lat>41.937586306454</lat>
+						<lon>-87.648711204529</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>61</seq>
+						<lat>41.93853602583</lat>
+						<lon>-87.649478316307</lon>
+
+							<typ>S</typ>
+                			<stpid>14437</stpid>
+                			<stpnm>Clark &amp; Barry/Halsted</stpnm>
+                			<pdist>26780.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>62</seq>
+						<lat>41.939781014681</lat>
+						<lon>-87.650481462479</lon>
+
+							<typ>S</typ>
+                			<stpid>1921</stpid>
+                			<stpnm>Clark &amp; Belmont</stpnm>
+                			<pdist>27218.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>63</seq>
+						<lat>41.94161653083</lat>
+						<lon>-87.651967406273</lon>
+
+							<typ>S</typ>
+                			<stpid>1922</stpid>
+                			<stpnm>Clark &amp; School/Aldine</stpnm>
+                			<pdist>28006.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>64</seq>
+						<lat>41.943448004064</lat>
+						<lon>-87.653458714485</lon>
+
+							<typ>S</typ>
+                			<stpid>1923</stpid>
+                			<stpnm>Clark &amp; Roscoe</stpnm>
+                			<pdist>28779.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>65</seq>
+						<lat>41.94464900697</lat>
+						<lon>-87.654413580894</lon>
+
+							<typ>S</typ>
+                			<stpid>14434</stpid>
+                			<stpnm>Clark &amp; Newport/Sheffield</stpnm>
+                			<pdist>29381.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>66</seq>
+						<lat>41.947086853598</lat>
+						<lon>-87.656360864639</lon>
+
+							<typ>S</typ>
+                			<stpid>1926</stpid>
+                			<stpnm>Clark &amp; Addison</stpnm>
+                			<pdist>30328.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>67</seq>
+						<lat>41.949230000001</lat>
+						<lon>-87.658048333333</lon>
+
+							<typ>S</typ>
+                			<stpid>18033</stpid>
+                			<stpnm>Clark &amp; Waveland</stpnm>
+                			<pdist>31242.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>68</seq>
+						<lat>41.950857152933</lat>
+						<lon>-87.659397125244</lon>
+
+							<typ>S</typ>
+                			<stpid>14438</stpid>
+                			<stpnm>Clark &amp; Grace</stpnm>
+                			<pdist>32136.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>69</seq>
+						<lat>41.951675019122</lat>
+						<lon>-87.660030126572</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>70</seq>
+						<lat>41.952552717505</lat>
+						<lon>-87.660748958588</lon>
+
+							<typ>S</typ>
+                			<stpid>1929</stpid>
+                			<stpnm>Clark &amp; Byron</stpnm>
+                			<pdist>32920.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>71</seq>
+						<lat>41.953366572478</lat>
+						<lon>-87.661392688751</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>72</seq>
+						<lat>41.954343982609</lat>
+						<lon>-87.662170529366</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>73</seq>
+						<lat>41.954647176175</lat>
+						<lon>-87.662369012833</lon>
+
+							<typ>S</typ>
+                			<stpid>6281</stpid>
+                			<stpnm>Clark &amp; Irving Park</stpnm>
+                			<pdist>33822.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>74</seq>
+						<lat>41.956398489731</lat>
+						<lon>-87.663441896439</lon>
+
+							<typ>S</typ>
+                			<stpid>1931</stpid>
+                			<stpnm>Clark &amp; Belle Plaine</stpnm>
+                			<pdist>34553.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>75</seq>
+						<lat>41.957224263254</lat>
+						<lon>-87.663962244987</lon>
+
+							<typ>S</typ>
+                			<stpid>15541</stpid>
+                			<stpnm>Clark &amp; Southport</stpnm>
+                			<pdist>34906.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>76</seq>
+						<lat>41.958038058576</lat>
+						<lon>-87.664466500282</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>77</seq>
+						<lat>41.958931625783</lat>
+						<lon>-87.664858102798</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>78</seq>
+						<lat>41.959705508686</lat>
+						<lon>-87.665169239044</lon>
+
+							<typ>S</typ>
+                			<stpid>1933</stpid>
+                			<stpnm>Clark &amp; Cullom</stpnm>
+                			<pdist>35833.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>79</seq>
+						<lat>41.961588318561</lat>
+						<lon>-87.66588807106</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>80</seq>
+						<lat>41.96180771016</lat>
+						<lon>-87.665936350822</lon>
+
+							<typ>S</typ>
+                			<stpid>15518</stpid>
+                			<stpnm>Clark &amp; Montrose</stpnm>
+                			<pdist>36679.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>81</seq>
+						<lat>41.963351407875</lat>
+						<lon>-87.66627430915798</lon>
+
+							<typ>S</typ>
+                			<stpid>1935</stpid>
+                			<stpnm>Clark &amp; Sunnyside</stpnm>
+                			<pdist>37172.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>82</seq>
+						<lat>41.965226132587</lat>
+						<lon>-87.66666591167399</lon>
+
+							<typ>S</typ>
+                			<stpid>1936</stpid>
+                			<stpnm>Clark &amp; Wilson</stpnm>
+                			<pdist>37848.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>83</seq>
+						<lat>41.966985</lat>
+						<lon>-87.66706</lon>
+
+							<typ>S</typ>
+                			<stpid>1937</stpid>
+                			<stpnm>Clark &amp; Leland</stpnm>
+                			<pdist>38516.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>84</seq>
+						<lat>41.969129999999</lat>
+						<lon>-87.667489999999</lon>
+
+							<typ>S</typ>
+                			<stpid>17395</stpid>
+                			<stpnm>Clark &amp; Lawrence</stpnm>
+                			<pdist>39309.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>85</seq>
+						<lat>41.971787234666</lat>
+						<lon>-87.667792439461</lon>
+
+							<typ>S</typ>
+                			<stpid>1939</stpid>
+                			<stpnm>Clark &amp; Ainslie</stpnm>
+                			<pdist>40247.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>86</seq>
+						<lat>41.972545008395</lat>
+						<lon>-87.667883634567</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>87</seq>
+						<lat>41.973518136171</lat>
+						<lon>-87.668049931526</lon>
+
+							<typ>S</typ>
+                			<stpid>14789</stpid>
+                			<stpnm>Clark &amp; Winnemac</stpnm>
+                			<pdist>40973.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>88</seq>
+						<lat>41.976090472015</lat>
+						<lon>-87.66836643219</lon>
+
+							<typ>S</typ>
+                			<stpid>1942</stpid>
+                			<stpnm>Clark &amp; Foster</stpnm>
+                			<pdist>41828.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>89</seq>
+						<lat>41.977905003023</lat>
+						<lon>-87.668291330338</lon>
+
+							<typ>S</typ>
+                			<stpid>1943</stpid>
+                			<stpnm>Clark &amp; Berwyn</stpnm>
+                			<pdist>42521.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>90</seq>
+						<lat>41.97894584253</lat>
+						<lon>-87.668253779411</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>91</seq>
+						<lat>41.979962738263</lat>
+						<lon>-87.668237686157</lon>
+
+							<typ>S</typ>
+                			<stpid>14791</stpid>
+                			<stpnm>Clark &amp; Balmoral</stpnm>
+                			<pdist>43329.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>92</seq>
+						<lat>41.981565811498</lat>
+						<lon>-87.668361067772</lon>
+
+							<typ>S</typ>
+                			<stpid>1945</stpid>
+                			<stpnm>Clark &amp; Catalpa</stpnm>
+                			<pdist>43860.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>93</seq>
+						<lat>41.982562727236</lat>
+						<lon>-87.668505907059</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>94</seq>
+						<lat>41.983699192138</lat>
+						<lon>-87.668758034706</lon>
+
+							<typ>S</typ>
+                			<stpid>14792</stpid>
+                			<stpnm>Clark &amp; Bryn Mawr</stpnm>
+                			<pdist>44666.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>95</seq>
+						<lat>41.985314133684</lat>
+						<lon>-87.66910135746</lon>
+
+							<typ>S</typ>
+                			<stpid>1948</stpid>
+                			<stpnm>Clark &amp; Hollywood</stpnm>
+                			<pdist>45225.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>96</seq>
+						<lat>41.986701754439</lat>
+						<lon>-87.669530510902</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>97</seq>
+						<lat>41.986769539735</lat>
+						<lon>-87.669503688812</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>98</seq>
+						<lat>41.987555046437</lat>
+						<lon>-87.669562697411</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>99</seq>
+						<lat>41.98809731952</lat>
+						<lon>-87.669632434845</lon>
+
+							<typ>S</typ>
+                			<stpid>1950</stpid>
+                			<stpnm>Clark &amp; Ardmore</stpnm>
+                			<pdist>46293.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>100</seq>
+						<lat>41.988715345711</lat>
+						<lon>-87.669712901115</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>101</seq>
+						<lat>41.989413110005</lat>
+						<lon>-87.669798731804</lon>
+
+							<typ>S</typ>
+                			<stpid>1951</stpid>
+                			<stpnm>Clark &amp; Ridge</stpnm>
+                			<pdist>46690.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>102</seq>
+						<lat>41.989759995693</lat>
+						<lon>-87.66983628273</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>103</seq>
+						<lat>41.990689002077</lat>
+						<lon>-87.669868469238</lon>
+
+							<typ>S</typ>
+                			<stpid>1952</stpid>
+                			<stpnm>Clark &amp; Elmdale/Peterson</stpnm>
+                			<pdist>47147.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>104</seq>
+						<lat>41.992550961177</lat>
+						<lon>-87.669922113419</lon>
+
+							<typ>S</typ>
+                			<stpid>1953</stpid>
+                			<stpnm>Clark &amp; Glenlake</stpnm>
+                			<pdist>47819.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>105</seq>
+						<lat>41.99470789495</lat>
+						<lon>-87.669997215271</lon>
+
+							<typ>S</typ>
+                			<stpid>17218</stpid>
+                			<stpnm>Clark &amp; Granville</stpnm>
+                			<pdist>48651.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>106</seq>
+						<lat>41.99629863661</lat>
+						<lon>-87.670050859451</lon>
+
+							<typ>S</typ>
+                			<stpid>1955</stpid>
+                			<stpnm>Clark &amp; Rosemont</stpnm>
+                			<pdist>49184.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>107</seq>
+						<lat>41.997251467836</lat>
+						<lon>-87.67021715641</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>108</seq>
+						<lat>41.997917245205</lat>
+						<lon>-87.670404911041</lon>
+
+							<typ>S</typ>
+                			<stpid>1956</stpid>
+                			<stpnm>Clark &amp; Devon</stpnm>
+                			<pdist>49782.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>109</seq>
+						<lat>41.998678694616</lat>
+						<lon>-87.670683860779</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>110</seq>
+						<lat>41.999173033858</lat>
+						<lon>-87.670882344246</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>111</seq>
+						<lat>41.999958387499</lat>
+						<lon>-87.671118378639</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>112</seq>
+						<lat>42.000137781641</lat>
+						<lon>-87.671247124672</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>113</seq>
+						<lat>42.000660015042</lat>
+						<lon>-87.671450972557</lon>
+
+							<typ>S</typ>
+                			<stpid>1957</stpid>
+                			<stpnm>Clark &amp; Arthur</stpnm>
+                			<pdist>50634.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>114</seq>
+						<lat>42.001608794529</lat>
+						<lon>-87.671767473221</lon>
+
+							<typ>S</typ>
+                			<stpid>1958</stpid>
+                			<stpnm>Clark &amp; Albion</stpnm>
+                			<pdist>51178.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>115</seq>
+						<lat>42.003422598289</lat>
+						<lon>-87.672384381294</lon>
+
+							<typ>S</typ>
+                			<stpid>1959</stpid>
+                			<stpnm>Clark &amp; North Shore</stpnm>
+                			<pdist>51874.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>116</seq>
+						<lat>42.00550342595</lat>
+						<lon>-87.67307639122</lon>
+
+							<typ>S</typ>
+                			<stpid>14436</stpid>
+                			<stpnm>Clark &amp; Pratt</stpnm>
+                			<pdist>52681.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>117</seq>
+						<lat>42.007628032249</lat>
+						<lon>-87.673596739769</lon>
+
+							<typ>S</typ>
+                			<stpid>14785</stpid>
+                			<stpnm>Clark &amp; Morse</stpnm>
+                			<pdist>53558.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>118</seq>
+						<lat>42.00891153113</lat>
+						<lon>-87.673891782761</lon>
+
+							<typ>S</typ>
+                			<stpid>1963</stpid>
+                			<stpnm>Clark &amp; Lunt</stpnm>
+                			<pdist>53849.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>119</seq>
+						<lat>42.010346468162</lat>
+						<lon>-87.674197554588</lon>
+
+							<typ>S</typ>
+                			<stpid>17219</stpid>
+                			<stpnm>Clark &amp; Greenleaf</stpnm>
+                			<pdist>54447.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>120</seq>
+						<lat>42.012769843875</lat>
+						<lon>-87.674594521523</lon>
+
+							<typ>S</typ>
+                			<stpid>14463</stpid>
+                			<stpnm>Clark &amp; Touhy</stpnm>
+                			<pdist>55394.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>121</seq>
+						<lat>42.01382207037</lat>
+						<lon>-87.674798369408</lon>
+
+							<typ>S</typ>
+                			<stpid>1967</stpid>
+                			<stpnm>Clark &amp; Chase</stpnm>
+                			<pdist>55599.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>122</seq>
+						<lat>42.015938427762</lat>
+						<lon>-87.675130963326</lon>
+
+							<typ>S</typ>
+                			<stpid>1968</stpid>
+                			<stpnm>Clark &amp; Jarvis</stpnm>
+                			<pdist>56390.0</pdist>
+
+					</pt>
+
+					<pt>
+						<seq>123</seq>
+						<lat>42.016042051739</lat>
+						<lon>-87.67514705658</lon>
+								
+							<typ>W</typ>
+
+					</pt>
+
+					<pt>
+						<seq>124</seq>
+						<lat>42.016667777551</lat>
+						<lon>-87.673843502998</lon>
+
+							<typ>S</typ>
+                			<stpid>15452</stpid>
+                			<stpnm>Rogers &amp; Hermitage</stpnm>
+                			<pdist>56904.0</pdist>
+
+					</pt>
+
+			</ptr>
+
+		</bustime-response>
+
+		

@@ -2,10 +2,10 @@ module CTA
   class API
     class Error
       attr_reader :code
-      attr_reader :name
+      attr_reader :message
 
       def initialize(options = {})
-        @name = options[:message] || "OK"
+        @message = options[:message] || "OK"
         @code = options[:code] ? options[:code].to_i : (@message == "OK" ? 0 : 1)
       end
     end

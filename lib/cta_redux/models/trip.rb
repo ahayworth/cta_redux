@@ -45,7 +45,6 @@ module CTA
       end
       d = timestamp.is_a?(DateTime) ? timestamp : DateTime.parse(timestamp)
       wday = d.strftime("%A").downcase
-      dstr = d.strftime("%Y%m%d")
       end_ts = (fuzz ? d.to_time - (30 * 60) : d).strftime("%H:%M:%S")
       start_ts = d.strftime("%H:%M:%S")
       Trip.with_sql(<<-SQL)
@@ -54,9 +53,9 @@ module CTA
           JOIN stop_times st ON t.trip_id = st.trip_id
           JOIN calendar   c  ON t.service_id = c.service_id
         #{join_str}
-          AND CAST(c.start_date AS NUMERIC) <= #{dstr}
-          AND CAST(c.end_date   AS NUMERIC) >= #{dstr}
-          AND c.#{wday} = '1'
+          AND c.start_date <= '#{d.to_s}'
+          AND c.end_date   >= '#{d.to_s}'
+          AND c.#{wday}
         GROUP BY t.trip_id
         HAVING MIN(st.departure_time) <= '#{start_ts}'
           AND  MAX(st.departure_time) >= '#{end_ts}'

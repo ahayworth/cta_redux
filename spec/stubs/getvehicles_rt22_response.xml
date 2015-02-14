@@ -1,0 +1,239 @@
+<?xml version="1.0"?>
+		<bustime-response>
+
+        	<vehicle>
+        		<vid>4394</vid>
+        		<tmstmp>20150214 11:40</tmstmp>
+	    		<lat>41.873779296875</lat>
+            	<lon>-87.63054656982422</lon>
+				<hdg>178</hdg>
+				<pid>3932</pid>
+        		<rt>22</rt>
+        		<des>Howard</des>
+        		<pdist>115</pdist>
+
+            	<dly>false</dly> 
+            	<spd>0</spd>
+				<tablockid>22 -506</tablockid>
+				<tatripid>204506</tatripid>
+				<zone></zone> 
+            </vehicle>
+
+        	<vehicle>
+        		<vid>4385</vid>
+        		<tmstmp>20150214 11:40</tmstmp>
+	    		<lat>41.88655059814453</lat>
+            	<lon>-87.62959838867188</lon>
+				<hdg>10</hdg>
+				<pid>3932</pid>
+        		<rt>22</rt>
+        		<des>Howard</des>
+        		<pdist>6164</pdist>
+
+            	<dly>false</dly> 
+            	<spd>0</spd>
+				<tablockid>22 -505</tablockid>
+				<tatripid>204505</tatripid>
+				<zone></zone> 
+            </vehicle>
+
+        	<vehicle>
+        		<vid>4398</vid>
+        		<tmstmp>20150214 11:40</tmstmp>
+	    		<lat>41.900115966796875</lat>
+            	<lon>-87.63133239746094</lon>
+				<hdg>4</hdg>
+				<pid>3932</pid>
+        		<rt>22</rt>
+        		<des>Howard</des>
+        		<pdist>11570</pdist>
+
+            	<dly>false</dly> 
+            	<spd>0</spd>
+				<tablockid>22 -511</tablockid>
+				<tatripid>204504</tatripid>
+				<zone></zone> 
+            </vehicle>
+
+        	<vehicle>
+        		<vid>4332</vid>
+        		<tmstmp>20150214 11:41</tmstmp>
+	    		<lat>41.911133986253006</lat>
+            	<lon>-87.6315689086914</lon>
+				<hdg>9</hdg>
+				<pid>3932</pid>
+        		<rt>22</rt>
+        		<des>Howard</des>
+        		<pdist>15582</pdist>
+
+            	<dly>false</dly> 
+            	<spd>0</spd>
+				<tablockid>22 -504</tablockid>
+				<tatripid>204503</tatripid>
+				<zone></zone> 
+            </vehicle>
+
+        	<vehicle>
+        		<vid>4155</vid>
+        		<tmstmp>20150214 11:41</tmstmp>
+	    		<lat>41.93629308847281</lat>
+            	<lon>-87.64751815795898</lon>
+				<hdg>330</hdg>
+				<pid>3932</pid>
+        		<rt>22</rt>
+        		<des>Howard</des>
+        		<pdist>25775</pdist>
+
+            	<dly>false</dly> 
+            	<spd>7</spd>
+				<tablockid>22 -507</tablockid>
+				<tatripid>204502</tatripid>
+				<zone></zone> 
+            </vehicle>
+
+        	<vehicle>
+        		<vid>4360</vid>
+        		<tmstmp>20150214 11:40</tmstmp>
+	    		<lat>41.954769134521484</lat>
+            	<lon>-87.662428855896</lon>
+				<hdg>334</hdg>
+				<pid>3932</pid>
+        		<rt>22</rt>
+        		<des>Howard</des>
+        		<pdist>33863</pdist>
+
+            	<dly>false</dly> 
+            	<spd>32</spd>
+				<tablockid>22 -510</tablockid>
+				<tatripid>204501</tatripid>
+				<zone></zone> 
+            </vehicle>
+
+        	<vehicle>
+        		<vid>4345</vid>
+        		<tmstmp>20150214 11:40</tmstmp>
+	    		<lat>41.97938868204753</lat>
+            	<lon>-87.66833292643229</lon>
+				<hdg>0</hdg>
+				<pid>3932</pid>
+        		<rt>22</rt>
+        		<des>Howard</des>
+        		<pdist>43083</pdist>
+
+            	<dly>false</dly> 
+            	<spd>0</spd>
+				<tablockid>22 -503</tablockid>
+				<tatripid>204500</tatripid>
+				<zone></zone> 
+            </vehicle>
+
+        	<vehicle>
+        		<vid>4154</vid>
+        		<tmstmp>20150214 11:40</tmstmp>
+	    		<lat>42.01862335205078</lat>
+            	<lon>-87.67300415039062</lon>
+				<hdg>358</hdg>
+				<pid>3936</pid>
+        		<rt>22</rt>
+        		<des>Harrison</des>
+        		<pdist>132</pdist>
+
+            	<dly>false</dly> 
+            	<spd>0</spd>
+				<tablockid>22 -502</tablockid>
+				<tatripid>204440</tatripid>
+				<zone></zone> 
+            </vehicle>
+
+        	<vehicle>
+        		<vid>4340</vid>
+        		<tmstmp>20150214 11:41</tmstmp>
+	    		<lat>41.99688278198242</lat>
+            	<lon>-87.67039489746094</lon>
+				<hdg>172</hdg>
+				<pid>3936</pid>
+        		<rt>22</rt>
+        		<des>Harrison</des>
+        		<pdist>9507</pdist>
+
+            	<dly>false</dly> 
+            	<spd>36</spd>
+				<tablockid>22 -514</tablockid>
+				<tatripid>204439</tatripid>
+				<zone></zone> 
+            </vehicle>
+
+        	<vehicle>
+        		<vid>4361</vid>
+        		<tmstmp>20150214 11:40</tmstmp>
+	    		<lat>41.948960379948694</lat>
+            	<lon>-87.65780591207837</lon>
+				<hdg>149</hdg>
+				<pid>3936</pid>
+        		<rt>22</rt>
+        		<des>Harrison</des>
+        		<pdist>27431</pdist>
+
+            	<dly>false</dly> 
+            	<spd>12</spd>
+				<tablockid>22 -501</tablockid>
+				<tatripid>204437</tatripid>
+				<zone></zone> 
+            </vehicle>
+
+        	<vehicle>
+        		<vid>4336</vid>
+        		<tmstmp>20150214 11:41</tmstmp>
+	    		<lat>41.93275705973307</lat>
+            	<lon>-87.64481678715458</lon>
+				<hdg>157</hdg>
+				<pid>3936</pid>
+        		<rt>22</rt>
+        		<des>Harrison</des>
+        		<pdist>34343</pdist>
+
+            	<dly>false</dly> 
+            	<spd>9</spd>
+				<tablockid>22 -513</tablockid>
+				<tatripid>204436</tatripid>
+				<zone></zone> 
+            </vehicle>
+
+        	<vehicle>
+        		<vid>4354</vid>
+        		<tmstmp>20150214 11:41</tmstmp>
+	    		<lat>41.930145263671875</lat>
+            	<lon>-87.64364079066685</lon>
+				<hdg>163</hdg>
+				<pid>3936</pid>
+        		<rt>22</rt>
+        		<des>Harrison</des>
+        		<pdist>35353</pdist>
+
+            	<dly>false</dly> 
+            	<spd>0</spd>
+				<tablockid>22 -508</tablockid>
+				<tatripid>204435</tatripid>
+				<zone></zone> 
+            </vehicle>
+
+        	<vehicle>
+        		<vid>4388</vid>
+        		<tmstmp>20150214 11:41</tmstmp>
+	    		<lat>41.902053113253615</lat>
+            	<lon>-87.63161238184514</lon>
+				<hdg>187</hdg>
+				<pid>3936</pid>
+        		<rt>22</rt>
+        		<des>Harrison</des>
+        		<pdist>46324</pdist>
+
+            	<dly>false</dly> 
+            	<spd>0</spd>
+				<tablockid>22 -512</tablockid>
+				<tatripid>204433</tatripid>
+				<zone></zone> 
+            </vehicle>
+
+		</bustime-response>
+		

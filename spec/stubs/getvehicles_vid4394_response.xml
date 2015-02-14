@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+		<bustime-response>
+
+        	<vehicle>
+        		<vid>4394</vid>
+        		<tmstmp>20150214 11:58</tmstmp>
+	    		<lat>41.89195728302002</lat>
+            	<lon>-87.6297836303711</lon>
+				<hdg>359</hdg>
+				<pid>3932</pid>
+        		<rt>22</rt>
+        		<des>Howard</des>
+        		<pdist>8288</pdist>
+
+            	<dly>false</dly> 
+            	<spd>10</spd>
+				<tablockid>22 -506</tablockid>
+				<tatripid>204506</tatripid>
+				<zone></zone> 
+            </vehicle>
+
+		</bustime-response>
+		

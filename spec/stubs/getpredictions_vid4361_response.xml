@@ -1,0 +1,647 @@
+<?xml version="1.0"?>
+
+
+
+
+
+
+
+
+
+
+
+		<bustime-response>	
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Dearborn &amp; Polk</stpnm>
+					<stpid>1875</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>1069</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 12:38</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>2</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Dearborn &amp; Harrison</stpnm>
+					<stpid>1876</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>1824</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 12:39</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>3</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Dearborn &amp; Congress</stpnm>
+					<stpid>1877</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>2275</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 12:40</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>4</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Dearborn &amp; Jackson</stpnm>
+					<stpid>14508</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>2965</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 12:41</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>5</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Dearborn &amp; Adams</stpnm>
+					<stpid>1880</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>3636</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 12:42</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>6</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Dearborn &amp; Monroe</stpnm>
+					<stpid>1881</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>4135</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 12:43</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>7</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Dearborn &amp; Madison</stpnm>
+					<stpid>1882</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>4560</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 12:44</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>7</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Dearborn &amp; Randolph</stpnm>
+					<stpid>1884</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>5483</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 12:45</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>9</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Dearborn &amp; Wacker/Lake</stpnm>
+					<stpid>1885</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>6044</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 12:46</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>10</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Dearborn &amp; Marina City</stpnm>
+					<stpid>1887</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>6760</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 12:47</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>11</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Dearborn &amp; Hubbard</stpnm>
+					<stpid>15399</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>7351</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 12:48</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>12</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Dearborn &amp; Grand</stpnm>
+					<stpid>14767</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>8088</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 12:49</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>13</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Dearborn &amp; Ontario</stpnm>
+					<stpid>1891</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>8513</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 12:50</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>14</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Dearborn &amp; Huron</stpnm>
+					<stpid>1892</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>9096</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 12:51</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>15</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Dearborn &amp; Chicago</stpnm>
+					<stpid>1893</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>9750</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 12:52</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>16</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Dearborn &amp; Chestnut</stpnm>
+					<stpid>1894</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>10271</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 12:53</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>16</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Dearborn &amp; Delaware</stpnm>
+					<stpid>1895</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>10676</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 12:53</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>17</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Walton &amp; Dearborn</stpnm>
+					<stpid>1896</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>11086</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 12:54</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>18</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Clark &amp; Oak</stpnm>
+					<stpid>1897</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>11567</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 12:55</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>18</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Clark &amp; Maple</stpnm>
+					<stpid>1898</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>12051</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 12:56</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>19</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Clark &amp; Division (Red Line)</stpnm>
+					<stpid>1899</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>12774</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 12:57</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>20</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Clark &amp; Goethe</stpnm>
+					<stpid>1900</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>13489</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 12:58</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>21</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Clark &amp; Schiller</stpnm>
+					<stpid>1901</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>14247</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 12:59</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>23</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Clark &amp; Burton</stpnm>
+					<stpid>1902</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>14843</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 13:00</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>24</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Clark &amp; North Ave</stpnm>
+					<stpid>1903</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>15464</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 13:01</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>25</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Clark &amp; LaSalle</stpnm>
+					<stpid>1451</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>16458</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 13:03</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>26</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Clark &amp; Lincoln</stpnm>
+					<stpid>1905</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>17209</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 13:04</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>27</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Clark &amp; Wisconsin</stpnm>
+					<stpid>1906</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>17680</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 13:04</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>28</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Clark &amp; Armitage</stpnm>
+					<stpid>1907</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>18323</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 13:05</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>29</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+			
+				<prd>
+					<tmstmp>20150214 12:36</tmstmp>
+					<typ>A</typ>
+					<stpnm>Clark &amp; Dickens</stpnm>
+					<stpid>1908</stpid>
+					<vid>4361</vid>
+					
+					 
+					<dstp>19015</dstp>
+					<rt>22</rt>
+					<rtdir>Northbound</rtdir>
+	        		<des>Howard</des>
+		        	 
+		        	<prdtm>20150214 13:06</prdtm>
+	        		<dly>false</dly>  
+		        	<tablockid>22 -501</tablockid>  
+		        	<tatripid>204511</tatripid>    
+		        	<prdctdn>30</prdctdn>  
+		        	<zone></zone>  
+				</prd>			
+
+		</bustime-response>
+
+		
