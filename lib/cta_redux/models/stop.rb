@@ -16,11 +16,11 @@ module CTA
     def self.new_from_api_response(s)
       CTA::Stop.unrestrict_primary_key
       stop = CTA::Stop.new({
-        :stop_id => s["stpid"],
+        :stop_id => s["stpid"].to_i,
         :stop_name => s["stpnm"],
-        :stop_lat => s["lat"],
-        :stop_lon => s["lon"],
-        :location_type => "3", # Bus in GTFS-land
+        :stop_lat => s["lat"].to_f,
+        :stop_lon => s["lon"].to_f,
+        :location_type => 3, # Bus in GTFS-land
         :stop_desc => "#{s["stpnm"]} (seasonal, generated from API results - missing from GTFS feed)"
       })
       CTA::Stop.restrict_primary_key
@@ -29,9 +29,9 @@ module CTA
     end
 
     def stop_type
-      if self.stop_id.to_i < 30000
+      if self.stop_id < 30000
         :bus
-      elsif self.stop_id.to_i < 40000
+      elsif self.stop_id < 40000
         :rail
       else
         :parent_station
