@@ -4,6 +4,15 @@ module CTA
 
     one_to_many :trips, :key => :route_id
 
+    def self.[](*args)
+      potential_route = args.first.downcase.to_sym
+      if CTA::Train::FRIENDLY_L_ROUTES.has_key?(potential_route)
+        super(Array.wrap(CTA::Train::FRIENDLY_L_ROUTES[potential_route].capitalize))
+      else
+        super(args)
+      end
+    end
+
     def stops
       # Gosh, I wish SQLite could do "SELECT DISTINCT ON..."
       CTA::Stop.with_sql(<<-SQL)

@@ -16,6 +16,9 @@ module CTA
         @routes = eta_map.map do |rt, etas|
           trains = etas.map do |t|
             train = CTA::Train.find_active_run(t["rn"], self.timestamp, (t["isDly"] == "1")).first
+            if !train
+              train = CTA::Train.find_active_run(t["rn"], self.timestamp, true).first
+            end
             position = t.select { |k,v| ["lat", "lon", "heading"].include?(k) }
             train.live!(position, t)
 
@@ -41,6 +44,9 @@ module CTA
 
         train_info = Array.wrap(parsed_body["ctatt"]["eta"]).first
         @train = CTA::Train.find_active_run(train_info["rn"], self.timestamp, (train_info["isDly"] == "1")).first
+        if !@train
+          @train = CTA::Train.find_active_run(train_info["rn"], self.timestamp, true).first
+        end
         @train.live!(parsed_body["ctatt"]["position"], parsed_body["ctatt"]["eta"])
         @predictions = @train.predictions
       end
