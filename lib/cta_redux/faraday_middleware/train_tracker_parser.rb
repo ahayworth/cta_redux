@@ -1,6 +1,11 @@
 module CTA
   class TrainTracker
     class Parser < Faraday::Response::Middleware
+      def initialize(app, debug)
+        @debug = debug
+        super(app)
+      end
+
       def call(request_env)
         api_response = nil
 
@@ -8,15 +13,15 @@ module CTA
           parsed_body = ::MultiXml.parse(response_env.body)
 
           if has_errors?(parsed_body)
-            api_response = CTA::API::Response.new(parsed_body, response_env.body)
+            api_response = CTA::API::Response.new(parsed_body, response_env.body, @debug)
           else
             case response_env.url.to_s
             when /ttarrivals\.aspx/
-              api_response = ArrivalsResponse.new(parsed_body, response_env.body)
+              api_response = ArrivalsResponse.new(parsed_body, response_env.body, @debug)
             when /ttfollow\.aspx/
-              api_response = FollowResponse.new(parsed_body, response_env.body)
+              api_response = FollowResponse.new(parsed_body, response_env.body, @debug)
             when /ttpositions\.aspx/
-              api_response = PositionsResponse.new(parsed_body, response_env.body)
+              api_response = PositionsResponse.new(parsed_body, response_env.body, @debug)
             end
           end
         end

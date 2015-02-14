@@ -8,8 +8,8 @@ module CTA
     class VehiclesResponse < CTA::API::Response
       attr_reader :vehicles
 
-      def initialize(parsed_body, raw_body)
-        super(parsed_body, raw_body)
+      def initialize(parsed_body, raw_body, debug)
+        super(parsed_body, raw_body, debug)
         @vehicles = Array.wrap(parsed_body["bustime_response"]["vehicle"]).map do |v|
           bus = CTA::Bus.find_active_run(v["rt"], v["tmstmp"], (v["dly"] == "true")).first
           bus.live!(v)
@@ -22,8 +22,8 @@ module CTA
     class TimeResponse < CTA::API::Response
       attr_reader :timestamp
 
-      def initialize(parsed_body, raw_body)
-        super(parsed_body, raw_body)
+      def initialize(parsed_body, raw_body, debug)
+        super(parsed_body, raw_body, debug)
         @timestamp = DateTime.parse(parsed_body["bustime_response"]["tm"])
       end
     end
@@ -31,8 +31,8 @@ module CTA
     class RoutesResponse < CTA::API::Response
       attr_reader :routes
 
-      def initialize(parsed_body, raw_body)
-        super(parsed_body, raw_body)
+      def initialize(parsed_body, raw_body, debug)
+        super(parsed_body, raw_body, debug)
         @routes = Array.wrap(parsed_body["bustime_response"]["route"]).map do |r|
           puts r.inspect
           rt = CTA::Route.where(:route_id => r["rt"]).first
@@ -46,8 +46,8 @@ module CTA
     class DirectionsResponse < CTA::API::Response
       attr_reader :directions
 
-      def initialize(parsed_body, raw_body)
-        super(parsed_body, raw_body)
+      def initialize(parsed_body, raw_body, debug)
+        super(parsed_body, raw_body, debug)
         @directions = Array.wrap(parsed_body["bustime_response"]["dir"]).map { |d| Direction.new(d) }
       end
     end
@@ -55,8 +55,8 @@ module CTA
     class StopsResponse < CTA::API::Response
       attr_reader :stops
 
-      def initialize(parsed_body, raw_body)
-        super(parsed_body, raw_body)
+      def initialize(parsed_body, raw_body, debug)
+        super(parsed_body, raw_body, debug)
         @stops = Array.wrap(parsed_body["bustime_response"]["stop"]).map do |s|
           CTA::Stop.where(:stop_id => s["stpid"]).first || CTA::Stop.new_from_api_response(s)
         end
@@ -66,8 +66,8 @@ module CTA
     class PatternsResponse < CTA::API::Response
       attr_reader :patterns
 
-      def initialize(parsed_body, raw_body)
-        super(parsed_body, raw_body)
+      def initialize(parsed_body, raw_body, debug)
+        super(parsed_body, raw_body, debug)
         @patterns = Array.wrap(parsed_body["bustime_response"]["ptr"]).map { |p| Pattern.new(p) }
       end
     end
@@ -76,8 +76,8 @@ module CTA
       attr_reader :vehicles
       attr_reader :predictions
 
-      def initialize(parsed_body, raw_body)
-        super(parsed_body, raw_body)
+      def initialize(parsed_body, raw_body, debug)
+        super(parsed_body, raw_body, debug)
         @vehicles = Array.wrap(parsed_body["bustime_response"]["prd"]).map do |p|
           bus = CTA::Bus.find_active_run(p["rt"], p["tmstmp"], (p["dly"] == "true")).first
           bus.live!(p, p)
@@ -91,8 +91,8 @@ module CTA
     class ServiceBulletinsResponse < CTA::API::Response
       attr_reader :bulletins
 
-      def initialize(parsed_body, raw_body)
-        super(parsed_body, raw_body)
+      def initialize(parsed_body, raw_body, debug)
+        super(parsed_body, raw_body, debug)
         @bulletins = Array.wrap(parsed_body["bustime_response"]["sb"]).map { |sb| ServiceBulletin.new(sb) }
       end
     end

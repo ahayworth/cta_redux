@@ -4,7 +4,7 @@ module CTA
     def self.connection
       @connection ||= Faraday.new do |faraday|
         faraday.url_prefix = 'http://www.transitchicago.com/api/1.0/'
-        faraday.use CTA::CustomerAlerts::Parser
+        faraday.use CTA::CustomerAlerts::Parser, !!@debug
         faraday.response :caching, SimpleCache.new(Hash.new)
         faraday.adapter Faraday.default_adapter
       end
@@ -48,6 +48,15 @@ module CTA
       params.merge!({ :bystartdate => options[:before] }) if options[:before]
 
       connection.get('alerts.aspx', params)
+    end
+
+    def self.debug
+      !!@debug
+    end
+
+    def self.debug=(debug)
+      @debug = debug
+      @connection = nil
     end
   end
 end

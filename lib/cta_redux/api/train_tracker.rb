@@ -3,8 +3,8 @@ module CTA
     class ArrivalsResponse < CTA::API::Response
       attr_reader :routes, :trains, :predictions
 
-      def initialize(parsed_body, raw_body)
-        super(parsed_body, raw_body)
+      def initialize(parsed_body, raw_body, debug)
+        super(parsed_body, raw_body, debug)
 
         eta_map = Array.wrap(parsed_body["ctatt"]["eta"]).inject({}) do |h, eta|
           h[eta["rt"]] ||= []
@@ -36,8 +36,8 @@ module CTA
     class FollowResponse < CTA::API::Response
       attr_reader :train, :predictions
 
-      def initialize(parsed_body, raw_body)
-        super(parsed_body, raw_body)
+      def initialize(parsed_body, raw_body, debug)
+        super(parsed_body, raw_body, debug)
 
         train_info = Array.wrap(parsed_body["ctatt"]["eta"]).first
         @train = CTA::Train.find_active_run(train_info["rn"], self.timestamp, (train_info["isDly"] == "1"))
@@ -49,8 +49,8 @@ module CTA
     class PositionsResponse < CTA::API::Response
       attr_reader :routes, :trains, :predictions
 
-      def initialize(parsed_body, raw_body)
-        super(parsed_body, raw_body)
+      def initialize(parsed_body, raw_body, debug)
+        super(parsed_body, raw_body, debug)
         @routes = Array.wrap(parsed_body["ctatt"]["route"]).map do |route|
           rt = Route.where(:route_id => route["name"].capitalize).first
 
@@ -65,7 +65,7 @@ module CTA
           rt.live!(trains)
           rt
         end
-        @trains = @routes.map(&:trains).flatten
+        @trains = @routes.map(&:vehicles).flatten
         @predictions = @trains.map(&:predictions).flatten
       end
     end

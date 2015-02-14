@@ -16,7 +16,7 @@ module CTA
       attr_reader :raw_body
       attr_reader :parsed_body
 
-      def initialize(parsed_body, raw_body)
+      def initialize(parsed_body, raw_body, debug)
         if parsed_body["bustime_response"]
           @timestamp = DateTime.now
           if parsed_body["bustime_response"].has_key?("error")
@@ -35,8 +35,10 @@ module CTA
           @error = Error.new({ :code => code, :message => msg })
         end
 
-        @parsed_body = parsed_body
-        @raw_body = raw_body
+        if debug
+          @parsed_body = parsed_body
+          @raw_body = raw_body
+        end
       end
     end
   end

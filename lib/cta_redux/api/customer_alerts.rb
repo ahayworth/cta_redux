@@ -49,8 +49,8 @@ module CTA
     class AlertsResponse < CTA::API::Response
       attr_reader :alerts
 
-      def initialize(parsed_body, raw_body)
-        super(parsed_body, raw_body)
+      def initialize(parsed_body, raw_body, debug)
+        super(parsed_body, raw_body, debug)
         @alerts = Array.wrap(parsed_body["CTAAlerts"]["Alert"]).map { |a| Alert.new(a) }
       end
     end
@@ -58,8 +58,8 @@ module CTA
     class RouteStatusResponse < CTA::API::Response
       attr_reader :routes
 
-      def initialize(parsed_body, raw_body)
-        super(parsed_body, raw_body)
+      def initialize(parsed_body, raw_body, debug)
+        super(parsed_body, raw_body, debug)
         @routes = Array.wrap(parsed_body["CTARoutes"]["RouteInfo"]).map { |r| RouteStatus.new(r) }
       end
     end

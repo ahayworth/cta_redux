@@ -7,7 +7,7 @@ module CTA
         faraday.url_prefix = 'http://lapi.transitchicago.com/api/1.0/'
         faraday.params = { :key => @key }
 
-        faraday.use CTA::TrainTracker::Parser
+        faraday.use CTA::TrainTracker::Parser, !!@debug
         faraday.response :caching, SimpleCache.new(Hash.new)
         faraday.adapter Faraday.default_adapter
       end
@@ -37,7 +37,7 @@ module CTA
       params = {}
       params.merge!({ :mapid => map.first }) if options[:parent_station]
       params.merge!({ :stpid => stop.first }) if options[:station]
-      params.merge!({ :max => options[:limit] }) if options[:limit]
+      params.merge!({ :max => limit }) if options[:limit]
       params.merge!({ :rt => route.first }) if route.any?
 
       connection.get('ttarrivals.aspx', params)
@@ -83,6 +83,15 @@ module CTA
 
     def self.key=(key)
       @key = key
+      @connection = nil
+    end
+
+    def self.debug
+      !!@debug
+    end
+
+    def self.debug=(debug)
+      @debug = debug
       @connection = nil
     end
   end

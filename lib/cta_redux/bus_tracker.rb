@@ -7,7 +7,7 @@ module CTA
         faraday.url_prefix = 'http://www.ctabustracker.com/bustime/api/v2/'
         faraday.params = { :key => @key }
 
-        faraday.use CTA::BusTracker::Parser
+        faraday.use CTA::BusTracker::Parser, !!@debug
         faraday.response :caching, SimpleCache.new(Hash.new)
         faraday.adapter Faraday.default_adapter
       end
@@ -138,6 +138,15 @@ module CTA
 
     def self.key=(key)
       @key = key
+      @connection = nil
+    end
+
+    def self.debug
+      !!@debug
+    end
+
+    def self.debug=(debug)
+      @debug = debug
       @connection = nil
     end
   end
