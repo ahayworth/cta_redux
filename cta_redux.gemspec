@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
                           cohesive client API that can be used to easily build a transit related project. Using Sequel,
                           we integrate GTFS scheduled service data with live data provided by the CTA's various APIs (like
                           BusTracker, TrainTracker, and the CTA customer alerts feed.}
-  spec.homepage      = "ctaredux.ahayworth.com"
+  spec.homepage      = "http://ctaredux.ahayworth.com"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
