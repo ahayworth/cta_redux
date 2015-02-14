@@ -10,6 +10,24 @@ module CTA
 
     many_to_many :trips, :left_key => :stop_id, :right_key => :trip_id, :join_table => :stop_times
 
+    # Some CTA routes are seasonal, and are missing from the GTFS feed.
+    # However, the API still returns that info. So, we create a dummy CTA::Stop
+    # to fill in the gaps. I've emailed CTA developer support for clarification.
+    def self.new_from_api_response(s)
+      CTA::Stop.unrestrict_primary_key
+      stop = CTA::Stop.new({
+        :stop_id => s["stpid"],
+        :stop_name => s["stpnm"],
+        :stop_lat => s["lat"],
+        :stop_lon => s["lon"],
+        :location_type => "3", # Bus in GTFS-land
+        :stop_desc => "#{s["stpnm"]} (seasonal, generated from API results - missing from GTFS feed)"
+      })
+      CTA::Stop.restrict_primary_key
+
+      stop
+    end
+
     def stop_type
       if self.stop_id < 30000
         :bus

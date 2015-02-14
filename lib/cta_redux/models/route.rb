@@ -4,19 +4,19 @@ module CTA
 
     one_to_many :trips, :key => :route_id
 
-    def live!(trains)
+    def live!(vehicles)
       class << self
-        attr_reader :trains
+        attr_reader :vehicles
       end
 
-      @trains = trains
+      @vehicles = vehicles
     end
 
     def predictions!(options = {})
       if CTA::Train::L_ROUTES.keys.include?(self.route_id.downcase)
         CTA::TrainTracker.predictions!(options.merge({:route => self.route_id.downcase}))
       else
-        raise "E_NOTIMPLEMENTED"
+        CTA::BusTracker.predictions!(options.merge({:route => self.route_id}))
       end
     end
 
@@ -24,12 +24,11 @@ module CTA
       if CTA::Train::L_ROUTES.keys.include?(self.route_id.downcase)
         CTA::TrainTracker.locations!(options.merge({:routes => self.route_id.downcase}))
       else
-        raise "E_NOTIMPLEMENTED"
+        raise "CTA BusTracker has no direct analog of the TrainTracker locations api. Try predictions instead."
       end
     end
 
     def status!
-      puts self.route_id
       CTA::CustomerAlerts.status!(:routes => self.route_id).routes.first
     end
 

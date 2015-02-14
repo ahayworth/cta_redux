@@ -28,8 +28,7 @@ module CTA
 
     def live!(position, predictions = [])
       class << self
-        attr_reader :lat, :lon, :vehicle_id, :heading, :pattern_id, :pattern_distance,
-                    :route, :delayed, :speed, :predictions
+        attr_reader :lat, :lon, :vehicle_id, :heading, :pattern_id, :pattern_distance, :route, :delayed, :speed, :predictions
       end
 
       @lat = position["lat"].to_f
@@ -42,7 +41,26 @@ module CTA
       @delayed = (position["dly"] == "true")
       @speed = position["spd"].to_i
 
-      @predictions = []
+      @predictions = Array.wrap(predictions).map { |p| Prediction.new(p) }
+    end
+
+    class Prediction
+      attr_reader :type, :stop, :distance, :route, :direction, :destination,
+                  :prediction_generated_at, :arrival_time, :delayed, :minutes, :seconds
+
+      def initialize(data)
+        @type = data["typ"]
+        @stop = CTA::Stop.where(:stop_id => data["stpid"]).first || CTA::Stop.new_from_api_response(data)
+        @distance = data["dstp"].to_i
+        @route = CTA::Route.where(:route_id => data["rt"]).first
+        @direction = CTA::BusTracker::Direction.new(data["rtdir"])
+        @destination = data["des"]
+        @prediction_generated_at = DateTime.parse(data["tmstmp"])
+        @arrival_time = DateTime.parse(data["prdtm"])
+        @seconds = @arrival_time.to_time - @prediction_generated_at.to_time
+        @minutes = (@seconds / 60).ceil
+        @delayed = (data["dly"] == "true")
+      end
     end
   end
 end

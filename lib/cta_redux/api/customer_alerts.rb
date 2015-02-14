@@ -5,26 +5,22 @@ require 'multi_xml'
 module CTA
   class CustomerAlerts
     class RouteStatus
-      FIELDS = [:route, :route_color, :route_text_color, :service_id, :route_url, :status, :status_color]
-      FIELDS.each { |f| attr_reader f }
+      attr_reader :route, :route_color, :route_text_color, :service_id, :route_url, :status, :status_color
 
       def initialize(s)
-        @route = s["Route"]
+        @route = CTA::Route.where(:route_id => s["Route"].split(" ").first).or(:route_id => s["ServiceId"]).first
         @route_color = s["RouteColorCode"]
         @route_text_color = s["RouteTextColor"]
-        @service_id = s["ServiceId"]
-        @route_url = s["RouteURL"]
         @status = s["RouteStatus"]
         @status_color = s["RouteStatusColor"]
       end
     end
 
     class Alert
-      FIELDS = [:id, :alert_id, :headline, :short_description, :full_description, :score,
-                :severity_color, :category, :impact, :start, :end, :tbd, :major_alert, :is_major_alert,
-                :url, :services]
+      attr_reader :id, :alert_id, :headline, :short_description, :full_description, :score,
+                  :severity_color, :category, :impact, :start, :end, :tbd, :major_alert, :is_major_alert,
+                  :url, :services
 
-      FIELDS.each { |f| attr_reader f }
       def initialize(a)
         @id = @alert_id = a["AlertId"].to_i
         @headline = a["Headline"]
@@ -40,26 +36,13 @@ module CTA
         @major_alert = @is_major_alert = (a["MajorAlert"] == "1")
         @url = a["AlertURL"]
 
-        @services = Array.wrap(a["ImpactedService"]["Service"]).map { |s| Service.new(s) }
+        @services = Array.wrap(a["ImpactedService"]["Service"]).map do |s|
+          CTA::Route.where(:route_id => s["ServiceName"].split(" ")).or(:route_id => s["ServiceId"]).first
+        end
       end
 
       def major?
         @major_alert
-      end
-    end
-
-    class Service
-      FIELDS = [:type, :description, :name, :id, :service_id, :service_color, :service_text_color, :service_url]
-      FIELDS.each { |f| attr_reader f }
-
-      def initialize(s)
-        @id = @service_id = s["ServiceId"].to_i
-        @type = s["ServiceType"].to_sym
-        @description = s["ServiceTypeDescription"]
-        @name = s["ServiceName"]
-        @service_color = s["ServiceBackColor"]
-        @service_text_color = s["ServiceTextColor"]
-        @service_url = s["ServiceURL"]
       end
     end
 
