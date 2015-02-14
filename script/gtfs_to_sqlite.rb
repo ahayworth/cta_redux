@@ -38,7 +38,8 @@ KNOWN_COLUMN_TYPES = {
     #"departure_time" => "TIME",
     "stop_id" => "INTEGER",
     "stop_sequence" => "INTEGER",
-    "shape_dist_traveled" => "INTEGER"
+    "shape_dist_traveled" => "INTEGER",
+    "pickup_type" => "INTEGER"
   },
   "stops" => {
     "stop_id" => "INTEGER",
