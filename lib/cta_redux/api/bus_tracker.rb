@@ -6,6 +6,8 @@ module CTA
   class BusTracker
 
     class VehiclesResponse < CTA::API::Response
+      # @return [Array<CTA::Bus>] An array with a full {CTA::Bus} object for each vehicle returned in the API, augmented
+      #  with live details
       attr_reader :vehicles
 
       def initialize(parsed_body, raw_body, debug)
@@ -20,6 +22,7 @@ module CTA
     end
 
     class TimeResponse < CTA::API::Response
+      # @return [DateTime] Current time according to the BusTime servers which power the BusTracker API
       attr_reader :timestamp
 
       def initialize(parsed_body, raw_body, debug)
@@ -29,6 +32,8 @@ module CTA
     end
 
     class RoutesResponse < CTA::API::Response
+      # @return [Array<CTA::Route>] An array with a full {CTA::Route} object for each route returned by the API,
+      #  augmented with the color that the API thinks you should be using (which is not always found in the GTFS data).
       attr_reader :routes
 
       def initialize(parsed_body, raw_body, debug)
@@ -43,6 +48,7 @@ module CTA
     end
 
     class DirectionsResponse < CTA::API::Response
+      # @return [Array<Direction>] An array of {Direction} that the requested route operates.
       attr_reader :directions
 
       def initialize(parsed_body, raw_body, debug)
@@ -52,6 +58,9 @@ module CTA
     end
 
     class StopsResponse < CTA::API::Response
+      # @return [Array<CTA::Stop>] An array with full {CTA::Stop} objects that correspond to the stops returned from the API.
+      # @note Some stops returned from BusTracker are not found in GTFS data, so cta_redux creates them on the fly. These
+      #  stops are for seasonal routes. An email has been sent to the CTA asking why they're not included in the GTFS data (they should be).
       attr_reader :stops
 
       def initialize(parsed_body, raw_body, debug)
@@ -63,6 +72,7 @@ module CTA
     end
 
     class PatternsResponse < CTA::API::Response
+      # @return [Array<Pattern>] An array of {Pattern} objects for the requested query.
       attr_reader :patterns
 
       def initialize(parsed_body, raw_body, debug)
@@ -72,7 +82,10 @@ module CTA
     end
 
     class PredictionsResponse < CTA::API::Response
+      # @return [Array<CTA::Bus>] An array of {CTA::Bus} objects that correspond to the predictions requested.
       attr_reader :vehicles
+      # @return [Array<CTA::Bus::Prediction>] An array of {CTA::Bus::Prediction} objects that correspond to the predictions requested.
+      #  This is equivalent to calling +vehicles.map(&:predictions).flatten+
       attr_reader :predictions
 
       def initialize(parsed_body, raw_body, debug)
@@ -88,6 +101,9 @@ module CTA
     end
 
     class ServiceBulletinsResponse < CTA::API::Response
+      # @return [Array<ServiceBulletin>] An array of {ServiceBulletin} objects that correspond to the query requested.
+      # @note Consider using the {CTA::CustomerAlerts} methods to search for alerts, as theoretically they should have the same
+      #  data and it is not a rate-limited API.
       attr_reader :bulletins
 
       def initialize(parsed_body, raw_body, debug)
@@ -97,7 +113,19 @@ module CTA
     end
 
     class ServiceBulletin
-      attr_reader :name, :subject, :details, :brief, :priority, :affected_services
+      # @return [String] The name of the bulletin.
+      attr_reader :name
+      # @return [String] A short description of the bulletin.
+      attr_reader :subject
+      # @return [String] More details about the bulletin
+      attr_reader :details
+      # @return [String] Another short description of the bulletin
+      # @note This seems to usually be unset by the CTA.
+      attr_reader :brief
+      # @return [Symbol] Priority of the alert. One of +[:low, :medium, :high]+
+      attr_reader :priority
+      # @return [Array<Service>] An array of {Service} objects that encapsulate information (if any) about which routes and stops are affected by this bulletin.
+      attr_reader :affected_services
 
       def initialize(sb)
         @name = sb["nm"]
@@ -111,9 +139,16 @@ module CTA
     end
 
     class Service
+      # @return [CTA::Route] A {CTA::Route}, if any, affected by a {ServiceBulletin}
       attr_reader :route
+      # @return [Direction] A {Direction} object for the direction, if any, affected by a {ServiceBulletin}
       attr_reader :direction
+      # @return [CTA::Stop] A specific {CTA::Stop} object for the stop affected by a {ServiceBulletin}
       attr_reader :stop
+
+      # @return [String] The name of the {CTA::Stop} affected.
+      # @note Usually this is equivalent to calling +stop.name+, but sometimes the CTA returns a {ServiceBulletin} with a stop name,
+      #  but no stop id set - and the stop name may not exactly correspond to a {CTA::Stop} object in the GTFS feed.
       attr_reader :stop_name
 
       def initialize(s)
@@ -134,11 +169,22 @@ module CTA
       end
     end
 
+    # @note {Pattern} objects enclose {Point} objects that describe a bus route. Conceptually it is similar to how a {CTA::Trip} contains
+    #  many {CTA::StopTime} objects that describe the route a vehicle takes. However, it is specific to busses and contains better information
+    #  for drawing turns and side-streets that the bus may take on its route. This bit of the API is mostly unnecessary unless you're drawing
+    #  maps.
     class Pattern
+      # @return [Integer] The ID of the pattern
       attr_reader :id
+      # @return [Integer] The ID of the pattern
       attr_reader :pattern_id
+      # @return [Integer] The total length of the pattern
       attr_reader :length
+      # @return [Direction] A {Direction} object that describes to which direction of a route this pattern applies.
+      # @note This logically means that any given bus route (so long as it's not a circulator or one-way express) will have
+      #  two associated {Pattern} objects
       attr_reader :direction
+      # @return [Array<Point>] An array of {Point} objects that describe stops and waypoints along the {Pattern}
       attr_reader :points
 
       def initialize(p)
@@ -151,7 +197,22 @@ module CTA
     end
 
     class Point
-      attr_reader :sequence, :lat, :lon, :latitude, :longitude, :type, :stop, :distance
+      # @return [Integer] The order that this {Point} appears along a {Pattern}
+      attr_reader :sequence
+      # @return [Float] The latitude of this {Point}
+      attr_reader :lat
+      # @return [Float] The longitude of this {Point}
+      attr_reader :lon
+      # @return [Float] The latitude of this {Point}
+      attr_reader :latitude
+      # @return [Float] The longitude of this {Point}
+      attr_reader :longitude
+      # @return [Symbol] The type of this {Point}. One of +[:stop, :waypoint]+
+      attr_reader :type
+      # @return [CTA::Stop] The {CTA::Stop} associated with this point.
+      attr_reader :stop
+      # @return [Float] The physical distance into a {Pattern} that corresponds to this {Point}
+      attr_reader :distance
 
       def initialize(p)
         @sequence = p["seq"].to_i
@@ -168,6 +229,9 @@ module CTA
     end
 
     class Direction
+      # @return [String] A direction for a service.
+      # @note The raw BusTracker API expects directions in the exact format this object returns. This is mostly an implementation detail, but
+      #  explains a bit about why this object even exists.
       attr_reader :direction
 
       def initialize(d)

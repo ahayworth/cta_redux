@@ -1,7 +1,10 @@
 module CTA
   class API
     class Error
+      # @return [Integer] Error code from the API. Normalized across different CTA APIs, and 0 indicates success.
       attr_reader :code
+
+      # @return [String] Detailed error message, if any, from the API.
       attr_reader :message
 
       def initialize(options = {})
@@ -11,9 +14,16 @@ module CTA
     end
 
     class Response
+      # @return [DateTime] Timestamp from the API server, if available. Defaults to DateTime.now if unavailable.
       attr_reader :timestamp
+
+      # @return [CTA::API::Error] Error information from the API
       attr_reader :error
+
+      # @return [String, nil] Raw XML from the API. Only set when {CTA::BusTracker.debug} or {CTA::TrainTracker.debug} is true.
       attr_reader :raw_body
+
+      # @return [Hash, nil] Parsed XML from the API. Only set when {CTA::BusTracker.debug} or {CTA::TrainTracker.debug} is true.
       attr_reader :parsed_body
 
       def initialize(parsed_body, raw_body, debug)

@@ -1,7 +1,14 @@
 module CTA
   class TrainTracker
     class ArrivalsResponse < CTA::API::Response
-      attr_reader :routes, :trains, :predictions
+      # @return [Array<CTA::Route>] An array of {CTA::Route} objects that correspond to the predictions requested.
+      attr_reader :routes
+      # @return [Array<CTA::Train>] An array of {CTA::Train} objects that correspond to the predictions requested.
+      # @note Convenience method, equivalent to calling +routes.map(&:vehicles).flatten+
+      attr_reader :trains
+      # @return [Array<CTA::Train::Prediction>] An array of {CTA::Train::Prediction} objects that correspond to the predictions requested.
+      # @note Convenience method, equivalent to calling +routes.map(&:vehicles).flatten.map(&:predictions).flatten+
+      attr_reader :predictions
 
       def initialize(parsed_body, raw_body, debug)
         super(parsed_body, raw_body, debug)
@@ -37,7 +44,11 @@ module CTA
     end
 
     class FollowResponse < CTA::API::Response
-      attr_reader :train, :predictions
+      # @return [CTA::Train] The {CTA::Train} that corresponds to the train for which you've requested follow predictions.
+      attr_reader :train
+      # @return [Array<CTA::Train::Prediction>] An array of {CTA::Train::Prediction} objects that correspond to the predictions requested.
+      # @note Convenience method, equivalent to calling +train.map(&:predictions).flatten+
+      attr_reader :predictions
 
       def initialize(parsed_body, raw_body, debug)
         super(parsed_body, raw_body, debug)
@@ -53,7 +64,14 @@ module CTA
     end
 
     class PositionsResponse < CTA::API::Response
-      attr_reader :routes, :trains, :predictions
+      # @return [Array<CTA::Route>] An array of {CTA::Route} objects that correspond to the positions requested.
+      attr_reader :routes
+      # @return [Array<CTA::Train>] An array of {CTA::Train} objects that correspond to the positions requested.
+      # @note Convenience method, equivalent to calling +routes.compact.map(&:vehicles).flatten+
+      attr_reader :trains
+      # @return [Array<CTA::Train::Prediction>] An array of {CTA::Train::Prediction} objects that correspond to the positions requested.
+      # @note Convenience method, equivalent to calling +routes.compact.map(&:vehicles).flatten.map(&:predictions).flatten+
+      attr_reader :predictions
 
       def initialize(parsed_body, raw_body, debug)
         super(parsed_body, raw_body, debug)
