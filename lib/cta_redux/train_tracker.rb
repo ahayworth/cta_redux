@@ -1,5 +1,6 @@
 module CTA
   class TrainTracker
+    # Returns the connection object we use to talk to the TrainTracker API
     def self.connection
       raise "You need to set a developer key first. Try CTA::TrainTracker.key = 'foo'." unless @key
 
@@ -13,6 +14,15 @@ module CTA
       end
     end
 
+    # Returns the arrivals for a route, or station
+    # @param [Hash] options
+    # @option options [String, Integer] :route The route to query
+    # @option options [String, Integer] :station The station to query for arrivals
+    # @option options [String, Integer] :parent_station The parent station to query for arrivals.
+    # @option options [String, Integer] :limit Maximum number of results to return
+    # @return [CTA::TrainTracker::ArrivalsResponse]
+    # @example
+    #    CTA::TrainTracker.arrivals!(:route => :red)
     def self.arrivals!(options={})
       allowed_keys = [:route, :parent_station, :station, :limit]
       if options.keys.any? { |k| !allowed_keys.include?(k) }
@@ -48,10 +58,25 @@ module CTA
       connection.get('ttarrivals.aspx', params)
     end
 
+    # Returns the arrivals for a route, or station
+    # @param [Hash] options
+    # @option options [String, Integer] :route The route to query
+    # @option options [String, Integer] :station The station to query for arrivals
+    # @option options [String, Integer] :parent_station The parent station to query for arrivals.
+    # @option options [String, Integer] :limit Maximum number of results to return
+    # @return [CTA::TrainTracker::ArrivalsResponse]
+    # @example
+    #    CTA::TrainTracker.predicitons!(:route => :red)
     def self.predictions!(options={})
       self.arrivals!(options)
     end
 
+    # Returns a set of upcoming positions for a train/run
+    # @param [Hash] options
+    # @option options [String, Integer] :run The run number of the train to follow
+    # @return [CTA::TrainTracker::FollowResponse]
+    # @example
+    #    CTA::TrainTracker.follow!(:run => 914)
     def self.follow!(options={})
       raise "Must specify a run! Try follow(:run => 914)..." unless options.has_key?(:run)
 
@@ -64,6 +89,12 @@ module CTA
       connection.get('ttfollow.aspx', { :runnumber => runs.first })
     end
 
+    # Returns the position and next station of all trains in service.
+    # @param [Hash] options
+    # @option options [Array<String>, Array<Integer>, String, Integer] :routes Routes for which to return positions
+    # @return [CTA::TrainTracker::LocationsResponse]
+    # @example
+    #    CTA::TrainTracker.locations!(:route => [:red, :blue])
     def self.locations!(options={})
       unless options.has_key?(:routes)
         raise "Must specify at least one route! (Try locations(:routes => [:red, :blue]) )"
@@ -78,23 +109,39 @@ module CTA
       connection.get('ttpositions.aspx', { :rt => rt.join(',') })
     end
 
+    # Returns the position and next station of all trains in service.
+    # @param [Hash] options
+    # @option options [Array<String>, Array<Integer>, String, Integer] :routes Routes for which to return positions
+    # @return [CTA::TrainTracker::LocationsResponse]
+    # @example
+    #    CTA::TrainTracker.positions!(:route => [:red, :blue])
     def self.positions!(options={})
       self.locations!(options)
     end
 
+    # Returns the current API key used to talk to TrainTracker
+    # @return [String] the api key
     def self.key
       @key
     end
 
+    # Sets the API key used to talk to TrainTracker
+    # @note If using SimpleCache as a caching strategy, this resets the cache.
+    # @param key [String] The key to use
     def self.key=(key)
       @key = key
       @connection = nil
     end
 
+    # Returns the debug status of the API. When in debug mode, all API responses will additionally return
+    # the parsed XML tree, and the original XML for inspection
     def self.debug
       !!@debug
     end
 
+    # Sets the debug status of the API. When in debug mode, all API responses will additionally return
+    # the parsed XML tree, and the original XML for inspection
+    # @param debug [true, false]
     def self.debug=(debug)
       @debug = debug
       @connection = nil
