@@ -14,7 +14,7 @@ module CTA
         super(parsed_body, raw_body, debug)
         @vehicles = Array.wrap(parsed_body["bustime_response"]["vehicle"]).map do |v|
           bus = CTA::Bus.find_active_run(v["rt"], v["tmstmp"], (v["dly"] == "true")).first
-          bus.live!(v)
+          bus.live = CTA::Bus::Live.new(v)
 
           bus
         end
@@ -85,18 +85,18 @@ module CTA
       # @return [Array<CTA::Bus>] An array of {CTA::Bus} objects that correspond to the predictions requested.
       attr_reader :vehicles
       # @return [Array<CTA::Bus::Prediction>] An array of {CTA::Bus::Prediction} objects that correspond to the predictions requested.
-      #  This is equivalent to calling +vehicles.map(&:predictions).flatten+
+      #  This is equivalent to calling +vehicles.map { |b| b.live.predictions }.flatten+
       attr_reader :predictions
 
       def initialize(parsed_body, raw_body, debug)
         super(parsed_body, raw_body, debug)
         @vehicles = Array.wrap(parsed_body["bustime_response"]["prd"]).map do |p|
           bus = CTA::Bus.find_active_run(p["rt"], p["tmstmp"], (p["dly"] == "true")).first
-          bus.live!(p, p)
+          bus.live = CTA::Bus::Live.new(p, p)
 
           bus
         end
-        @predictions = @vehicles.map(&:predictions).flatten
+        @predictions = @vehicles.map { |b| b.live.predictions }.flatten
       end
     end
 

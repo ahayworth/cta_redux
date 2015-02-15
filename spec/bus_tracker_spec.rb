@@ -45,8 +45,8 @@ RSpec.describe CTA::BusTracker do
 
       expect(result.vehicles.first.route).to be_instance_of(CTA::Route)
       expect(result.vehicles.first.route.route_id).to eq("22")
-      expect(result.vehicles.first.vehicle_id).to eq(4394)
-      expect(result.vehicles.first.pattern_distance).to eq(115)
+      expect(result.vehicles.first.live.vehicle_id).to eq(4394)
+      expect(result.vehicles.first.live.pattern_distance).to eq(115)
     end
 
     it "returns information about one vehicle" do
@@ -56,8 +56,8 @@ RSpec.describe CTA::BusTracker do
       expect(result.vehicles.size).to eq(1)
       expect(result.vehicles.first.route).to be_instance_of(CTA::Route)
       expect(result.vehicles.first.route.route_id).to eq("22")
-      expect(result.vehicles.first.vehicle_id).to eq(4394)
-      expect(result.vehicles.first.heading).to eq(359)
+      expect(result.vehicles.first.live.vehicle_id).to eq(4394)
+      expect(result.vehicles.first.live.heading).to eq(359)
     end
   end
 

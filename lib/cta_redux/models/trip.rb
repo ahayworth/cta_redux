@@ -1,4 +1,8 @@
 module CTA
+  # A {http://sequel.jeremyevans.net/rdoc/classes/Sequel/Model.html Sequel::Model}, inherited from {CTA::Trip}
+  # This corresponds to {https://developers.google.com/transit/gtfs/reference?csw=1#trips_txt___Field_Definitions trips.txt} in the
+  # GTFS feed, though the CTA does not fully implement the standard.
+  # @note Current columns: [:route_id, :service_id, :trip_id, :direction_id, :block_id, :shape_id, :direction, :wheelchair_accessible, :schd_trip_id]
   class Trip < Sequel::Model
     L_ROUTES = ["Brn", "G", "Pink", "P", "Org", "Red", "Blue", "Y"]
     BUS_ROUTES = CTA::Trip.exclude(:route_id => L_ROUTES).select_map(:route_id).uniq
@@ -21,22 +25,41 @@ module CTA
 
     set_primary_key :trip_id
 
+    # @!method calendar
+    #   @return [CTA::Calendar] The {CTA::Calendar} entry for this {CTA::Trip}. Can be used to determine
+    #     if a given {CTA::Trip} is valid for a given date/time
     many_to_one :calendar, :key => :service_id
+
+    # @!method stop_times
+    #   @return [Array<CTA::StopTime>] The {CTA::StopTimes} that are serviced on this {CTA::Trip}
     one_to_many :stop_times, :key => :trip_id
 
+    # @!method route
+    #   @return [CTA::Route] The {CTA::Route} associated with this {CTA::Trip}
     many_to_one :route, :key => :route_id
 
+    # @!method stops
+    #   @return [Array<CTA::Stop>] All {CTA::Stop}s serviced on this {CTA::Trip}
     many_to_many :stops, :left_key => :trip_id, :right_key => :stop_id, :join_table => :stop_times
 
-    # DRAGONS
-    # The CTA doesn't exactly honor the GTFS spec (nor do they return GTFS trip_ids
-    # in the API, grr). They specify multiple entries of # (schd_trip_id, block_id, service_id)
-    # so the only way to know which trip_id to pick is to join against stop_times and
-    # calendar dates, and # find out which run (according to stop_times) is happening *right now*.
-    # Of course, this will break if the train is delayed more the total time
-    # it takes to complete the run... so a delayed train will start to disappear
-    # as it progresses through the run. We allow for a 'fuzz factor' to account
-    # for this...
+    # Find a {CTA::Trip} that should be happening, given a timestamp and a route or run.
+    # The CTA does not return GTFS trip_id information in either the BusTracker or TrainTracker API, so
+    # it is actually somewhat difficult to associate an API response to a {CTA::Trip}. However, we
+    # know what *should* be happening at any given time. This method attempts a fuzzy find - internally,
+    # we often first try to find the exact Trip that should be happening according to the schedule, and
+    # then failing that we assume that the CTA is running late and look for trips that should have
+    # ended within the past 90 minutes. This almost always finds something.
+    # That said, however, it means we may sometimes find a {CTA::Trip} that's incorrect. In practical usage
+    # however, that doesn't matter too much - most Trips for a run service the same stops.
+    # However, to be safe, your program may wish to compare certain other bits of the API responses to ensure
+    # we found something valid. For example, almost all Brown line trains service the same stops, so
+    # finding the wrong Trip doesn't matter too much. However, a handful of Brown line runs throughout the dat
+    # actually change to Orange line trains at Midway - so, you may wish to verify that the destination of the
+    # Trip matches the reported destination of the API.
+    # Suggestions on how to approach this problem are most welcome (as are patches for better behavior).
+    # @param [String] run The run or route to search for
+    # @param [DateTime, String] timestamp The timestamp to search against.
+    # @param [true,false] fuzz Whether or not to do an exact schedule search or a fuzzy search.
     def self.find_active_run(run, timestamp, fuzz = false)
       if self.to_s == "CTA::Train" # This is admittedly hacky.
         join_str = "WHERE t.schd_trip_id = 'R#{run}'"

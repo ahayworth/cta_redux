@@ -4,10 +4,10 @@ module CTA
       # @return [Array<CTA::Route>] An array of {CTA::Route} objects that correspond to the predictions requested.
       attr_reader :routes
       # @return [Array<CTA::Train>] An array of {CTA::Train} objects that correspond to the predictions requested.
-      # @note Convenience method, equivalent to calling +routes.map(&:vehicles).flatten+
+      # @note Convenience method, equivalent to calling +routes.map { |r| r.vehicles }.flatten+
       attr_reader :trains
       # @return [Array<CTA::Train::Prediction>] An array of {CTA::Train::Prediction} objects that correspond to the predictions requested.
-      # @note Convenience method, equivalent to calling +routes.map(&:vehicles).flatten.map { |t| t.live.predictions }.flatten+
+      # @note Convenience method, equivalent to calling +trains.map { |t| t.live.predictions }.flatten+
       attr_reader :predictions
 
       def initialize(parsed_body, raw_body, debug)
@@ -33,12 +33,12 @@ module CTA
           end
 
           route = CTA::Route.where(:route_id => rt.capitalize).first
-          route.live!(trains)
+          route.live = CTA::Route::Live.new(trains)
 
           route
         end
 
-        @trains = @routes.map(&:vehicles).flatten
+        @trains = @routes.map { |r| r.live.vehicles }.flatten
         @predictions = @trains.map { |t| t.live.predictions }.flatten
       end
     end
@@ -67,10 +67,10 @@ module CTA
       # @return [Array<CTA::Route>] An array of {CTA::Route} objects that correspond to the positions requested.
       attr_reader :routes
       # @return [Array<CTA::Train>] An array of {CTA::Train} objects that correspond to the positions requested.
-      # @note Convenience method, equivalent to calling +routes.compact.map(&:vehicles).flatten+
+      # @note Convenience method, equivalent to calling +routes.compact.map { |r| r.live.vehicles }.flatten+
       attr_reader :trains
       # @return [Array<CTA::Train::Prediction>] An array of {CTA::Train::Prediction} objects that correspond to the positions requested.
-      # @note Convenience method, equivalent to calling +routes.compact.map(&:vehicles).flatten.map { |t| t.live.predictions }.flatten+
+      # @note Convenience method, equivalent to calling +trains.map { |t| t.live.predictions }.flatten+
       attr_reader :predictions
 
       def initialize(parsed_body, raw_body, debug)
@@ -95,11 +95,11 @@ module CTA
             t
           end
 
-          rt.live!(trains)
+          rt.live = CTA::Route::Live.new(trains)
           rt
         end.compact
 
-        @trains = @routes.compact.map(&:vehicles).flatten
+        @trains = @routes.compact.map { |r| r.live.vehicles }.flatten
         @predictions = @trains.compact.map { |t| t.live.predictions }.flatten
       end
     end
