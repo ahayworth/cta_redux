@@ -10,6 +10,5 @@ if !File.exists?(db_filename)
   dbf.close
   File.unlink("#{db_filename}.gz")
 end
-puts `ls -lh #{db_filename}`
 
 create_makefile "inflate_database/inflate_database"
