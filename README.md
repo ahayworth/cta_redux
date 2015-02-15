@@ -1,5 +1,8 @@
 # cta_redux
 
+[![Build Status](https://travis-ci.org/ahayworth/cta_redux.svg?branch=master)](https://travis-ci.org/ahayworth/cta_redux)
+
+
 # Reloading CTA GTFS data
 
 Note that this will take a long time - there are several million stop_time records.
