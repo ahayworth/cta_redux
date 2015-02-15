@@ -43,6 +43,9 @@ module CTA
 end
 
 class Array
+  # Encloses the object with an array, if it is not already
+  # @param object [Object] the object to enclose
+  # @return [Array<Object>] the object, enclosed in an array
   def self.wrap(object)
     if object.nil?
       []
