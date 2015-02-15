@@ -2,18 +2,39 @@
 
 [![Build Status](https://travis-ci.org/ahayworth/cta_redux.svg?branch=master)](https://travis-ci.org/ahayworth/cta_redux)
 
+The CTA (http://www.transitchicago.com) provides a wealth of information for developers, but it's hard to access, inconsistent, and there are no official clients. CTA Redux is an easy to use, comprehensive client for that data.
 
-# Reloading CTA GTFS data
+This gem combines GTFS data with live API responses to create a consistent view of CTA vehicles and status.
 
-Note that this will take a long time - there are several million stop_time records.
+Examples:
 
-1. cd data && curl 'http://www.transitchicago.com/downloads/sch_data/<latest file>' > gtfs.zip && unzip gtfs.zip
+```ruby
+require 'cta_redux'
 
-2. cd ../script && for i in `ls ../data/*.txt`; do echo $i; ./gtfs_to_sqlite.rb $i ../data/cta-gtfs.db; done
+CTA::TrainTracker.key = 'foo'
+CTA::BusTracker.key   = 'bar'
 
-3. rm ../data/*{txt,htm,zip}
+# Pick a random stop on the brown line
+stop = CTA::Route[:brown].stops.all.sample
 
-4. cd ../data && gzip cta-gtfs.db
+routes = []
+stop.predictions!.predictions.sort_by(&:seconds).each do |prd|
+  routes << prd.route.route_id
+  puts "A #{prd.direction} #{prd.route.route_long_name} " +
+    "train will be arriving at #{stop.stop_name} in #{prd.minutes} minutes."
+end
 
-5. Commit / push / create release and gem
+# Pick a random stop on the 8-Halsted route
+stop = CTA::Route["8"].stops.all.sample
+stop.predictions!.predictions.sort_by(&:seconds).each do |prd|
+  routes << prd.route.route_id
+  puts "A(n) #{prd.route.route_id}-#{prd.route.route_long_name} will be " +
+    "arriving at #{stop.stop_name} in #{prd.minutes} minutes."
+end
 
+CTA::CustomerAlerts.alerts!(:routes => routes.uniq).alerts.each do |alert|
+  puts "Alert: #{alert.short_description}"
+end
+```
+
+More information is available at (http://www.rubydoc.info/gems/cta_redux/0.2.0)
