@@ -1,5 +1,7 @@
 module CTA
   class Train < CTA::Trip
+    attr_accessor :live
+
     L_ROUTES = {
       "red"   => { :name => "Red",
                    :directions => { "1" => "Howard-bound", "5" => "95th/Dan Ryan-bound" }
@@ -32,16 +34,18 @@ module CTA
       CTA::TrainTracker.follow!(:run => self.schd_trip_id.gsub("R", ""))
     end
 
-    def live!(position, predictions)
-      class << self
-        attr_reader :lat, :lon, :heading, :predictions
+    class Live
+      attr_reader :lat
+      attr_reader :lon
+      attr_reader :heading
+      attr_reader :predictions
+
+      def initialize(position, predictions)
+        @lat = position["lat"].to_f
+        @lon = position["lon"].to_f
+        @heading = position["heading"].to_i
+        @predictions = Array.wrap(predictions).map { |p| Prediction.new(p) }
       end
-
-      @lat = position["lat"].to_f
-      @lon = position["lon"].to_f
-      @heading = position["heading"].to_i
-
-      @predictions = Array.wrap(predictions).map { |p| Prediction.new(p) }
     end
 
     class Prediction

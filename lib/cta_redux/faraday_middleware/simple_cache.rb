@@ -1,3 +1,5 @@
+# A simplistic in-process cache.
+# Used internally by cta_redux and caches responses for 60 seconds.
 class SimpleCache
   def initialize(cache)
     @cache = cache

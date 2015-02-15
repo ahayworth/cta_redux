@@ -7,7 +7,7 @@ module CTA
       # @note Convenience method, equivalent to calling +routes.map(&:vehicles).flatten+
       attr_reader :trains
       # @return [Array<CTA::Train::Prediction>] An array of {CTA::Train::Prediction} objects that correspond to the predictions requested.
-      # @note Convenience method, equivalent to calling +routes.map(&:vehicles).flatten.map(&:predictions).flatten+
+      # @note Convenience method, equivalent to calling +routes.map(&:vehicles).flatten.map { |t| t.live.predictions }.flatten+
       attr_reader :predictions
 
       def initialize(parsed_body, raw_body, debug)
@@ -27,7 +27,7 @@ module CTA
               train = CTA::Train.find_active_run(t["rn"], self.timestamp, true).first
             end
             position = t.select { |k,v| ["lat", "lon", "heading"].include?(k) }
-            train.live!(position, t)
+            train.live = CTA::Train::Live.new(position, t)
 
             train
           end
@@ -39,7 +39,7 @@ module CTA
         end
 
         @trains = @routes.map(&:vehicles).flatten
-        @predictions = @trains.map(&:predictions).flatten
+        @predictions = @trains.map { |t| t.live.predictions }.flatten
       end
     end
 
@@ -47,7 +47,7 @@ module CTA
       # @return [CTA::Train] The {CTA::Train} that corresponds to the train for which you've requested follow predictions.
       attr_reader :train
       # @return [Array<CTA::Train::Prediction>] An array of {CTA::Train::Prediction} objects that correspond to the predictions requested.
-      # @note Convenience method, equivalent to calling +train.map(&:predictions).flatten+
+      # @note Convenience method, equivalent to calling +train.map { |t| t.live.predictions }.flatten+
       attr_reader :predictions
 
       def initialize(parsed_body, raw_body, debug)
@@ -58,8 +58,8 @@ module CTA
         if !@train
           @train = CTA::Train.find_active_run(train_info["rn"], self.timestamp, true).first
         end
-        @train.live!(parsed_body["ctatt"]["position"], parsed_body["ctatt"]["eta"])
-        @predictions = @train.predictions
+        @train.live = CTA::Train::Live.new(parsed_body["ctatt"]["position"], parsed_body["ctatt"]["eta"])
+        @predictions = @train.live.predictions
       end
     end
 
@@ -70,7 +70,7 @@ module CTA
       # @note Convenience method, equivalent to calling +routes.compact.map(&:vehicles).flatten+
       attr_reader :trains
       # @return [Array<CTA::Train::Prediction>] An array of {CTA::Train::Prediction} objects that correspond to the positions requested.
-      # @note Convenience method, equivalent to calling +routes.compact.map(&:vehicles).flatten.map(&:predictions).flatten+
+      # @note Convenience method, equivalent to calling +routes.compact.map(&:vehicles).flatten.map { |t| t.live.predictions }.flatten+
       attr_reader :predictions
 
       def initialize(parsed_body, raw_body, debug)
@@ -90,7 +90,7 @@ module CTA
             end
 
             position = train.select { |k,v| ["lat", "lon", "heading"].include?(k) }
-            t.live!(position, train)
+            t.live = CTA::Train::Live.new(position, train)
 
             t
           end
@@ -100,7 +100,7 @@ module CTA
         end.compact
 
         @trains = @routes.compact.map(&:vehicles).flatten
-        @predictions = @trains.compact.map(&:predictions).flatten
+        @predictions = @trains.compact.map { |t| t.live.predictions }.flatten
       end
     end
   end

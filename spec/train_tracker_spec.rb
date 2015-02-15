@@ -43,7 +43,7 @@ RSpec.describe CTA::TrainTracker do
       expect(response.train).to be_instance_of(CTA::Train)
       expect(response.train.route_id).to eq("Blue")
       expect(response.train.route.route_id).to eq("Blue")
-      expect(response.train.predictions).to eq(response.predictions)
+      expect(response.train.live.predictions).to eq(response.predictions)
       expect(response.predictions.first.direction).to eq("O'Hare-bound")
       expect(response.predictions.first.destination.stop_name).to eq("O'Hare")
       expect(response.predictions.first.approaching).to eq(false)

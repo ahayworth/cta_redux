@@ -1,14 +1,59 @@
 module CTA
+  # A {http://sequel.jeremyevans.net/rdoc/classes/Sequel/Model.html Sequel::Model}, inherited from {CTA::Trip}
+  # This corresponds to {https://developers.google.com/transit/gtfs/reference?csw=1#trips_txt___Field_Definitions trips.txt} in the
+  # GTFS feed, though the CTA does not fully implement the standard.
+  # @note Current columns: [:route_id, :service_id, :trip_id, :direction_id, :block_id, :shape_id, :direction, :wheelchair_accessible, :schd_trip_id]
   class Bus < CTA::Trip
+    # Returns predictions for this {CTA::Bus}. Accepts all options for {CTA::BusTracker.predictions!}, and will merge in
+    # it's own vehicle_id or route_id if present.
+    # @params [Hash] options
+    # @option options [Array<String>, Array<Integer>, String, Integer] :vehicles Vehicles to predict. Not available with :routes
+    # @option options [Array<String>, Array<Integer>, String, Integer] :routes Routes to predict. Not available with :vehicles
+    # @option options [Array<String>, Array<Integer>, String, Integer] :stops Stops along a route to predict. Required with :routes
+    # @option options [String, Integer] :limit Maximum number of predictions to return.
+    # @return [CTA::BusTracker::PredictionsResponse]
+    # @example
+    #   predictions!(:stops => 15895)
+    #   predictions!(:limit => 1)
     def predictions!(options = {})
       opts = (self.vehicle_id ? { :vehicles => self.vehicle_id } : { :routes => self.route_id })
-      puts opts
       CTA::BusTracker.predictions!(options.merge(opts))
     end
 
+    # Used internally by cta_redux to augment a Sequel::Model with API data.
     def live!(position, predictions = [])
       class << self
-        attr_reader :lat, :lon, :vehicle_id, :heading, :pattern_id, :pattern_distance, :route, :delayed, :speed, :predictions
+
+        # @!attribute [r] lat
+        # @return [Float] The latitude of the bus. Only defined when augmented with an API response.
+        attr_reader :lat
+        # @!attribute [r] lon
+        # @return [Float] The longitude of the bus. Only defined when augmented with an API response.
+        attr_reader :lon
+        # @!attribute [r] vehicle_id
+        # @return [Integer] The vehicle_id of the bus. Only defined when augmented with an API response.
+        attr_reader :vehicle_id
+        # @!attribute [r] heading
+        # @return [Integer] The heading of the bus. Only defined when augmented with an API response.
+        attr_reader :heading
+        # @!attribute [r] pattern_id
+        # @return [Integer] The pattern the bus is following. Only defined when augmented with an API response.
+        attr_reader :pattern_id
+        # @!attribute [r] pattern_distance
+        # @return [Integer] The distnace into the pattern the bus is following. Only defined when augmented with an API response.
+        attr_reader :pattern_distance
+        # @!attribute [r] route
+        # @return [CTA::Route] The {CTA::Route} the bus is operation. Only defined when augmented with an API response.
+        attr_reader :route
+        # @!attribute [r] delayed
+        # @return [true,false] True if the bus is considered to be delayed. Only defined when augmented with an API response.
+        attr_reader :delayed
+        # @!attribute [r] speed
+        # @return [Integer] Last reported speed of the bus, in mph. Only defined when augmented with an API response.
+        attr_reader :speed
+        # @!attribute [r] speed
+        # @return [Array<Prediction>] Predictions for this bus. Only defined when augmented with an API response.
+        attr_reader :predictions
       end
 
       @lat = position["lat"].to_f
