@@ -12,5 +12,28 @@ module CTA
     # @!method stop
     #   @return [CTA::Stop] The {CTA::Stop} associated with this {CTA::StopTime}
     many_to_one :stop, :key => :stop_id
+
+    # @!method trip_id
+    #  @return [Integer]
+    # @!method arrival_time
+    #  @return [String]
+    #  @note This is a string because ruby has no concept of storing a time without a date
+    # @!method departure_time
+    #  @return [String]
+    #  @note This is a string because ruby has no concept of storing a time without a date
+    # @!method stop_id
+    #  @return [Integer]
+    # @!method stop_sequence
+    #  @return [Integer]
+    # @!method stop_headsign
+    #  @return [String]
+    # @!method pickup_type
+    #  @return [Integer]
+    # @!method shape_dist_traveled
+    #  @return [Integer]
+    alias_method :sequence, :stop_sequence
+    alias_method :headsign, :stop_headsign
+    alias_method :distance, :shape_dist_traveled
+    alias_method :distance_traveled, :shape_dist_traveled
   end
 end

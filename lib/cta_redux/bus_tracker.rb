@@ -84,7 +84,7 @@ module CTA
     end
 
     # Returns the stops along a route and direction
-    # @params [Hash] options
+    # @param [Hash] options
     # @option options [String, Integer] :route The route to query for stops
     # @option options [String, Integer] :direction The direction to query for stops
     # @return [CTA::BusTracker::StopsResponse]
@@ -117,7 +117,7 @@ module CTA
     end
 
     # Returns available patterns for a route
-    # @params [Hash] options
+    # @param [Hash] options
     # @option options [String, Integer] :route The route to query for patterns. Not available with :patterns
     # @option options [Array<String>, Array<Integer>, String, Integer] :patterns Patterns to return. Not available with :route
     # @return [CTA::BusTracker::PatternsResponse]
@@ -147,7 +147,7 @@ module CTA
     end
 
     # Returns a set of arrival/departure predictions.
-    # @params [Hash] options
+    # @param [Hash] options
     # @option options [Array<String>, Array<Integer>, String, Integer] :vehicles Vehicles to predict. Not available with :routes
     # @option options [Array<String>, Array<Integer>, String, Integer] :routes Routes to predict. Not available with :vehicles
     # @option options [Array<String>, Array<Integer>, String, Integer] :stops Stops along a route to predict. Required with :routes
@@ -179,7 +179,7 @@ module CTA
 
     # Returns active bulletins.
     # @note Consider using {CTA::CustomerAlerts.alerts!} or {CTA::CustomerAlerts.status!}, as those are not rate-limited.
-    # @params [Hash] options
+    # @param [Hash] options
     # @option options [Array<String>, Array<Integer>, String, Integer] :routes Routes for which to retrieve bulletins.
     #   When combined with :direction or :stops, may only specify one :route.
     # @option options [String, Integer] :direction Direction of a route for which to retrieve bulletins.
@@ -277,7 +277,7 @@ module CTA
     # Sets the underlying cache object caching responses. Any object can be used that responds to #read, #write, and #fetch
     # @note Setting the cache object resets the connection. If you're using the default SimpleCache strategy (built-in 60
     #  second caching), then it will also *clear* the cache.
-    # @param [Object]
+    # @param [Object] cache
     def self.cache=(cache)
       @cache = cache
       @connection = nil

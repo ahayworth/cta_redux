@@ -8,9 +8,31 @@ module CTA
     # @note a {CTA::Bus} will only contain live data when augmented with an {API::Response}
     attr_accessor :live
 
+    # @!method route_id
+    #  @return [String]
+    # @!method service_id
+    #  @return [Integer]
+    # @!method trip_id
+    #  @return [Integer]
+    # @!method direction_id
+    #  @return [Integer]
+    # @!method block_id
+    #  @return [Integer]
+    # @!method shape_id
+    #  @return [Integer]
+    # @!method direction
+    #  @return [String]
+    # @!method wheelchair_accessible
+    #  @return [true,false]
+    # @!method schd_trip_id
+    #  @return [String]
+    alias_method :id, :route_id
+    alias_method :scheduled_trip_id, :schd_trip_id
+    alias_method :run, :schd_trip_id
+
     # Returns predictions for this {CTA::Bus}. Accepts all options for {CTA::BusTracker.predictions!}, and will merge in
     # it's own vehicle_id or route_id if present.
-    # @params [Hash] options
+    # @param [Hash] options
     # @option options [Array<String>, Array<Integer>, String, Integer] :vehicles Vehicles to predict. Not available with :routes
     # @option options [Array<String>, Array<Integer>, String, Integer] :routes Routes to predict. Not available with :vehicles
     # @option options [Array<String>, Array<Integer>, String, Integer] :stops Stops along a route to predict. Required with :routes
@@ -62,8 +84,28 @@ module CTA
     end
 
     class Prediction
-      attr_reader :type, :stop, :distance, :route, :direction, :destination,
-                  :prediction_generated_at, :arrival_time, :delayed, :minutes, :seconds
+      # @return [String] The type of prediction, either *A*rrival or *D*eparture
+      attr_reader :type
+      # @return [CTA::Stop] The {CTA::Stop} for this prediction
+      attr_reader :stop
+      # @return [Integer] The distance remaining until the bus arrives
+      attr_reader :distance
+      # @return [CTA::Route] The {CTA::Route} associated with this prediction
+      attr_reader :route
+      # @return [Direction] The {Direction} associated with this prediction
+      attr_reader :direction
+      # @return [String] The headsign of the bus (final destination, *not* expressed as {CTA::Stop})
+      attr_reader :headsign
+      # @return [DateTime] The time this {Prediction} was generated on the BusTime servers
+      attr_reader :prediction_generated_at
+      # @return [DateTime] The time this bus is predicted to arrive or depart
+      attr_reader :arrival_time
+      # @return [true, false] True if this bus is considered to be delayed
+      attr_reader :delayed
+      # @return [Integer] The number of minutes until this bus arrives or departs
+      attr_reader :minutes
+      # @return [Integer] The number of seconds until this bus arrives or departs
+      attr_reader :seconds
 
       def initialize(data)
         @type = data["typ"]
@@ -71,7 +113,7 @@ module CTA
         @distance = data["dstp"].to_i
         @route = CTA::Route.where(:route_id => data["rt"]).first
         @direction = CTA::BusTracker::Direction.new(data["rtdir"])
-        @destination = data["des"]
+        @headsign = data["des"]
         @prediction_generated_at = DateTime.parse(data["tmstmp"])
         @arrival_time = DateTime.parse(data["prdtm"])
         @seconds = @arrival_time.to_time - @prediction_generated_at.to_time

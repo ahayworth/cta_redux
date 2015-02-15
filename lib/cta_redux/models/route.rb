@@ -14,6 +14,29 @@ module CTA
     #   @return [Array<CTA::Trip>] All trips associated with this route
     one_to_many :trips, :key => :route_id
 
+    # @!method route_id
+    #  @return [String]
+    # @!method route_short_name
+    #  @return [String]
+    # @!method route_long_name
+    #  @return [String]
+    # @!method route_type
+    #  @return [Integer]
+    # @!method route_url
+    #  @return [String]
+    # @!method route_color
+    #  @return [String]
+    # @!method route_text_color
+    #  @return [String]
+    alias_method :id, :route_id
+    alias_method :name, :route_short_name
+    alias_method :short_name, :route_short_name
+    alias_method :long_name, :route_long_name
+    alias_method :type, :route_type
+    alias_method :url, :route_url
+    alias_method :color, :route_color
+    alias_method :text_color, :route_text_color
+
     # Overrides the default "find by primary key" method in {http://sequel.jeremyevans.net/rdoc/classes/Sequel/Model.html Sequel::Model}.
     # Allows you to specify a human-friendly {CTA::Train} name. If you supply something that doesn't look like an "L" route, it's passed
     # to the default [] method on Sequel::Model.

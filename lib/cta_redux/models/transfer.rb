@@ -12,5 +12,12 @@ module CTA
     #  The stop to transfer *to*
     #  @return [CTA::Stop]
     many_to_one :to_stop, :class => 'CTA::Stop', :key => :to_stop_id
+
+    # @!method from_stop_id
+    #  @return [Integer]
+    # @!method to_stop_id
+    #  @return [Integer]
+    # @!method transfer_type
+    #  @return [Integer]
   end
 end

@@ -124,7 +124,7 @@ module CTA
     # Sets the underlying cache object caching responses. Any object can be used that responds to #read, #write, and #fetch
     # @note Setting the cache object resets the connection. If you're using the default SimpleCache strategy (built-in 60
     #  second caching), then it will also *clear* the cache.
-    # @param [Object]
+    # @param [Object] cache
     def self.cache=(cache)
       @cache = cache
       @connection = nil

@@ -1,5 +1,5 @@
 module CTA
-  # A {http://sequel.jeremyevans.net/rdoc/classes/Sequel/Model.html Sequel::Model}, inherited from {CTA::Trip}
+  # A {http://sequel.jeremyevans.net/rdoc/classes/Sequel/Model.html Sequel::Model}.
   # This corresponds to {https://developers.google.com/transit/gtfs/reference?csw=1#trips_txt___Field_Definitions trips.txt} in the
   # GTFS feed, though the CTA does not fully implement the standard.
   # @note Current columns: [:route_id, :service_id, :trip_id, :direction_id, :block_id, :shape_id, :direction, :wheelchair_accessible, :schd_trip_id]
@@ -41,6 +41,28 @@ module CTA
     # @!method stops
     #   @return [Array<CTA::Stop>] All {CTA::Stop}s serviced on this {CTA::Trip}
     many_to_many :stops, :left_key => :trip_id, :right_key => :stop_id, :join_table => :stop_times
+
+    # @!method route_id
+    #  @return [String]
+    # @!method service_id
+    #  @return [Integer]
+    # @!method trip_id
+    #  @return [Integer]
+    # @!method direction_id
+    #  @return [Integer]
+    # @!method block_id
+    #  @return [Integer]
+    # @!method shape_id
+    #  @return [Integer]
+    # @!method direction
+    #  @return [String]
+    # @!method wheelchair_accessible
+    #  @return [true,false]
+    # @!method schd_trip_id
+    #  @return [String]
+    alias_method :id, :route_id
+    alias_method :scheduled_trip_id, :schd_trip_id
+    alias_method :run, :schd_trip_id
 
     # Find a {CTA::Trip} that should be happening, given a timestamp and a route or run.
     # The CTA does not return GTFS trip_id information in either the BusTracker or TrainTracker API, so

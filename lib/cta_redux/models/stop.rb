@@ -19,13 +19,13 @@ module CTA
 
     # @!method transfers_from
     #   GTFS defines a {CTA::Transfer} object, that describes where customers may transfer lines.
-    #   This method defines which {CTA::Stops} customers may transfer *from* at this {CTA::Stop}.
+    #   This method defines which {CTA::Stop} customers may transfer *from* at this {CTA::Stop}.
     #   By then introspecting on {CTA::Route}s attached to these stops, you can find the transfer points between routes at this stop.
     #   @return [Array<CTA::Stop>] All {CTA::Stop}s from which a customer may transfer at this stop
     one_to_many :transfers_from, :class => 'CTA::Transfer', :key => :from_stop_id
     # @!method transfers_to
     #   GTFS defines a {CTA::Transfer} object, that describes where customers may transfer lines.
-    #   This method defines which {CTA::Stops} customers may transfer *to* at {CTA::Stop}.
+    #   This method defines which {CTA::Stop} customers may transfer *to* at {CTA::Stop}.
     #   By then introspecting on {CTA::Route}s attached to these stops, you can find the transfer points between routes at this stop.
     #   @return [Array<CTA::Stop>] All {CTA::Stop}s to which a customer may transfer at this stop
     one_to_many :transfers_to, :class => 'CTA::Transfer', :key => :to_stop_id
@@ -34,6 +34,31 @@ module CTA
     #   A {CTA::Route} may be related to many trips, through {CTA::StopTime} objects
     #   @return [Array<CTA::Trip>] The trips that will at some point use this {CTA::Stop}
     many_to_many :trips, :left_key => :stop_id, :right_key => :trip_id, :join_table => :stop_times
+
+    # @!method stop_id
+    #  @return [Integer]
+    # @!method stop_code
+    #  @return [Integer]
+    # @!method stop_name
+    #  @return [String]
+    # @!method stop_desc
+    #  @return [String]
+    # @!method stop_lat
+    #  @return [Float]
+    # @!method stop_lon
+    #  @return [Float]
+    # @!method location_type
+    #  @return [Integer]
+    # @!method parent_station
+    #  @return [Integer]
+    # @!method wheelchair_boarding
+    #  @return [true, false]
+    alias_method :id, :stop_id
+    alias_method :code, :stop_code
+    alias_method :name, :stop_name
+    alias_method :description, :stop_desc
+    alias_method :lat, :stop_lat
+    alias_method :lon, :stop_lon
 
     # Returns a {http://sequel.jeremyevans.net/rdoc/classes/Sequel/Dataset.html Sequel::Dataset} that corresponds to all routes
     # associated with this {CTA::Stop} at some point

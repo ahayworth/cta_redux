@@ -1,4 +1,8 @@
 module CTA
+  # A {http://sequel.jeremyevans.net/rdoc/classes/Sequel/Model.html Sequel::Model}, inherited from {CTA::Trip}
+  # This corresponds to {https://developers.google.com/transit/gtfs/reference?csw=1#trips_txt___Field_Definitions trips.txt} in the
+  # GTFS feed, though the CTA does not fully implement the standard.
+  # @note Current columns: [:route_id, :service_id, :trip_id, :direction_id, :block_id, :shape_id, :direction, :wheelchair_accessible, :schd_trip_id]
   class Train < CTA::Trip
     # @return [Live] Returns the {Live} data associated with this {CTA::Train} object, if available.
     # @note a {CTA::Train} will only contain live data when augmented with an {API::Response}
@@ -31,6 +35,28 @@ module CTA
       },
     }
     FRIENDLY_L_ROUTES = Hash[L_ROUTES.values.map { |r| r[:name].downcase.to_sym }.zip(L_ROUTES.keys)]
+
+    # @!method route_id
+    #  @return [String]
+    # @!method service_id
+    #  @return [Integer]
+    # @!method trip_id
+    #  @return [Integer]
+    # @!method direction_id
+    #  @return [Integer]
+    # @!method block_id
+    #  @return [Integer]
+    # @!method shape_id
+    #  @return [Integer]
+    # @!method direction
+    #  @return [String]
+    # @!method wheelchair_accessible
+    #  @return [true,false]
+    # @!method schd_trip_id
+    #  @return [String]
+    alias_method :id, :route_id
+    alias_method :scheduled_trip_id, :schd_trip_id
+    alias_method :run, :schd_trip_id
 
     # Follows a train, using the TrainTracker follow API
     # @return [CTA::TrainTracker::FollowResponse] A {CTA::TrainTracker::FollowResponse} with predictions for this train
