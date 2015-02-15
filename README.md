@@ -37,4 +37,4 @@ CTA::CustomerAlerts.alerts!(:routes => routes.uniq).alerts.each do |alert|
 end
 ```
 
-More information is available at (http://www.rubydoc.info/gems/cta_redux/0.2.0)
+More information is available at (http://www.rubydoc.info/github/ahayworth/cta_redux)
