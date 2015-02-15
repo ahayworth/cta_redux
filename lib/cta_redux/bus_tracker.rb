@@ -1,5 +1,7 @@
 module CTA
   class BusTracker
+    @cache_responses = true
+
     # Returns the connection object we use to talk to the BusTracker API
     def self.connection
       raise "You need to set a developer key first. Try CTA::BusTracker.key = 'foo'." unless @key
@@ -9,7 +11,9 @@ module CTA
         faraday.params = { :key => @key }
 
         faraday.use CTA::BusTracker::Parser, !!@debug
-        faraday.response :caching, SimpleCache.new(Hash.new)
+        if @cache_responses
+          faraday.response :caching, (@cache || SimpleCache.new(Hash.new))
+        end
         faraday.adapter Faraday.default_adapter
       end
     end
@@ -243,6 +247,39 @@ module CTA
     # @param debug [true, false]
     def self.debug=(debug)
       @debug = debug
+      @connection = nil
+    end
+
+    # Returns whether or not cta_redux is caching responses
+    # @return [true, false]
+    def self.cache_responses
+      @cache_responses
+    end
+
+    # Sets whether or not cta_redux is caching responses
+    # @param [true, false] should_cache
+    def self.cache_responses=(should_cache)
+      @cache_responses = should_cache
+      @connection = nil
+    end
+
+    # Returns the underlying cache object caching responses (if we're actually caching responses)
+    # @return [Object]
+    def self.cache
+      if self.cache_responses
+        # This is ugly
+        @cache || self.connection.builder.handlers.find { |x| x == FaradayMiddleware::Caching }.instance_variable_get(:@args).first
+      else
+        nil
+      end
+    end
+
+    # Sets the underlying cache object caching responses. Any object can be used that responds to #read, #write, and #fetch
+    # @note Setting the cache object resets the connection. If you're using the default SimpleCache strategy (built-in 60
+    #  second caching), then it will also *clear* the cache.
+    # @param [Object]
+    def self.cache=(cache)
+      @cache = cache
       @connection = nil
     end
   end
