@@ -4,11 +4,9 @@ require "sqlite3"
 require "faraday"
 require "faraday_middleware"
 require "multi_xml"
-require "zlib"
 
 module CTA
   base_path = File.expand_path("..", __FILE__)
-  data_dir = File.join(File.expand_path("../..", __FILE__), 'data')
 
   require "#{base_path}/cta_redux/faraday_middleware/bus_tracker_parser.rb"
   require "#{base_path}/cta_redux/faraday_middleware/train_tracker_parser.rb"
@@ -25,17 +23,9 @@ module CTA
   require "#{base_path}/cta_redux/customer_alerts.rb"
   require "#{base_path}/cta_redux/version.rb"
 
+
+  data_dir = File.join(File.expand_path("../..", __FILE__), 'data')
   db_filename = File.join(data_dir, 'cta-gtfs.db')
-
-  # First run
-  if !File.exists?(db_filename)
-    dbf = File.open(db_filename, 'wb')
-    Zlib::GzipReader.open("#{db_filename}.gz") do |gz|
-      dbf.puts gz.read
-    end
-    dbf.close
-  end
-
   DB = Sequel.sqlite(:database => db_filename, :readonly => true)
 
   require "#{base_path}/cta_redux/models/agency.rb"
