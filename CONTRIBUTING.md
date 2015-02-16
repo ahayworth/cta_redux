@@ -35,7 +35,7 @@ The Faraday stub interface is adequate, but picky - you must set up things with 
 Note that this will take a long time - there are several million stop_time records. This should only be necessary
 when the CTA releases new GTFS data, or if a manual correction to the data is needed.
 
-1. cd data && curl 'http://www.transitchicago.com/downloads/sch_data/<latest file>' > gtfs.zip && unzip gtfs.zip
+1. cd data && curl 'http://www.transitchicago.com/downloads/sch_data/filename' > gtfs.zip && unzip gtfs.zip
 
 2. cd ../script && for i in `ls ../data/*.txt`; do echo $i; ./gtfs_to_sqlite.rb $i ../data/cta-gtfs.db; done
 
