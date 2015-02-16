@@ -4,8 +4,8 @@
 
 2. ```bundle install```
 
-3. Load your REPL like so: ```CI=true irb```. This ensures that the embedded SQLite database will be
-   unzipped in the correct location for you. The CI environment variable is only necessary once for a fresh checkout.
+3. Load your REPL like so: ```TRAVIS=true irb```. This ensures that the embedded SQLite database will be
+   unzipped in the correct location for you. The TRAVIS environment variable is only necessary once for a fresh checkout.
 
 4. Make changes, and submit a pull request. Open issues as needed.
 
