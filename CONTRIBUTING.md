@@ -14,7 +14,7 @@ at least some sort of smokescreen test.
 
 Testing framework: rspec, builds set up on [travis-ci](https://travis-ci.org/ahayworth/cta_redux)
 
-Documentation: yardoc, hosted on [rubydoc.info](http://www.rubydoc.info/github/ahayworth/cta_redux) and rubygems.org (for releases).
+Documentation: yard, hosted on [rubydoc.info](http://www.rubydoc.info/github/ahayworth/cta_redux) and rubygems.org (for releases).
 
 
 ## Testing notes
