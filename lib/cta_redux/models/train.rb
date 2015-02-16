@@ -92,8 +92,10 @@ module CTA
       attr_reader :destination
       # @return [String] A human-readable direction of this train, eg "O'Hare-bound"
       attr_reader :direction
-      # @return [CTA::Stop] The next {CTA::Stop} of this train
+      # @return [CTA::Stop] The next parent {CTA::Stop} of this train
       attr_reader :next_station
+      # @return [CTA::Stop] The next {CTA::Stop} of this train
+      attr_reader :next_stop
       # @return [DateTime] The time this {Prediction} was generated on the TrainTracker servers
       attr_reader :prediction_generated_at
       # @return [DateTime] The time this train is predicted to arrive at the next_station
@@ -122,6 +124,7 @@ module CTA
         @trip = CTA::Trip.where(:schd_trip_id => "R#{@run}").first
         @destination = CTA::Stop.where(:stop_id => data["destSt"]).first
         @next_station = CTA::Stop.where(:stop_id => (data["staId"] || data["nextStaId"])).first
+        @next_stop = CTA::Stop.where(:stop_id => (data["stpId"] || data["nextStpId"])).first
         @prediction_generated_at = DateTime.parse(data["prdt"])
         @arrival_time = DateTime.parse(data["arrT"])
         @seconds = @arrival_time.to_time - @prediction_generated_at.to_time
