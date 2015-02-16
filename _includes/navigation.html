@@ -1,7 +1,7 @@
 <ul class="nav nav-list">
     <li><a href="{{ site.baseurl }}/">Home</a></li>
-    <li><a href="{{ site.codeurl }}">GitHub</a></li>
-    <li><a href="https://rubygems.org/gems/cta_redux">RubyGems</a></li>
+    <li><a href="{{ site.codeurl }}" target='_blank'>GitHub</a></li>
+    <li><a href="https://rubygems.org/gems/cta_redux" target='_blank'>RubyGems</a></li>
     {% for section in site.sections %}
         {% assign attr = section[0] %}
         {% assign label = section[1] %}
@@ -15,4 +15,5 @@
     {% endfor %}
 <!-- List additional links. It is recommended to add a divider
     e.g. <li class=divider></li> first to break up the content. -->
+    <li><a href='http://www.rubydoc.info/github/ahayworth/cta_redux' target='_blank'>RubyDoc</a></li>
 </ul>
