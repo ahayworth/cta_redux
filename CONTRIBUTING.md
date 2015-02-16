@@ -47,6 +47,6 @@ when the CTA releases new GTFS data, or if a manual correction to the data is ne
 
 6. VACUUM
 
-7. gzip cta-gtfs.db
+7. gzip -9 cta-gtfs.db
 
 8. Commit / bump version / tag release / push / build and push gem
