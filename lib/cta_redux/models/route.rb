@@ -109,7 +109,7 @@ module CTA
     # Returns alerts for this route
     # @return [CTA::CustomerAlerts::AlertsResponse]
     def alerts!
-      CTA::CustomerAlerts.alerts!(:route => self.route_id).alerts
+      CTA::CustomerAlerts.alerts!(:routes => self.route_id).alerts
     end
 
     class Live
