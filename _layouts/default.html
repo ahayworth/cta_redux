@@ -13,6 +13,8 @@
         <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
         <link rel="stylesheet" href="/css/syntax.css">
         <link rel="stylesheet" href="/css/main.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+        <script src="/js/tinynav.min.js"></script>
     </head>
     <body>
 
@@ -114,5 +116,11 @@
         {% if site.google_analytics_id != "" %}
         {% include google_analytics.html %}
         {% endif %}
+
+        <script>
+          $(function () {
+            $("#nav").tinyNav();
+          });
+        </script>
     </body>
 </html>
