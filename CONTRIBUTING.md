@@ -23,7 +23,7 @@ Faraday has a stub interface that we use to stub out test data. The workflow usu
 
 1. Figure out what call you're making to the API
 
-2. ```curl '<url for the api call>' > spec/stubs/some_response_name.xml
+2. `curl 'url for the api call' > spec/stubs/some_response_name.xml`
 
 3. Add the appropriate stub in spec/{bus,train}_tracker_spec.rb or spec/customer_alerts_spec.rb
 
