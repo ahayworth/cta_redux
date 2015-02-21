@@ -36,6 +36,22 @@ module CTA
     }
     FRIENDLY_L_ROUTES = Hash[L_ROUTES.values.map { |r| r[:name].downcase.to_sym }.zip(L_ROUTES.keys)]
 
+    ANNOYING_GREEN_RUNS = CTA::DB[:stop_times].with_sql(<<-SQL).select_map(:schd_trip_id)
+      SELECT DISTINCT t.schd_trip_id
+      FROM stop_times st
+        JOIN trips t ON st.trip_id = t.trip_id
+      WHERE t.route_id = 'G'
+        AND st.stop_headsign = ''
+    SQL
+
+    HEADSIGNS = {
+      "54th/Cermak"   => "54 / Cermak",
+      "Ashland/63rd"  => "Ashland / 63",
+      "UIC-Halsted"   => "UIC",
+      "Harlem/Lake"   => "Harlem",
+      "95th/Dan Ryan" => "95th",
+    }
+
     # @!method route_id
     #  @return [String]
     # @!method service_id
@@ -57,6 +73,62 @@ module CTA
     alias_method :id, :route_id
     alias_method :scheduled_trip_id, :schd_trip_id
     alias_method :run, :schd_trip_id
+
+    # Find a {CTA::Trip} that should be happening, given a timestamp and a route or run.
+    # The CTA does not return GTFS trip_id information in either the BusTracker or TrainTracker API, so
+    # it is actually somewhat difficult to associate an API response to a {CTA::Trip}. However, we
+    # know what *should* be happening at any given time. This method attempts a fuzzy find - internally,
+    # we often first try to find the exact Trip that should be happening according to the schedule, and
+    # then failing that we assume that the CTA is running late and look for trips that should have
+    # ended within the past 90 minutes. This almost always finds something.
+    # That said, however, it means we may sometimes find a {CTA::Trip} that's incorrect. In practical usage
+    # however, that doesn't matter too much - most Trips for a run service the same stops.
+    # However, to be safe, your program may wish to compare certain other bits of the API responses to ensure
+    # we found something valid. For example, almost all Brown line trains service the same stops, so
+    # finding the wrong Trip doesn't matter too much. However, a handful of Brown line runs throughout the dat
+    # actually change to Orange line trains at Midway - so, you may wish to verify that the destination of the
+    # Trip matches the reported destination of the API.
+    # Suggestions on how to approach this problem are most welcome (as are patches for better behavior).
+    # @param [String] run The run or route to search for
+    # @param [DateTime, String] timestamp The timestamp to search against.
+    # @param [true,false] fuzz Whether or not to do an exact schedule search or a fuzzy search.
+    # @param [String] direction The stop headsign. Highly recommended to use because otherwise results may be inaccurate.
+    def self.find_active_run(run, timestamp, fuzz = false, direction = nil)
+      # The TrainTracker API sets the stop_headsign to 'Cottage Grove' but GTFS has it as blank...
+      if run == "516"
+        puts run
+        puts timestamp.to_s
+        puts fuzz.inspect
+        puts direction
+      end
+      if ANNOYING_GREEN_RUNS.any? { |r| r =~ /#{run}/ } && false
+        direction_str = <<-EOF
+          AND (st.stop_headsign = '#{(HEADSIGNS[direction] || direction).gsub("'", "''")}'
+            OR (t.route_id = 'G' AND st.stop_headsign = ''))
+        EOF
+      elsif direction
+        direction_str = "AND st.stop_headsign = '#{(HEADSIGNS[direction] || direction).gsub("'", "''")}'"
+      else
+        direction_str = ''
+      end
+      d = timestamp.is_a?(DateTime) ? timestamp : DateTime.parse(timestamp)
+      wday = d.strftime("%A").downcase
+      end_ts = (fuzz ? (d.to_time + (60 * 60 * 6) - (90 * 60)) : d).strftime("%H:%M:%S")
+      Trip.with_sql(<<-SQL)
+        SELECT t.*
+        FROM trips t
+          JOIN stop_times st ON t.trip_id = st.trip_id
+          JOIN calendar   c  ON t.service_id = c.service_id
+        WHERE t.schd_trip_id = 'R#{run}'
+          #{direction_str}
+          AND c.start_date <= '#{d.to_s}'
+          AND c.end_date   >= '#{d.to_s}'
+          AND c.#{wday}
+        GROUP BY t.trip_id
+        HAVING MAX(st.departure_time) >= '#{end_ts}'
+        ORDER BY st.departure_time ASC
+      SQL
+    end
 
     # Follows a train, using the TrainTracker follow API
     # @return [CTA::TrainTracker::FollowResponse] A {CTA::TrainTracker::FollowResponse} with predictions for this train

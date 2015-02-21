@@ -4,6 +4,8 @@ module CTA
   # GTFS feed, though the CTA does not fully implement the standard.
   # @note Current columns: [:shape_id, :shape_pt_lat, :shape_pt_lon, :shape_pt_sequence, :shape_dist_traveled]
   class Shape < Sequel::Model
+    set_primary_key :shape_id
+
     # @!method shape_id
     #  @return [Integer]
     # @!method shape_pt_lat
@@ -20,5 +22,9 @@ module CTA
     alias_method :sequence, :shape_pt_sequence
     alias_method :distance, :shape_dist_traveled
     alias_method :distance_traveled, :shape_dist_traveled
+
+    # @!method trips
+    #   @return [Array<CTA::Trip>] All {CTA::Trip}s related to this {CTA::Shape}
+    one_to_many :trips, :key => :shape_id
   end
 end

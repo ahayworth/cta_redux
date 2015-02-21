@@ -13,7 +13,7 @@ module CTA
       def initialize(parsed_body, raw_body, debug)
         super(parsed_body, raw_body, debug)
         @vehicles = Array.wrap(parsed_body["bustime_response"]["vehicle"]).map do |v|
-          bus = CTA::Bus.find_active_run(v["rt"], v["tmstmp"], (v["dly"] == "true")).first
+          bus = CTA::Bus.find_active_run(v["rt"], v["tmstmp"], (v["dly"] == "true"), v["rtdir"]).first
           bus.live = CTA::Bus::Live.new(v)
 
           bus
@@ -91,7 +91,7 @@ module CTA
       def initialize(parsed_body, raw_body, debug)
         super(parsed_body, raw_body, debug)
         @vehicles = Array.wrap(parsed_body["bustime_response"]["prd"]).map do |p|
-          bus = CTA::Bus.find_active_run(p["rt"], p["tmstmp"], (p["dly"] == "true")).first
+          bus = CTA::Bus.find_active_run(p["rt"], p["tmstmp"], (p["dly"] == "true"), p["rtdir"]).first
           bus.live = CTA::Bus::Live.new(p, p)
 
           bus

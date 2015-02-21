@@ -60,7 +60,7 @@ RSpec.describe CTA::TrainTracker do
       expect(response.routes.size).to eq(8)
       expect(response.trains.size).to eq(80)
 
-      expect(response.trains.last.route.route_id).to eq("Y")
+      expect(response.trains.last.route.route_id).to eq("P")
       expect(response.trains.first.live.lon).to eq(-87.65338)
       expect(response.predictions.first.route.route_id).to eq("Red")
       expect(response.predictions.first.destination.stop_id).to eq(30173)

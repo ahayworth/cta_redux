@@ -30,6 +30,43 @@ module CTA
     alias_method :scheduled_trip_id, :schd_trip_id
     alias_method :run, :schd_trip_id
 
+    # Find a {CTA::Trip} that should be happening, given a timestamp and a route or run.
+    # The CTA does not return GTFS trip_id information in either the BusTracker or TrainTracker API, so
+    # it is actually somewhat difficult to associate an API response to a {CTA::Trip}. However, we
+    # know what *should* be happening at any given time. This method attempts a fuzzy find - internally,
+    # we often first try to find the exact Trip that should be happening according to the schedule, and
+    # then failing that we assume that the CTA is running late and look for trips that should have
+    # ended within the past 90 minutes. This almost always finds something.
+    # That said, however, it means we may sometimes find a {CTA::Trip} that's incorrect. In practical usage
+    # however, that doesn't matter too much - most Trips for a run service the same stops.
+    # However, to be safe, your program may wish to compare certain other bits of the API responses to ensure
+    # we found something valid. For example, almost all Brown line trains service the same stops, so
+    # finding the wrong Trip doesn't matter too much. However, a handful of Brown line runs throughout the dat
+    # actually change to Orange line trains at Midway - so, you may wish to verify that the destination of the
+    # Trip matches the reported destination of the API.
+    # Suggestions on how to approach this problem are most welcome (as are patches for better behavior).
+    # @param [String] run The run or route to search for
+    # @param [DateTime, String] timestamp The timestamp to search against.
+    # @param [true,false] fuzz Whether or not to do an exact schedule search or a fuzzy search.
+    def self.find_active_run(run, timestamp, fuzz = false, direction = nil)
+      d = timestamp.is_a?(DateTime) ? timestamp : DateTime.parse(timestamp)
+      wday = d.strftime("%A").downcase
+      end_ts = (fuzz ? (d.to_time + (60 * 60 * 6) - (90 * 60)) : d).strftime("%H:%M:%S")
+      Trip.with_sql(<<-SQL)
+        SELECT t.*
+        FROM trips t
+          JOIN stop_times st ON t.trip_id = st.trip_id
+          JOIN calendar   c  ON t.service_id = c.service_id
+        WHERE t.route_id = '#{run}'
+        #{direction ? "  AND t.direction = '#{direction.gsub("bound", "")}'" : '' }
+          AND c.start_date <= '#{d.to_s}'
+          AND c.end_date   >= '#{d.to_s}'
+          AND c.#{wday}
+        GROUP BY t.trip_id, st.departure_time
+        HAVING  MAX(st.departure_time) >= '#{end_ts}'
+      SQL
+    end
+
     # Returns predictions for this {CTA::Bus}. Accepts all options for {CTA::BusTracker.predictions!}, and will merge in
     # it's own vehicle_id or route_id if present.
     # @param [Hash] options

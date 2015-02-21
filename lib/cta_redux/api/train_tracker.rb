@@ -22,9 +22,9 @@ module CTA
 
         @routes = eta_map.map do |rt, etas|
           trains = etas.map do |t|
-            train = CTA::Train.find_active_run(t["rn"], self.timestamp, (t["isDly"] == "1")).first
+            train = CTA::Train.find_active_run(t["rn"], self.timestamp, (t["isDly"] == "1"), t["destNm"]).first
             if !train
-              train = CTA::Train.find_active_run(t["rn"], self.timestamp, true).first
+              train = CTA::Train.find_active_run(t["rn"], self.timestamp, true, t["destNm"]).first
             end
             position = t.select { |k,v| ["lat", "lon", "heading"].include?(k) }
             train.live = CTA::Train::Live.new(position, t)
@@ -54,9 +54,9 @@ module CTA
         super(parsed_body, raw_body, debug)
 
         train_info = Array.wrap(parsed_body["ctatt"]["eta"]).first
-        @train = CTA::Train.find_active_run(train_info["rn"], self.timestamp, (train_info["isDly"] == "1")).first
+        @train = CTA::Train.find_active_run(train_info["rn"], self.timestamp, (train_info["isDly"] == "1"), train_info["destNm"]).first
         if !@train
-          @train = CTA::Train.find_active_run(train_info["rn"], self.timestamp, true).first
+          @train = CTA::Train.find_active_run(train_info["rn"], self.timestamp, true, train_info['destNm']).first
         end
         @train.live = CTA::Train::Live.new(parsed_body["ctatt"]["position"], parsed_body["ctatt"]["eta"])
         @predictions = @train.live.predictions
@@ -79,9 +79,9 @@ module CTA
           rt = Route.where(:route_id => route["name"].capitalize).first
 
           trains = Array.wrap(route["train"]).map do |train|
-            t = CTA::Train.find_active_run(train["rn"], self.timestamp, (train["isDly"] == "1")).first
+            t = CTA::Train.find_active_run(train["rn"], self.timestamp, (train["isDly"] == "1"), train['destNm']).first
             if !t # Sometimes the CTA doesn't report things as delayed even when they ARE
-              t = CTA::Train.find_active_run(train["rn"], self.timestamp, true).first
+              t = CTA::Train.find_active_run(train["rn"], self.timestamp, true, train['destNm']).first
             end
 
             if !t
