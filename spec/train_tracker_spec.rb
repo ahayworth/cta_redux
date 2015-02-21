@@ -67,4 +67,11 @@ RSpec.describe CTA::TrainTracker do
       expect(response.predictions.first.trip.service_id).to eq(104701)
     end
   end
+
+  describe "bugs" do
+    it "uses proper station IDs for Green line runs, which are wrong from the CTA GTFS feed" do
+      trip = CTA::Trip[47085599996]
+      expect(trip.stops.map(&:stop_id)).to include(30033)
+    end
+  end
 end
